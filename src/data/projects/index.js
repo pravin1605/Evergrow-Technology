@@ -3,7 +3,7 @@ import gymWebsite02 from "./gymWebsite02";
 import hospitalDemo from "./hospitalDemo";
 import kindergartenDemo1 from "./kindergartenDemo1";
 import kindergartenDemo2 from "./kindergartenDemo2";
-import societyHub from "./societyHub";
+
 
 import restaurantDemo from "./restaurantDemo";
 

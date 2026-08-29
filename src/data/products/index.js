@@ -1,10 +1,11 @@
-import societyhub from "./societyhub";
+import societyHub from "./societyHub";
 import gymManagement from "./gymManagement";
 import educationPlatform from "./educationPlatform";
 
 
+
 const products = [
-  societyhub,
+  societyHub,
   gymManagement,
   educationPlatform,
 ];
@@ -12,7 +13,7 @@ const products = [
 
 export {
   products,
-  societyhub,
+  societyHub,
   gymManagement,
   educationPlatform,
 };
