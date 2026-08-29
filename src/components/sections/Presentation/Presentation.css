@@ -1,0 +1,253 @@
+.presentation-section {
+  padding: var(--section-padding) 0;
+
+  background: var(--color-bg);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.presentation-heading {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr 0.9fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 65px;
+}
+
+.presentation-heading h2 {
+  margin-top: 18px;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    6rem
+  );
+
+  line-height: 0.92;
+}
+
+.presentation-heading > p {
+  max-width: 500px;
+
+  padding-bottom: 8px;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   LIST
+========================================= */
+
+.presentation-list {
+  border-top: 1px solid
+    var(--color-border);
+}
+
+/* =========================================
+   ROW
+========================================= */
+
+.presentation-row {
+  min-height: 130px;
+
+  display: grid;
+
+  grid-template-columns:
+    60px 55px 1fr auto;
+
+  gap: 25px;
+
+  align-items: center;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid
+    var(--color-border);
+
+  transition:
+    padding var(--transition-normal),
+    background var(--transition-normal);
+}
+
+.presentation-row:hover {
+  padding-left: 18px;
+
+  padding-right: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.presentation-number {
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   ICON
+========================================= */
+
+.presentation-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-primary);
+
+  background:
+    rgba(200, 255, 61, 0.06);
+
+  border: 1px solid
+    rgba(200, 255, 61, 0.12);
+
+  border-radius: var(--radius-md);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.presentation-content span {
+  color: var(--color-primary);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+.presentation-content h3 {
+  margin-top: 6px;
+
+  font-size: 22px;
+
+  letter-spacing: -0.035em;
+}
+
+.presentation-content p {
+  max-width: 650px;
+
+  margin-top: 6px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   ACTION
+========================================= */
+
+.presentation-action {
+  min-height: 43px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #000;
+
+  background: var(--color-primary);
+
+  border-radius: var(--radius-full);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.presentation-action:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   COMING
+========================================= */
+
+.presentation-coming {
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .presentation-heading {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .presentation-row {
+    grid-template-columns:
+      45px 50px 1fr;
+
+    gap: 18px;
+  }
+
+  .presentation-action,
+  .presentation-coming {
+    grid-column: 3;
+
+    justify-self: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .presentation-row {
+    grid-template-columns:
+      35px 45px 1fr;
+
+    gap: 12px;
+
+    padding: 18px 0;
+  }
+
+  .presentation-content h3 {
+    font-size: 18px;
+  }
+
+  .presentation-content p {
+    font-size: 12px;
+  }
+
+  .presentation-row:hover {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+}

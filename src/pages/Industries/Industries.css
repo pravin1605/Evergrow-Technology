@@ -1,0 +1,2036 @@
+
+/* =====================================================
+   INDUSTRIES PAGE
+===================================================== */
+
+.industries-page {
+  overflow: hidden;
+  background: #ffffff;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.industries-hero {
+  position: relative;
+
+  padding: 145px 0 110px;
+
+  background:
+    radial-gradient(
+      circle at 82% 25%,
+      rgba(215, 38, 56, 0.07),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fafaf7 100%
+    );
+
+  overflow: hidden;
+}
+
+.industries-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  top: -200px;
+
+  border-radius: 50%;
+
+  background: rgba(215, 38, 56, 0.035);
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   HERO GRID
+===================================================== */
+
+.industries-hero-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(300px, 0.75fr);
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.industries-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+}
+
+.industries-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 7px 12px;
+
+  color: #d72638;
+
+  background: rgba(215, 38, 56, 0.06);
+
+  border: 1px solid rgba(215, 38, 56, 0.10);
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 650;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+.industries-eyebrow svg {
+  animation:
+    sparklePulse
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.industries-hero h1 {
+  max-width: 950px;
+
+  margin: 24px 0 0;
+
+  color: #111111;
+
+  font-size:
+    clamp(
+      4rem,
+      8vw,
+      8.5rem
+    );
+
+  line-height: 0.88;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 700;
+}
+
+.industries-hero h1 span {
+  position: relative;
+
+  color: #d72638;
+}
+
+.industries-hero h1 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 4%;
+
+  bottom: -8px;
+
+  height: 3px;
+
+  background: #d72638;
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  animation:
+    underlineReveal
+    1s
+    0.7s
+    cubic-bezier(.2, .7, .2, 1)
+    forwards;
+}
+
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.industries-hero-content > p {
+  max-width: 680px;
+
+  margin: 32px 0 0;
+
+  color: #686868;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   HERO ACTIONS
+===================================================== */
+
+.industries-hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  margin-top: 34px;
+}
+
+.industries-primary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 50px;
+
+  padding: 0 21px;
+
+  color: #ffffff;
+
+  background: #111111;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  box-shadow:
+    0 10px 25px rgba(17, 17, 17, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.industries-primary-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 35px rgba(17, 17, 17, 0.18);
+}
+
+.industries-primary-button svg {
+  transition:
+    transform 0.3s ease;
+}
+
+.industries-primary-button:hover svg {
+  transform:
+    translate(3px, -3px);
+}
+
+.industries-text-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #555555;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.industries-text-link svg {
+  transition:
+    transform 0.3s ease;
+}
+
+.industries-text-link:hover {
+  color: #d72638;
+}
+
+.industries-text-link:hover svg {
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.industries-hero-visual {
+  position: relative;
+
+  min-height: 440px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.industries-visual-card {
+  position: relative;
+
+  z-index: 2;
+
+  width: 260px;
+
+  min-height: 300px;
+
+  padding: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  border:
+    1px solid rgba(17, 17, 17, 0.08);
+
+  box-shadow:
+    0 35px 80px rgba(17, 17, 17, 0.10);
+
+  backdrop-filter:
+    blur(20px);
+
+  transform:
+    rotate(4deg);
+
+  animation:
+    visualFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+.industries-visual-card > span {
+  margin-bottom: 25px;
+
+  color: #d72638;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.industries-visual-card strong {
+  color: #111111;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+.industries-visual-dot {
+  width: 12px;
+  height: 12px;
+
+  margin-top: 30px;
+
+  border-radius: 50%;
+
+  background: #d72638;
+
+  box-shadow:
+    0 0 0 8px rgba(215, 38, 56, 0.08),
+    0 0 0 16px rgba(215, 38, 56, 0.04);
+
+  animation:
+    dotPulse
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.industries-visual-orbit {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(215, 38, 56, 0.12);
+
+  border-radius: 50%;
+}
+
+.orbit-one {
+  width: 420px;
+  height: 420px;
+
+  animation:
+    orbitRotate
+    18s
+    linear
+    infinite;
+}
+
+.orbit-two {
+  width: 300px;
+  height: 300px;
+
+  border-style: dashed;
+
+  animation:
+    orbitRotateReverse
+    14s
+    linear
+    infinite;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.industries-intro {
+  padding: 100px 0;
+
+  background: #f7f7f4;
+
+  border-top:
+    1px solid rgba(17, 17, 17, 0.05);
+
+  border-bottom:
+    1px solid rgba(17, 17, 17, 0.05);
+}
+
+.industries-intro-grid {
+  display: grid;
+
+  grid-template-columns:
+    0.35fr
+    1fr;
+
+  gap: 80px;
+}
+
+.industries-intro-grid h2 {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #111111;
+
+  font-size:
+    clamp(
+      2.8rem,
+      5.5vw,
+      5.5rem
+    );
+
+  line-height: 0.94;
+
+  letter-spacing: -0.06em;
+}
+
+.industries-intro-grid p {
+  max-width: 650px;
+
+  margin-top: 25px;
+
+  color: #707070;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   DIRECTORY
+===================================================== */
+
+.industries-directory {
+  padding: 120px 0;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.industries-section-heading {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    0.55fr;
+
+  gap: 70px;
+
+  align-items: end;
+
+  margin-bottom: 55px;
+}
+
+.industries-section-heading h2 {
+  max-width: 800px;
+
+  margin-top: 16px;
+
+  color: #111111;
+
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      6rem
+    );
+
+  line-height: 0.9;
+
+  letter-spacing: -0.065em;
+}
+
+.industries-section-heading > p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #707070;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   INDUSTRY CARD GRID
+===================================================== */
+
+.industries-page .industries-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
+  align-items: stretch;
+}
+
+.industries-page .industry-card {
+  width: 100%;
+
+  min-width: 0;
+}
+
+
+/* =====================================================
+   INDUSTRY CARD
+===================================================== */
+
+.industries-page .industry-card-image {
+  height: 235px;
+}
+
+.industries-page .industry-card-content h3 {
+  font-size:
+    clamp(
+      2rem,
+      3vw,
+      3rem
+    );
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 700;
+}
+
+.industries-page .industry-card-meta {
+  margin-bottom: 14px;
+}
+
+.industries-page .industry-card-content p {
+  max-width: 100%;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.industries-page .industry-card-content {
+  min-height: 205px;
+
+  padding:
+    25px
+    25px
+    27px;
+}
+
+.industries-page .industry-card-link {
+  margin-top: 20px;
+}
+
+
+/* =====================================================
+   INDUSTRY TITLE ACCENT
+===================================================== */
+
+.industries-page .industry-card-content h3::after {
+  content: "";
+
+  display: block;
+
+  width: 0;
+
+  height: 2px;
+
+  margin-top: 9px;
+
+  background: #d72638;
+
+  transition:
+    width 0.35s ease;
+}
+
+.industries-page .industry-card:hover
+.industry-card-content h3::after {
+  width: 42px;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.industries-cta {
+  position: relative;
+
+  padding: 110px 0 130px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+
+/* =====================================================
+   CTA BOX
+===================================================== */
+
+.industries-cta-box {
+  position: relative;
+
+  min-height: 520px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 70px;
+
+  padding: 72px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 32px;
+
+  background:
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(215, 38, 56, 0.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 12% 88%,
+      rgba(37, 99, 235, 0.15),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #111111 0%,
+      #15171c 48%,
+      #0b0d11 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 40px 110px
+    rgba(17, 24, 39, 0.20);
+
+  isolation: isolate;
+
+  transform: translateZ(0);
+}
+
+
+/* =====================================================
+   CTA TOP GLOW
+===================================================== */
+
+.industries-cta-box::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  right: -140px;
+  top: -180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(215, 38, 56, 0.16),
+      transparent 68%
+    );
+
+  filter: blur(10px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation:
+    industriesCtaMainGlow
+    8s
+    ease-in-out
+    infinite;
+}
+
+@keyframes industriesCtaMainGlow {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(-35px, 30px, 0)
+      scale(1.12);
+  }
+}
+
+
+/* =====================================================
+   ANIMATED BORDER
+===================================================== */
+
+.industries-cta-box::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  padding: 1px;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 15%,
+      rgba(215, 38, 56, 0.65),
+      rgba(37, 99, 235, 0.55),
+      transparent 85%
+    );
+
+  background-size: 200% 200%;
+
+  animation:
+    industriesCtaBorderMove
+    8s
+    linear
+    infinite;
+
+  pointer-events: none;
+
+  z-index: 4;
+
+  opacity: 0.65;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite:
+    xor;
+
+  mask-composite:
+    exclude;
+}
+
+@keyframes industriesCtaBorderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* =====================================================
+   MOVING GRID
+===================================================== */
+
+.industries-cta-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.065;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.4) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.4) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    45px 45px;
+
+  mask-image:
+    linear-gradient(
+      to bottom right,
+      transparent,
+      black 30%,
+      black 70%,
+      transparent
+    );
+
+  animation:
+    industriesCtaGridMove
+    18s
+    linear
+    infinite;
+
+  pointer-events: none;
+}
+
+@keyframes industriesCtaGridMove {
+  from {
+    transform:
+      translate(0, 0);
+  }
+
+  to {
+    transform:
+      translate(45px, 45px);
+  }
+}
+
+
+/* =====================================================
+   GLOW ORBS
+===================================================== */
+
+.industries-cta-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(10px);
+
+  pointer-events: none;
+
+  mix-blend-mode: screen;
+}
+
+.industries-cta-glow-one {
+  width: 300px;
+  height: 300px;
+
+  right: 3%;
+  top: -110px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(215, 38, 56, 0.30),
+      transparent 70%
+    );
+
+  animation:
+    industriesCtaGlowOne
+    7s
+    ease-in-out
+    infinite;
+}
+
+@keyframes industriesCtaGlowOne {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(-35px, 35px, 0)
+      scale(1.15);
+  }
+}
+
+.industries-cta-glow-two {
+  width: 270px;
+  height: 270px;
+
+  left: 3%;
+  bottom: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.26),
+      transparent 70%
+    );
+
+  animation:
+    industriesCtaGlowTwo
+    9s
+    ease-in-out
+    infinite;
+}
+
+@keyframes industriesCtaGlowTwo {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(40px, -35px, 0)
+      scale(1.12);
+  }
+}
+
+
+/* =====================================================
+   ORB
+===================================================== */
+
+.industries-cta-orb {
+  position: absolute;
+
+  right: 15%;
+  top: 17%;
+
+  width: 145px;
+  height: 145px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  animation:
+    industriesCtaOrbFloat
+    6s
+    ease-in-out
+    infinite;
+
+  pointer-events: none;
+}
+
+.industries-cta-orb::before,
+.industries-cta-orb::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 17px;
+
+  border:
+    1px solid
+    rgba(215, 38, 56, 0.30);
+
+  border-radius: 50%;
+}
+
+.industries-cta-orb::after {
+  inset: 36px;
+
+  border-color:
+    rgba(37, 99, 235, 0.35);
+}
+
+.industries-cta-orb span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #d72638;
+
+  box-shadow:
+    0 0 22px
+    rgba(215, 38, 56, 0.85);
+
+  transform:
+    translate(-50%, -50%);
+}
+
+@keyframes industriesCtaOrbFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-16px)
+      rotate(8deg);
+  }
+}
+
+
+/* =====================================================
+   FLOATING LABEL
+===================================================== */
+
+.industries-cta-floating-label {
+  position: absolute;
+
+  top: 32px;
+  right: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  backdrop-filter:
+    blur(12px);
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+
+  animation:
+    industriesCtaLabelFloat
+    4s
+    ease-in-out
+    infinite;
+
+  z-index: 5;
+}
+
+.industries-cta-floating-label svg {
+  color: #d72638;
+
+  animation:
+    industriesCtaSparkleRotate
+    3s
+    ease-in-out
+    infinite;
+}
+
+@keyframes industriesCtaLabelFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-5px);
+  }
+}
+
+@keyframes industriesCtaSparkleRotate {
+  0%,
+  100% {
+    transform:
+      rotate(0deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      rotate(15deg)
+      scale(1.12);
+  }
+}
+
+
+/* =====================================================
+   CTA CONTENT
+===================================================== */
+
+.industries-cta-content {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 800px;
+}
+
+
+/* =====================================================
+   CTA EYEBROW
+===================================================== */
+
+.industries-cta-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color:
+    rgba(255, 255, 255, 0.60);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+.industries-cta-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #d72638;
+
+  box-shadow:
+    0 0 15px
+    rgba(215, 38, 56, 0.85);
+}
+
+
+/* =====================================================
+   CTA HEADING
+===================================================== */
+
+.industries-cta-content h2 {
+  margin:
+    20px 0
+    25px;
+
+  max-width: 850px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      6rem
+    );
+
+  line-height: 0.94;
+
+  letter-spacing: -0.065em;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CTA HIGHLIGHT
+===================================================== */
+
+.industries-cta-highlight {
+  position: relative;
+
+  display: inline-block;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #f04455 45%,
+      #8dafff 100%
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    industriesCtaHighlightGradient
+    5s
+    ease infinite;
+}
+
+@keyframes industriesCtaHighlightGradient {
+  0% {
+    background-position:
+      0% center;
+  }
+
+  50% {
+    background-position:
+      100% center;
+  }
+
+  100% {
+    background-position:
+      0% center;
+  }
+}
+
+
+/* =====================================================
+   CTA DESCRIPTION
+===================================================== */
+
+.industries-cta-content p {
+  max-width: 610px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.60);
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   CTA META
+===================================================== */
+
+.industries-cta-meta {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 28px;
+
+  color:
+    rgba(255, 255, 255, 0.40);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.10em;
+
+  text-transform: uppercase;
+}
+
+.industries-cta-meta .meta-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #d72638;
+
+  box-shadow:
+    0 0 12px
+    rgba(215, 38, 56, 0.8);
+
+  animation:
+    industriesCtaMetaPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+@keyframes industriesCtaMetaPulse {
+  0%,
+  100% {
+    transform:
+      scale(1);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform:
+      scale(1.5);
+
+    opacity: 1;
+  }
+}
+
+.industries-cta-meta .meta-separator {
+  opacity: 0.25;
+}
+
+
+/* =====================================================
+   CTA ACTION
+===================================================== */
+
+.industries-cta-action {
+  position: relative;
+
+  z-index: 6;
+
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   CTA BUTTON
+===================================================== */
+
+.industries-cta-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  min-width: 175px;
+
+  min-height: 58px;
+
+  padding:
+    0 9px
+    0 23px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.20);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.industries-cta-button:hover {
+  transform:
+    translateY(-5px)
+    scale(1.02);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0, 0, 0, 0.38);
+}
+
+
+/* =====================================================
+   CTA BUTTON SHIMMER
+===================================================== */
+
+.industries-cta-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(215, 38, 56, 0.08),
+      transparent
+    );
+
+  background-size: 200% auto;
+
+  animation:
+    industriesCtaButtonShimmer
+    4s
+    linear
+    infinite;
+
+  pointer-events: none;
+}
+
+@keyframes industriesCtaButtonShimmer {
+  from {
+    background-position:
+      -100% center;
+  }
+
+  to {
+    background-position:
+      200% center;
+  }
+}
+
+
+/* =====================================================
+   CTA BUTTON ICON
+===================================================== */
+
+.industries-cta-button-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.industries-cta-button:hover
+.industries-cta-button-icon {
+  transform:
+    rotate(8deg);
+
+  background:
+    #d72638;
+}
+
+.industries-cta-button-icon svg {
+  transition:
+    transform 0.3s ease;
+}
+
+.industries-cta-button:hover
+.industries-cta-button-icon svg {
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* =====================================================
+   CORNER TEXT
+===================================================== */
+
+.industries-cta-corner-text {
+  position: absolute;
+
+  left: 72px;
+  bottom: 30px;
+
+  color:
+    rgba(255, 255, 255, 0.18);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.20em;
+
+  pointer-events: none;
+
+  z-index: 5;
+}
+
+
+/* =====================================================
+   TABLET CTA
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .industries-cta-box {
+    min-height: 460px;
+
+    padding:
+      60px 50px;
+
+    gap: 45px;
+  }
+
+  .industries-cta-content h2 {
+    font-size:
+      clamp(
+        2.8rem,
+        7vw,
+        4.8rem
+      );
+  }
+
+  .industries-cta-orb {
+    right: 5%;
+  }
+}
+
+
+/* =====================================================
+   GENERAL TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .industries-hero {
+    padding:
+      120px 0 90px;
+  }
+
+  .industries-hero-grid {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .industries-hero-visual {
+    min-height: 350px;
+  }
+
+  .industries-intro-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .industries-section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .industries-page .industries-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET INDUSTRY GRID
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .industries-page .industries-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .industries-page .industry-card-image {
+    height: 250px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .industries-hero {
+    padding:
+      105px 0 70px;
+  }
+
+  .industries-hero h1 {
+    font-size:
+      clamp(
+        3.2rem,
+        15vw,
+        5rem
+      );
+  }
+
+  .industries-hero-content > p {
+    font-size: 15px;
+  }
+
+  .industries-hero-actions {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .industries-primary-button {
+    width: 100%;
+  }
+
+  .industries-text-link {
+    justify-content: center;
+  }
+
+  .industries-hero-visual {
+    min-height: 300px;
+  }
+
+  .industries-visual-card {
+    width: 220px;
+
+    min-height: 260px;
+  }
+
+  .industries-visual-card strong {
+    font-size: 26px;
+  }
+
+  .orbit-one {
+    width: 300px;
+    height: 300px;
+  }
+
+  .orbit-two {
+    width: 220px;
+    height: 220px;
+  }
+
+  .industries-intro {
+    padding:
+      75px 0;
+  }
+
+  .industries-directory {
+    padding:
+      80px 0;
+  }
+
+  .industries-section-heading h2 {
+    font-size:
+      clamp(
+        2.8rem,
+        13vw,
+        4.5rem
+      );
+  }
+
+  .industries-page .industries-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .industries-page .industry-card-image {
+    height: 230px;
+  }
+
+  .industries-page .industry-card-content {
+    min-height: auto;
+
+    padding:
+      23px
+      22px
+      25px;
+  }
+
+  .industries-page .industry-card-content h3 {
+    font-size: 2.15rem;
+  }
+
+  .industries-page .industry-card-content p {
+    font-size: 14px;
+
+    -webkit-line-clamp: 4;
+  }
+
+
+  /* =================================================
+     MOBILE FINAL CTA
+  ================================================= */
+
+  .industries-cta {
+    padding:
+      75px 0 90px;
+  }
+
+  .industries-cta-box {
+    min-height: auto;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding:
+      75px 25px 45px;
+
+    gap: 35px;
+
+    border-radius: 24px;
+  }
+
+  .industries-cta-floating-label {
+    top: 22px;
+
+    right: 22px;
+
+    font-size: 9px;
+  }
+
+  .industries-cta-content h2 {
+    margin-top: 16px;
+
+    font-size:
+      clamp(
+        2.5rem,
+        12vw,
+        3.8rem
+      );
+
+    line-height: 0.98;
+  }
+
+  .industries-cta-content p {
+    font-size:
+      0.94rem;
+
+    line-height: 1.7;
+  }
+
+  .industries-cta-meta {
+    margin-top: 22px;
+
+    font-size: 8px;
+  }
+
+  .industries-cta-action {
+    width: 100%;
+  }
+
+  .industries-cta-button {
+    width: 100%;
+
+    min-height: 56px;
+  }
+
+  .industries-cta-orb {
+    width: 90px;
+    height: 90px;
+
+    right: -15px;
+    top: 85px;
+
+    opacity: 0.45;
+  }
+
+  .industries-cta-corner-text {
+    left: 25px;
+
+    bottom: 18px;
+
+    font-size: 8px;
+  }
+
+  .industries-cta-glow-one {
+    width: 200px;
+    height: 200px;
+
+    right: -80px;
+  }
+
+  .industries-cta-glow-two {
+    width: 190px;
+    height: 190px;
+
+    left: -70px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .industries-eyebrow svg,
+  .industries-hero h1 span::after,
+  .industries-visual-card,
+  .industries-visual-dot,
+  .orbit-one,
+  .orbit-two,
+
+  .industries-cta-box::before,
+  .industries-cta-box::after,
+  .industries-cta-grid,
+  .industries-cta-glow-one,
+  .industries-cta-glow-two,
+  .industries-cta-orb,
+  .industries-cta-floating-label,
+  .industries-cta-floating-label svg,
+  .industries-cta-highlight,
+  .industries-cta-meta .meta-dot,
+  .industries-cta-button::before {
+
+    animation: none;
+  }
+
+  .industries-primary-button,
+  .industries-cta-button,
+  .industries-cta-button-icon {
+
+    transition: none;
+  }
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes sparklePulse {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.2)
+      rotate(8deg);
+  }
+}
+
+
+@keyframes underlineReveal {
+
+  to {
+    transform:
+      scaleX(1);
+  }
+}
+
+
+@keyframes visualFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(4deg);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotate(1deg);
+  }
+}
+
+
+@keyframes orbitRotate {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+@keyframes orbitRotateReverse {
+
+  from {
+    transform:
+      rotate(360deg);
+  }
+
+  to {
+    transform:
+      rotate(0deg);
+  }
+}
+
+
+@keyframes dotPulse {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.2);
+  }
+}
+
+
+/* =====================================================
+   EXTRA MOBILE SAFETY
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .industries-hero h1 {
+    font-size:
+      3.1rem;
+  }
+
+  .industries-section-heading h2 {
+    font-size:
+      2.75rem;
+  }
+
+  .industries-cta-box {
+    padding:
+      72px 21px 42px;
+  }
+
+  .industries-cta-content h2 {
+    font-size:
+      2.55rem;
+  }
+
+  .industries-cta-floating-label {
+    right: 18px;
+  }
+
+  .industries-cta-button {
+    font-size: 13px;
+  }
+
+}
+

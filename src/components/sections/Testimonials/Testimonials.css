@@ -1,0 +1,399 @@
+/* =========================================
+   TESTIMONIALS SECTION
+========================================= */
+
+.testimonials-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 120px 0;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.testimonials-container {
+  width: min(1200px, 92%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.testimonials-header {
+  max-width: 760px;
+
+  margin-bottom: 65px;
+}
+
+
+.testimonials-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 18px;
+
+  color: var(--color-accent-dark, #6f9f00);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.testimonials-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(
+    --color-accent,
+    #c8ff3d
+  );
+
+  box-shadow:
+    0 0 0 5px
+    rgba(200, 255, 61, 0.13);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.testimonials-header h2 {
+  margin: 0;
+
+  color: var(
+    --color-heading,
+    #171a17
+  );
+
+  font-size: clamp(
+    2.8rem,
+    5vw,
+    4.8rem
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 750;
+}
+
+
+.testimonials-header h2 span {
+  color: var(
+    --color-accent-dark,
+    #6f9f00
+  );
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.testimonials-header p {
+  max-width: 680px;
+
+  margin: 24px 0 0;
+
+  color: var(
+    --color-text-secondary,
+    #555b55
+  );
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   SLIDER WRAPPER
+========================================= */
+
+.testimonials-slider-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 15px 0 45px;
+}
+
+
+/*
+  Soft fade at the left and right edges.
+  This makes the train feel cleaner.
+*/
+
+.testimonials-slider-wrapper::before,
+.testimonials-slider-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 100px;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+.testimonials-slider-wrapper::before {
+  left: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      rgba(255, 255, 255, 0)
+    );
+}
+
+
+.testimonials-slider-wrapper::after {
+  right: 0;
+
+  background:
+    linear-gradient(
+      270deg,
+      #ffffff,
+      rgba(255, 255, 255, 0)
+    );
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.testimonials-slider {
+  display: flex;
+
+  width: max-content;
+
+  gap: 24px;
+
+  padding-left: 4%;
+
+  animation:
+    testimonialTrain
+    42s linear infinite;
+}
+
+
+/*
+  Pause train when user hovers.
+*/
+
+.testimonials-slider-wrapper:hover
+.testimonials-slider {
+  animation-play-state: paused;
+}
+
+
+/* =========================================
+   TRAIN ANIMATION
+========================================= */
+
+@keyframes testimonialTrain {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(
+        calc(
+          -50% - 12px
+        )
+      );
+  }
+
+}
+
+
+/* =========================================
+   BOTTOM INFO
+========================================= */
+
+.testimonials-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 15px;
+
+  color: var(
+    --color-text-secondary,
+    #737873
+  );
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+.testimonials-bottom-line {
+  width: 45px;
+
+  height: 1px;
+
+  background:
+    var(
+      --color-border,
+      #e2e7e1
+    );
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .testimonials-section {
+    padding: 100px 0;
+  }
+
+
+  .testimonials-header {
+    margin-bottom: 50px;
+  }
+
+
+  .testimonials-slider {
+    gap: 20px;
+
+    animation-duration: 36s;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .testimonials-section {
+    padding: 80px 0;
+  }
+
+
+  .testimonials-container {
+    width: 90%;
+  }
+
+
+  .testimonials-header {
+    margin-bottom: 40px;
+  }
+
+
+  .testimonials-header h2 {
+    font-size: clamp(
+      2.5rem,
+      11vw,
+      3.5rem
+    );
+  }
+
+
+  .testimonials-header p {
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  .testimonials-slider-wrapper {
+    padding-bottom: 30px;
+  }
+
+
+  .testimonials-slider-wrapper::before,
+  .testimonials-slider-wrapper::after {
+    width: 35px;
+  }
+
+
+  .testimonials-slider {
+    gap: 15px;
+
+    padding-left: 5%;
+
+    animation-duration: 30s;
+  }
+
+
+  .testimonials-bottom {
+    margin-top: 5px;
+
+    font-size: 9px;
+
+    gap: 10px;
+  }
+
+
+  .testimonials-bottom-line {
+    width: 25px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .testimonials-slider {
+    animation: none;
+  }
+
+}

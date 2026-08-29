@@ -1,0 +1,129 @@
+:root {
+  /* =========================================
+     EVERGROW LIGHT BRAND SYSTEM
+  ========================================= */
+
+  --color-primary: #22B45A;
+  --color-primary-dark: #08783B;
+  --color-primary-light: #EAF8EF;
+
+  --color-dark: #111827;
+  --color-dark-soft: #1F2937;
+
+  --color-text: #111827;
+  --color-text-secondary: #475467;
+  --color-text-muted: #667085;
+
+  --color-background: #FFFFFF;
+  --color-background-soft: #F7FAF8;
+  --color-background-green: #EFFAF3;
+  --color-background-gray: #F5F6F7;
+
+  --color-border: #E5E7EB;
+  --color-border-light: #EEF1EE;
+
+  /* Legacy aliases used by existing components */
+  --color-bg: var(--color-background);
+  --color-bg-soft: var(--color-background-soft);
+  --color-bg-card: #FFFFFF;
+  --color-bg-elevated: #FFFFFF;
+  --color-white: #FFFFFF;
+  --color-heading: var(--color-text);
+  --color-accent: var(--color-primary);
+  --color-muted: #EEF2EF;
+  --color-surface: #FFFFFF;
+
+  /* Typography */
+  --font-primary: "Inter", Arial, Helvetica, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.75rem;
+  --font-size-5xl: 3.5rem;
+  --font-size-6xl: 4.5rem;
+  --font-size-hero: clamp(2.75rem, 6vw, 5.5rem);
+
+  --line-tight: 0.98;
+  --line-normal: 1.5;
+  --line-relaxed: 1.7;
+
+  /* Layout */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --container-width: 1280px;
+  --container-wide: 1440px;
+  --navbar-height: 80px;
+  --section-padding: clamp(5rem, 9vw, 8rem);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Effects */
+  --shadow-sm: 0 4px 15px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 10px 30px rgba(16, 24, 40, 0.07);
+  --shadow-lg: 0 20px 60px rgba(16, 24, 40, 0.08);
+
+  --transition-fast: 0.2s ease-out;
+  --transition-normal: 0.3s ease-out;
+  --transition-slow: 0.6s ease-out;
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-navbar: 500;
+  --z-modal: 1000;
+  --z-toast: 2000;
+}
+
+/* =========================================
+   SERVICE ACCENTS
+========================================= */
+
+.service--web,
+.service--web-development { --domain-color:#22B45A; --domain-soft:#EAF8EF; --domain-gradient:linear-gradient(135deg,#EAF8EF 0%,#F8FCF9 100%); }
+.service--uiux,
+.service--ui-ux { --domain-color:#7C4DFF; --domain-soft:#F2ECFF; --domain-gradient:linear-gradient(135deg,#F2ECFF 0%,#FAF8FF 100%); }
+.service--software,
+.service--custom-software { --domain-color:#3478F6; --domain-soft:#EAF2FF; --domain-gradient:linear-gradient(135deg,#EAF2FF 0%,#F8FAFF 100%); }
+.service--mobile,
+.service--mobile-apps { --domain-color:#06AFC7; --domain-soft:#E8F9FC; --domain-gradient:linear-gradient(135deg,#E8F9FC 0%,#F8FEFF 100%); }
+.service--ai,
+.service--ai-automation { --domain-color:#6D4AFF; --domain-soft:#F0EDFF; --domain-gradient:linear-gradient(135deg,#F0EDFF 0%,#FAF9FF 100%); }
+.service--seo { --domain-color:#16A34A; --domain-soft:#EDF9EF; --domain-gradient:linear-gradient(135deg,#EDF9EF 0%,#F9FDF9 100%); }
+.service--google-ads { --domain-color:#4285F4; --domain-soft:#EDF4FF; --domain-gradient:linear-gradient(135deg,#EDF4FF 0%,#F9FBFF 100%); }
+.service--meta-ads { --domain-color:#E84A8A; --domain-soft:#FFF0F5; --domain-gradient:linear-gradient(135deg,#FFF0F5 0%,#FFF9FB 100%); }
+.service--instagram { --domain-color:#D946EF; --domain-soft:#FDF0FF; --domain-gradient:linear-gradient(135deg,#FDF0FF 0%,#FFFAFF 100%); }
+.service--social { --domain-color:#8B5CF6; --domain-soft:#F4EEFF; --domain-gradient:linear-gradient(135deg,#F4EEFF 0%,#FCFAFF 100%); }
+.service--ecommerce { --domain-color:#F59E0B; --domain-soft:#FFF5E6; --domain-gradient:linear-gradient(135deg,#FFF5E6 0%,#FFFBF4 100%); }
+.service--digital-marketing { --domain-color:#F97316; --domain-soft:#FFF1E8; --domain-gradient:linear-gradient(135deg,#FFF1E8 0%,#FFFAF7 100%); }
+
+/* =========================================
+   INDUSTRY ACCENTS
+========================================= */
+
+.industry--gym { --domain-color:#FF6B35; --domain-soft:#FFF1EB; --domain-gradient:linear-gradient(135deg,#FFF1EB 0%,#FFF9F6 100%); }
+.industry--healthcare { --domain-color:#2494E8; --domain-soft:#EDF7FF; --domain-gradient:linear-gradient(135deg,#EDF7FF 0%,#F8FCFF 100%); }
+.industry--education { --domain-color:#7C4DFF; --domain-soft:#F3EFFF; --domain-gradient:linear-gradient(135deg,#F3EFFF 0%,#FBFAFF 100%); }
+.industry--housing { --domain-color:#00A88F; --domain-soft:#EAFBF7; --domain-gradient:linear-gradient(135deg,#EAFBF7 0%,#F8FDFC 100%); }
+.industry--realestate { --domain-color:#C58A32; --domain-soft:#FBF5E9; --domain-gradient:linear-gradient(135deg,#FBF5E9 0%,#FFFCF7 100%); }
+.industry--restaurant { --domain-color:#E74C3C; --domain-soft:#FFF0EE; --domain-gradient:linear-gradient(135deg,#FFF0EE 0%,#FFF9F8 100%); }
+.industry--business { --domain-color:#22B45A; --domain-soft:#EAF8EF; --domain-gradient:linear-gradient(135deg,#EAF8EF 0%,#F8FCF9 100%); }

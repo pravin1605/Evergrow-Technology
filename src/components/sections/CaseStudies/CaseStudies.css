@@ -1,0 +1,106 @@
+.case-studies-section {
+  width: 100%;
+
+  padding: 110px 0;
+
+  background: var(--color-muted);
+}
+
+.case-studies-container {
+  width: min(1200px, 92%);
+
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.case-studies-header {
+  display: grid;
+
+  grid-template-columns: 1fr 0.6fr;
+
+  gap: 60px;
+
+  align-items: end;
+
+  margin-bottom: 55px;
+}
+
+.case-studies-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: var(--color-accent);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.case-studies-header h2 {
+  margin: 0;
+
+  font-size: clamp(40px, 5vw, 62px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+
+  color: var(--color-heading);
+}
+
+.case-studies-header p {
+  margin: 0;
+
+  max-width: 430px;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  color: var(--color-text-secondary);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.case-studies-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .case-studies-header {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .case-studies-section {
+    padding: 80px 0;
+  }
+
+}

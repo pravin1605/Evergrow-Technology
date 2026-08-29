@@ -1,0 +1,563 @@
+/* =========================================================
+   EVERGROW HOME PAGE
+   ---------------------------------------------------------
+   IMPORTANT:
+   This file controls ONLY the Home page section wrappers
+   and their visual separation.
+
+   It does NOT redesign:
+   - Hero
+   - WhatWeDo
+   - Industries
+   - FinalCTA
+
+   Existing component CSS remains untouched.
+========================================================= */
+
+
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+.home-page {
+  position: relative;
+
+  width: 100%;
+
+  overflow-x: hidden;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   HOME SECTION WRAPPER
+========================================================= */
+
+.home-section {
+  position: relative;
+
+  width: 100%;
+
+  background: transparent;
+
+  isolation: isolate;
+
+  scroll-margin-top: 80px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.home-section--hero {
+  position: relative;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   NON-HERO SECTION
+========================================================= */
+
+.home-section:not(.home-section--hero) {
+  position: relative;
+
+  padding-top: 1px;
+
+  --section-accent: #c8ff3d;
+}
+
+
+/* =========================================================
+   STRONG ANIMATED SECTION DIVIDER
+========================================================= */
+
+/*
+   Every section after Hero gets a strong horizontal
+   divider.
+
+   The line:
+   - is 3px thick
+   - becomes darker toward the center
+   - expands and contracts continuously
+   - remains elegant rather than looking like a hard border
+*/
+
+.home-section:not(.home-section--hero)::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 100%;
+  height: 3px;
+
+  z-index: 50;
+
+  pointer-events: none;
+
+  transform:
+    translateX(-50%)
+    scaleX(0.35);
+
+  transform-origin: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(17, 17, 17, 0.25) 10%,
+      rgba(17, 17, 17, 0.75) 30%,
+      #171a17 50%,
+      rgba(17, 17, 17, 0.75) 70%,
+      rgba(17, 17, 17, 0.25) 90%,
+      transparent 100%
+    );
+
+  opacity: 0.65;
+
+  animation:
+    sectionLinePulse 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SECTION LINE ANIMATION
+========================================================= */
+
+@keyframes sectionLinePulse {
+
+  0% {
+    transform:
+      translateX(-50%)
+      scaleX(0.35);
+
+    opacity: 0.45;
+  }
+
+  30% {
+    transform:
+      translateX(-50%)
+      scaleX(0.65);
+
+    opacity: 0.7;
+  }
+
+  55% {
+    transform:
+      translateX(-50%)
+      scaleX(1);
+
+    opacity: 1;
+  }
+
+  75% {
+    transform:
+      translateX(-50%)
+      scaleX(0.8);
+
+    opacity: 0.8;
+  }
+
+  100% {
+    transform:
+      translateX(-50%)
+      scaleX(0.35);
+
+    opacity: 0.45;
+  }
+
+}
+
+
+/* =========================================================
+   CENTER LIME ACCENT
+========================================================= */
+
+/*
+   Small lime point at the exact center of the divider.
+
+   This makes the beginning of a new section easier
+   to recognize while keeping the white theme.
+*/
+
+.home-section:not(.home-section--hero) {
+  background-image:
+    radial-gradient(
+      circle at 50% 0,
+      #c8ff3d 0,
+      #c8ff3d 4px,
+      rgba(200, 255, 61, 0.35) 5px,
+      rgba(200, 255, 61, 0.15) 7px,
+      transparent 10px
+    );
+
+  background-repeat: no-repeat;
+
+  background-position:
+    center top;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+/*
+   Example:
+
+   01 / WHAT WE DO
+
+   The label sits directly on the divider.
+*/
+
+.home-section:not(.home-section--hero)::after {
+  content:
+    attr(data-section-number)
+    "   /   "
+    attr(data-section-name);
+
+  position: absolute;
+
+  top: -18px;
+  left: 50%;
+
+  z-index: 60;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 210px;
+  height: 36px;
+
+  padding:
+    0 18px;
+
+  transform:
+    translateX(-50%);
+
+  border:
+    1px solid rgba(17, 17, 17, 0.14);
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 18px rgba(17, 17, 17, 0.06);
+
+  color: #171a17;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  animation:
+    sectionLabelGlow 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LABEL ANIMATION
+========================================================= */
+
+@keyframes sectionLabelGlow {
+
+  0% {
+    box-shadow:
+      0 4px 18px rgba(17, 17, 17, 0.06);
+  }
+
+  50% {
+    box-shadow:
+      0 6px 24px rgba(17, 17, 17, 0.13),
+      0 0 0 3px rgba(200, 255, 61, 0.12);
+  }
+
+  100% {
+    box-shadow:
+      0 4px 18px rgba(17, 17, 17, 0.06);
+  }
+
+}
+
+
+/* =========================================================
+   SECTION CONTENT
+========================================================= */
+
+/*
+   Do not style individual component elements here.
+
+   This allows the existing CSS of each component to
+   continue controlling its own:
+   - typography
+   - cards
+   - images
+   - buttons
+   - grids
+   - spacing
+*/
+
+.home-section > * {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   SECTION SPACING
+========================================================= */
+
+.home-section:not(.home-section--hero) {
+  padding-bottom: 20px;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 769px) {
+
+  .home-section {
+    scroll-margin-top: 80px;
+  }
+
+
+  .home-section:not(.home-section--hero)::before {
+    height: 3px;
+  }
+
+
+  .home-section:not(.home-section--hero)::after {
+    top: -18px;
+
+    min-width: 210px;
+
+    height: 36px;
+
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .home-section {
+    scroll-margin-top: 75px;
+  }
+
+
+  .home-section:not(.home-section--hero)::after {
+    min-width: 195px;
+
+    font-size: 8.5px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .home-page {
+    width: 100%;
+
+    overflow-x: hidden;
+
+    background: #ffffff;
+  }
+
+
+  .home-section {
+    width: 100%;
+
+    scroll-margin-top: 70px;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE DIVIDER
+  ------------------------------------------------------- */
+
+  .home-section:not(.home-section--hero)::before {
+    top: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(17, 17, 17, 0.30) 8%,
+        rgba(17, 17, 17, 0.70) 25%,
+        #171a17 50%,
+        rgba(17, 17, 17, 0.70) 75%,
+        rgba(17, 17, 17, 0.30) 92%,
+        transparent 100%
+      );
+
+    animation:
+      sectionLinePulse 2.8s ease-in-out infinite;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE CENTER ACCENT
+  ------------------------------------------------------- */
+
+  .home-section:not(.home-section--hero) {
+    background-image:
+      radial-gradient(
+        circle at 50% 0,
+        #c8ff3d 0,
+        #c8ff3d 3px,
+        rgba(200, 255, 61, 0.40) 4px,
+        rgba(200, 255, 61, 0.15) 6px,
+        transparent 9px
+      );
+
+    background-repeat: no-repeat;
+
+    background-position:
+      center top;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE SECTION LABEL
+  ------------------------------------------------------- */
+
+  .home-section:not(.home-section--hero)::after {
+    top: -15px;
+
+    min-width: 165px;
+
+    height: 30px;
+
+    padding:
+      0 14px;
+
+    border:
+      1px solid rgba(17, 17, 17, 0.14);
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    box-shadow:
+      0 4px 18px rgba(17, 17, 17, 0.08);
+
+    font-size: 7.5px;
+
+    letter-spacing: 0.13em;
+
+    animation:
+      sectionLabelGlow 2.8s ease-in-out infinite;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE SECTION SPACING
+  ------------------------------------------------------- */
+
+  .home-section:not(.home-section--hero) {
+    padding-top: 1px;
+
+    padding-bottom: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .home-section {
+    scroll-margin-top: 64px;
+  }
+
+
+  .home-section:not(.home-section--hero)::before {
+    height: 3px;
+  }
+
+
+  .home-section:not(.home-section--hero)::after {
+    top: -14px;
+
+    min-width: 150px;
+
+    height: 28px;
+
+    padding:
+      0 12px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.11em;
+  }
+
+
+  .home-section:not(.home-section--hero) {
+    background-image:
+      radial-gradient(
+        circle at 50% 0,
+        #c8ff3d 0,
+        #c8ff3d 3px,
+        rgba(200, 255, 61, 0.40) 4px,
+        rgba(200, 255, 61, 0.15) 6px,
+        transparent 9px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-section,
+  .home-section::before,
+  .home-section::after {
+
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+}

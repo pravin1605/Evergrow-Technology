@@ -1,0 +1,1345 @@
+/* =========================================================
+   WHY EVERGROW
+========================================================= */
+
+.why-evergrow-section {
+
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 95px 0 110px;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(200, 255, 61, 0.07),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fbfcfa 55%,
+      #f5f8f2 100%
+    );
+
+  color: #171a17;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.why-evergrow-container {
+
+  width: min(1180px, 92%);
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.why-evergrow-bg-glow {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(15px);
+
+}
+
+
+.why-glow-one {
+
+  width: 600px;
+
+  height: 600px;
+
+  left: -300px;
+
+  top: 20%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(200, 255, 61, 0.14),
+      transparent 70%
+    );
+
+}
+
+
+.why-glow-two {
+
+  width: 500px;
+
+  height: 500px;
+
+  right: -260px;
+
+  bottom: -150px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.08),
+      transparent 70%
+    );
+
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.why-section-label {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 50px;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  color: #687068;
+
+}
+
+
+.why-label-line {
+
+  width: 38px;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #c8ff3d;
+
+}
+
+
+/* =========================================================
+   MAIN VISUAL
+========================================================= */
+
+.why-evergrow-visual {
+
+  position: relative;
+
+  min-height: 680px;
+
+  width: 100%;
+
+}
+
+
+/* =========================================================
+   CENTER WRAP
+   Glow, orbit ring and circle all live inside one wrapper
+   sized to the largest of the three (the ring), so they
+   stay perfectly concentric at every breakpoint instead of
+   being positioned independently with matching-by-hand
+   percentages.
+========================================================= */
+
+.why-center-wrap {
+
+  position: absolute;
+
+  left: 27%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: clamp(380px, 42vw, 530px);
+
+  height: clamp(380px, 42vw, 530px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   GLOW — pulsing bloom behind the circle
+========================================================= */
+
+.why-center-glow {
+
+  position: absolute;
+
+  inset: -14%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(166, 230, 44, 0.45),
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  animation: centerGlowPulse 4.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CENTRAL CIRCLE — now a bold, saturated brand gradient
+   instead of a pale off-white disc, so it reads as the
+   clear visual anchor of the section.
+========================================================= */
+
+.why-center-circle {
+
+  position: relative;
+
+  width: clamp(300px, 34vw, 440px);
+
+  height: clamp(300px, 34vw, 440px);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 32% 26%,
+      #e8ffa3 0%,
+      #a6e62c 42%,
+      #4c7a12 100%
+    );
+
+  box-shadow:
+
+    0 35px 90px
+    rgba(76, 122, 18, 0.35),
+
+    inset 0 0 0 2px
+    rgba(255, 255, 255, 0.4);
+
+  z-index: 2;
+
+  opacity: 0;
+  animation:
+    centerEnter 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    centerFloat 6s ease-in-out 0.9s infinite;
+}
+
+
+/* Slowly spinning conic highlight along the rim, for a
+   little extra shimmer on the bold new color. */
+
+.why-center-circle::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -3px;
+
+  border-radius: 50%;
+
+  padding: 3px;
+
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.6),
+    transparent 30%,
+    transparent 70%,
+    rgba(255, 255, 255, 0.6)
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  animation: orbitRotate 9s linear infinite;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CENTRAL INNER CIRCLE — darkened glass panel so the
+   lighter/white text stays readable over the bold gradient.
+========================================================= */
+
+.why-center-inner {
+
+  width: 78%;
+
+  height: 78%;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 26, 16, 0.88),
+      rgba(20, 26, 16, 0.72)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    inset 0 0 34px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   CENTRAL TEXT — recolored for contrast against the
+   darkened glass panel.
+========================================================= */
+
+.why-center-small {
+
+  font-size: clamp(20px, 2.3vw, 30px);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.02em;
+
+  color: #d9ffab;
+
+}
+
+
+.why-center-title {
+
+  display: block;
+
+  font-size: clamp(27px, 3vw, 43px);
+
+  line-height: 0.95;
+
+  font-weight: 800;
+
+  letter-spacing: -0.055em;
+
+  color: #ffffff;
+
+}
+
+
+.why-center-title:nth-of-type(3) {
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #c8ff3d
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+.why-center-line {
+
+  width: 55px;
+
+  height: 2px;
+
+  margin: 18px 0 12px;
+
+  border-radius: 999px;
+
+  background: #c8ff3d;
+
+}
+
+
+.why-center-subtitle {
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   ORBIT RING
+========================================================= */
+
+.why-orbit-ring {
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 50%;
+
+  border:
+    1px dashed
+    rgba(111, 159, 0, 0.32);
+
+  z-index: 1;
+
+  opacity: 0;
+  animation:
+    ringEnter 0.9s ease 0.2s forwards,
+    orbitRotate 30s linear infinite;
+
+}
+
+
+/* =========================================================
+   REASONS AREA
+========================================================= */
+
+.why-reasons {
+
+  position: absolute;
+
+  top: 0;
+
+  right: 0;
+
+  width: 57%;
+
+  height: 100%;
+
+}
+
+
+/* =========================================================
+   INDIVIDUAL REASON
+   Starts hidden — .is-revealed (added on scroll into view)
+   triggers the entrance. Desktop slides in from the right,
+   toward the center circle it's connected to.
+========================================================= */
+
+.why-reason {
+
+  position: absolute;
+
+  display: grid;
+
+  grid-template-columns:
+    82px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  column-gap: 22px;
+
+  width: 100%;
+
+  min-height: 125px;
+
+  padding: 12px 0;
+
+  opacity: 0;
+  transform: translateX(45px);
+
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+  transition-delay: var(--reason-delay);
+}
+
+.why-reason.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   REASON POSITIONS
+========================================================= */
+
+.why-reason-1 { top: 3%; }
+.why-reason-2 { top: 29%; }
+.why-reason-3 { top: 55%; }
+.why-reason-4 { top: 81%; }
+
+
+/* =========================================================
+   CONNECTOR — grows in (scale from 0) once revealed,
+   instead of just appearing.
+========================================================= */
+
+.why-connector {
+
+  position: absolute;
+
+  left: -115px;
+
+  top: 50%;
+
+  width: 105px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(111, 159, 0, 0),
+      rgba(111, 159, 0, 0.35)
+    );
+
+  transform-origin: left center;
+
+  transform: translateY(-50%) scaleX(0);
+
+  transition: transform 0.6s ease;
+  transition-delay: calc(var(--reason-delay) + 250ms);
+}
+
+.why-reason.is-revealed .why-connector {
+  transform: translateY(-50%) scaleX(1);
+}
+
+
+.why-connector::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 50%;
+
+  width: 7px;
+
+  height: 7px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #c8ff3d;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(200, 255, 61, 0.13);
+
+}
+
+
+/* =========================================================
+   ICON CIRCLE
+   Pops in with a rotate + scale bounce, slightly after
+   the row itself starts sliding in.
+========================================================= */
+
+.why-reason-icon {
+
+  position: relative;
+
+  width: 78px;
+
+  height: 78px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #c8ff3d,
+      #8ab51d
+    );
+
+  border:
+    5px solid
+    rgba(255, 255, 255, 0.95);
+
+  opacity: 0;
+  transform: scale(0.5) rotate(-30deg);
+
+  box-shadow:
+
+    0 15px 30px
+    rgba(88, 120, 20, 0.22),
+
+    0 0 0 1px
+    rgba(111, 159, 0, 0.15);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease,
+
+    background 0.4s ease;
+
+  transition-delay:
+    calc(var(--reason-delay) + 180ms),
+    calc(var(--reason-delay) + 180ms),
+    0s,
+    0s;
+}
+
+.why-reason.is-revealed .why-reason-icon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+
+.why-reason-icon svg {
+
+  color: #171a17;
+
+  transition:
+    transform 0.4s ease;
+
+}
+
+
+.why-reason:hover .why-reason-icon {
+
+  transform:
+    scale(1.12)
+    rotate(-6deg);
+
+  box-shadow:
+
+    0 20px 45px
+    rgba(88, 120, 20, 0.3),
+
+    0 0 0 9px
+    rgba(200, 255, 61, 0.12);
+
+}
+
+
+.why-reason:hover .why-reason-icon svg {
+
+  transform:
+    scale(1.12);
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.why-reason-content {
+
+  max-width: 400px;
+
+}
+
+
+.why-reason-heading {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+.why-reason-number {
+
+  flex-shrink: 0;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  color: #7c857c;
+
+}
+
+
+.why-reason-content h3 {
+
+  margin: 0;
+
+  font-size: clamp(18px, 1.7vw, 23px);
+
+  line-height: 1.2;
+
+  letter-spacing: -0.035em;
+
+  color: #171a17;
+
+  transition:
+    color 0.3s ease,
+
+    transform 0.3s ease;
+
+}
+
+
+.why-reason:hover h3 {
+
+  color: #6f9f00;
+
+  transform:
+    translateX(4px);
+
+}
+
+
+.why-reason-content p {
+
+  margin: 9px 0 0;
+
+  max-width: 390px;
+
+  font-size: 13.5px;
+
+  line-height: 1.65;
+
+  color: #596159;
+
+}
+
+
+/* =========================================================
+   BOTTOM STATEMENT
+   Fades/slides up once scrolled into view.
+========================================================= */
+
+.why-evergrow-bottom {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    minmax(300px, 1.5fr)
+    1fr;
+
+  align-items: center;
+
+  gap: 35px;
+
+  margin-top: 15px;
+
+  opacity: 0;
+  transform: translateY(24px);
+
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.why-evergrow-bottom.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.why-bottom-line {
+
+  width: 100%;
+
+  height: 1px;
+
+  background: #dfe4de;
+
+}
+
+
+.why-evergrow-bottom p {
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: #697169;
+
+}
+
+
+.why-evergrow-bottom p strong {
+
+  color: #171a17;
+
+}
+
+
+.why-bottom-mark {
+
+  justify-self: end;
+
+  width: 46px;
+
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f0ffd2;
+
+  border: 1px solid #d8e9b1;
+
+  color: #6f9f00;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes centerFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+
+@keyframes centerEnter {
+
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+@keyframes ringEnter {
+
+  from { opacity: 0; }
+  to { opacity: 1; }
+
+}
+
+
+@keyframes centerGlowPulse {
+
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+
+}
+
+
+@keyframes orbitRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .why-evergrow-section {
+
+    padding: 80px 0 95px;
+
+  }
+
+
+  .why-evergrow-visual {
+
+    min-height: 620px;
+
+  }
+
+
+  .why-center-wrap {
+
+    left: 25%;
+
+    width: 400px;
+
+    height: 400px;
+
+  }
+
+
+  .why-center-circle {
+
+    width: 330px;
+
+    height: 330px;
+
+  }
+
+
+  .why-reasons {
+
+    width: 62%;
+
+  }
+
+
+  .why-reason {
+
+    grid-template-columns:
+      68px
+      minmax(0, 1fr);
+
+    column-gap: 18px;
+
+  }
+
+
+  .why-reason-icon {
+
+    width: 66px;
+
+    height: 66px;
+
+  }
+
+
+  .why-connector {
+
+    left: -85px;
+
+    width: 75px;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT / MOBILE
+   Same visual language as desktop — icon circle, connector,
+   text — just re-flowed into a vertical list instead of an
+   absolutely-positioned radial spread. A single continuous
+   line replaces the per-item connectors, growing in once
+   the list scrolls into view.
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .why-evergrow-visual {
+
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+  }
+
+
+  /* Center */
+
+  .why-center-wrap {
+
+    position: relative;
+
+    left: auto;
+
+    top: auto;
+
+    transform: none;
+
+    width: 380px;
+
+    height: 380px;
+
+    margin: 0 auto 55px;
+
+  }
+
+
+  .why-center-circle {
+
+    width: 330px;
+
+    height: 330px;
+
+  }
+
+
+  /* Reasons — vertical timeline, same row anatomy as desktop */
+
+  .why-reasons {
+
+    position: relative;
+
+    top: auto;
+
+    right: auto;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    padding-left: 8px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 40px;
+
+  }
+
+  /* Continuous connecting line, aligned to the icon center */
+
+  .why-reasons::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 41px;
+    top: 8px;
+    bottom: 8px;
+
+    width: 2px;
+
+    background: linear-gradient(
+      180deg,
+      rgba(111, 159, 0, 0.05),
+      rgba(111, 159, 0, 0.4) 12%,
+      rgba(111, 159, 0, 0.4) 88%,
+      rgba(111, 159, 0, 0.05)
+    );
+
+    transform: scaleY(0);
+    transform-origin: top;
+
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .why-reasons.is-revealed::before {
+    transform: scaleY(1);
+  }
+
+
+  .why-reason,
+  .why-reason-1,
+  .why-reason-2,
+  .why-reason-3,
+  .why-reason-4 {
+
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+
+    min-height: 0;
+
+    width: 100%;
+
+    padding: 0;
+
+    grid-template-columns: 82px minmax(0, 1fr);
+    column-gap: 22px;
+
+    /* A different entrance from desktop's horizontal slide —
+       a slight upward tilt-in feels distinct on a vertical list */
+    transform: translateY(26px) rotate(-2deg);
+  }
+
+  .why-reason.is-revealed {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  /* Per-item connector replaced by the continuous line above */
+  .why-connector { display: none; }
+
+  .why-reason-content { max-width: none; }
+
+  .why-reason-content h3 { font-size: 19px; }
+
+  .why-reason-content p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+
+  .why-evergrow-bottom { margin-top: 50px; }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .why-evergrow-section {
+
+    padding: 65px 0 80px;
+
+  }
+
+
+  .why-evergrow-container {
+
+    width: min(92%, 500px);
+
+  }
+
+
+  .why-section-label {
+
+    margin-bottom: 35px;
+
+  }
+
+
+  /* Center */
+
+  .why-center-wrap {
+    width: 320px;
+    height: 320px;
+    margin-bottom: 45px;
+  }
+
+  .why-center-circle {
+    width: 285px;
+    height: 285px;
+  }
+
+
+  .why-center-small { font-size: 19px; }
+  .why-center-title { font-size: 30px; }
+  .why-center-subtitle { font-size: 12px; }
+  .why-center-line { margin: 14px 0 10px; }
+
+
+  /* Reasons */
+
+  .why-reasons { gap: 32px; padding-left: 4px; }
+
+  .why-reasons::before { left: 33px; }
+
+  .why-reason,
+  .why-reason-1,
+  .why-reason-2,
+  .why-reason-3,
+  .why-reason-4 {
+    grid-template-columns: 66px minmax(0, 1fr);
+    column-gap: 17px;
+  }
+
+  .why-reason-icon {
+    width: 66px;
+    height: 66px;
+    border-width: 4px;
+  }
+
+  .why-reason-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .why-reason-heading { gap: 8px; flex-wrap: wrap; }
+  .why-reason-number { font-size: 10px; }
+  .why-reason-content h3 { font-size: 18px; }
+
+  .why-reason-content p {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+
+  /* Bottom */
+
+  .why-evergrow-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .why-bottom-line { width: 60px; }
+
+  .why-evergrow-bottom p {
+    max-width: 310px;
+    font-size: 14px;
+  }
+
+  .why-bottom-mark {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .why-center-wrap { width: 280px; height: 280px; }
+  .why-center-circle { width: 250px; height: 250px; }
+
+  .why-center-title { font-size: 26px; }
+  .why-center-small { font-size: 17px; }
+
+  .why-reasons::before { left: 27px; }
+
+  .why-reason,
+  .why-reason-1,
+  .why-reason-2,
+  .why-reason-3,
+  .why-reason-4 {
+    grid-template-columns: 54px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .why-reason-icon { width: 54px; height: 54px; }
+
+  .why-reason-content h3 { font-size: 16px; }
+  .why-reason-content p { font-size: 12.5px; }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   Content must not stay permanently invisible for users
+   who've asked for less motion.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .why-center-circle,
+  .why-center-glow,
+  .why-orbit-ring,
+  .why-center-circle::before,
+  .why-reason,
+  .why-connector,
+  .why-reason-icon,
+  .why-reasons::before,
+  .why-evergrow-bottom {
+
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .why-connector { transform: translateY(-50%) scaleX(1) !important; }
+
+  .why-reason-icon,
+  .why-reason-icon svg,
+  .why-reason-content h3 {
+
+    transition: none !important;
+
+  }
+
+}

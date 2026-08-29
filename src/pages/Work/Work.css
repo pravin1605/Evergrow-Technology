@@ -1,0 +1,1463 @@
+/* =====================================================
+   WORK PAGE
+===================================================== */
+
+.work-page {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  color: #111111;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.work-hero {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 145px 0 115px;
+
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(215, 38, 56, 0.075),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 12% 85%,
+      rgba(37, 99, 235, 0.045),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fafaf8 100%
+    );
+}
+
+
+/* =====================================================
+   HERO BACKGROUND GLOW
+===================================================== */
+
+.work-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -280px;
+  top: -250px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(215, 38, 56, 0.035);
+
+  filter: blur(25px);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   HERO BOTTOM LINE
+===================================================== */
+
+.work-hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(17, 17, 17, 0.08),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   HERO GRID
+===================================================== */
+
+.work-hero-grid {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(320px, 0.85fr);
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.work-hero-content {
+  position: relative;
+
+  z-index: 3;
+
+  max-width: 820px;
+}
+
+
+/* =====================================================
+   HERO EYEBROW
+===================================================== */
+
+.work-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  color: #d72638;
+
+  background:
+    rgba(215, 38, 56, 0.055);
+
+  border:
+    1px solid
+    rgba(215, 38, 56, 0.10);
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   EYEBROW ICON
+===================================================== */
+
+.work-eyebrow svg {
+  flex-shrink: 0;
+
+  animation:
+    workSparklePulse
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.work-hero h1 {
+  max-width: 850px;
+
+  margin: 25px 0 0;
+
+  color: #111111;
+
+  font-size:
+    clamp(
+      4rem,
+      7vw,
+      7.5rem
+    );
+
+  line-height: 0.9;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   HERO TITLE HIGHLIGHT
+===================================================== */
+
+.work-hero h1 span {
+  position: relative;
+
+  color: #d72638;
+}
+
+
+/* =====================================================
+   TITLE UNDERLINE
+===================================================== */
+
+.work-hero h1 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  right: 5%;
+
+  bottom: -9px;
+
+  height: 3px;
+
+  background: #d72638;
+
+  transform:
+    scaleX(0);
+
+  transform-origin: left;
+
+  animation:
+    workUnderlineReveal
+    1s
+    0.65s
+    cubic-bezier(.2, .7, .2, 1)
+    forwards;
+}
+
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.work-hero-content > p {
+  max-width: 650px;
+
+  margin: 32px 0 0;
+
+  color: #686868;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   HERO ACTIONS
+===================================================== */
+
+.work-hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  margin-top: 35px;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.work-primary-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 52px;
+
+  padding: 0 22px;
+
+  color: #ffffff;
+
+  background: #111111;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  box-shadow:
+    0 12px 28px
+    rgba(17, 17, 17, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON HOVER
+===================================================== */
+
+.work-primary-button:hover {
+  transform:
+    translateY(-3px);
+
+  background: #d72638;
+
+  box-shadow:
+    0 18px 35px
+    rgba(215, 38, 56, 0.20);
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON ICON
+===================================================== */
+
+.work-primary-button svg {
+  transition:
+    transform 0.3s ease;
+}
+
+.work-primary-button:hover svg {
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+
+/* =====================================================
+   SECONDARY LINK
+===================================================== */
+
+.work-text-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #555555;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+/* =====================================================
+   SECONDARY LINK HOVER
+===================================================== */
+
+.work-text-link:hover {
+  color: #d72638;
+}
+
+
+/* =====================================================
+   SECONDARY LINK ICON
+===================================================== */
+
+.work-text-link svg {
+  transition:
+    transform 0.3s ease;
+}
+
+.work-text-link:hover svg {
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.work-hero-visual {
+  position: relative;
+
+  min-height: 440px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =====================================================
+   VISUAL CARD
+===================================================== */
+
+.work-visual-card {
+  position: relative;
+
+  z-index: 3;
+
+  width: 270px;
+
+  min-height: 310px;
+
+  padding: 38px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.82
+    );
+
+  border:
+    1px solid
+    rgba(
+      17,
+      17,
+      17,
+      0.08
+    );
+
+  box-shadow:
+    0 35px 85px
+    rgba(
+      17,
+      17,
+      17,
+      0.10
+    );
+
+  backdrop-filter:
+    blur(22px);
+
+  transform:
+    rotate(4deg);
+
+  animation:
+    workVisualFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =====================================================
+   VISUAL CARD LABEL
+===================================================== */
+
+.work-visual-card > span {
+  margin-bottom: 26px;
+
+  color: #d72638;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =====================================================
+   VISUAL CARD TEXT
+===================================================== */
+
+.work-visual-card strong {
+  color: #111111;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+}
+
+
+/* =====================================================
+   VISUAL DOT
+===================================================== */
+
+.work-visual-dot {
+  width: 12px;
+
+  height: 12px;
+
+  margin-top: 30px;
+
+  border-radius: 50%;
+
+  background: #d72638;
+
+  box-shadow:
+    0 0 0 8px
+    rgba(
+      215,
+      38,
+      56,
+      0.08
+    ),
+    0 0 0 16px
+    rgba(
+      215,
+      38,
+      56,
+      0.04
+    );
+
+  animation:
+    workDotPulse
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.work-visual-orbit {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(
+      215,
+      38,
+      56,
+      0.12
+    );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   ORBIT ONE
+===================================================== */
+
+.work-orbit-one {
+  width: 430px;
+
+  height: 430px;
+
+  animation:
+    workOrbitRotate
+    18s
+    linear
+    infinite;
+}
+
+
+/* =====================================================
+   ORBIT TWO
+===================================================== */
+
+.work-orbit-two {
+  width: 305px;
+
+  height: 305px;
+
+  border-style: dashed;
+
+  animation:
+    workOrbitRotateReverse
+    14s
+    linear
+    infinite;
+}
+
+
+/* =====================================================
+   DIRECTORY
+===================================================== */
+
+.work-directory {
+  padding: 125px 0 135px;
+
+  background: #ffffff;
+}
+
+
+/* =====================================================
+   DIRECTORY HEADING
+===================================================== */
+
+.work-section-heading {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    0.55fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 45px;
+}
+
+
+/* =====================================================
+   DIRECTORY EYEBROW
+===================================================== */
+
+.work-directory-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  color: #d72638;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   DIRECTORY TITLE
+===================================================== */
+
+.work-section-heading h2 {
+  max-width: 800px;
+
+  margin: 17px 0 0;
+
+  color: #111111;
+
+  font-size:
+    clamp(
+      3rem,
+      5.8vw,
+      6rem
+    );
+
+  line-height: 0.91;
+
+  letter-spacing: -0.065em;
+}
+
+
+/* =====================================================
+   DIRECTORY DESCRIPTION
+===================================================== */
+
+.work-section-heading > p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #707070;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.work-filters {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   FILTER BUTTON
+===================================================== */
+
+.work-filters button {
+  min-height: 40px;
+
+  padding: 0 17px;
+
+  border:
+    1px solid
+    rgba(
+      17,
+      17,
+      17,
+      0.10
+    );
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =====================================================
+   FILTER HOVER
+===================================================== */
+
+.work-filters button:hover {
+  transform:
+    translateY(-2px);
+
+  color: #d72638;
+
+  border-color:
+    rgba(
+      215,
+      38,
+      56,
+      0.25
+    );
+}
+
+
+/* =====================================================
+   ACTIVE FILTER
+===================================================== */
+
+.work-filters button.active {
+  color: #ffffff;
+
+  background: #111111;
+
+  border-color: #111111;
+
+  box-shadow:
+    0 7px 18px
+    rgba(
+      17,
+      17,
+      17,
+      0.12
+    );
+}
+
+
+/* =====================================================
+   RESULTS META
+===================================================== */
+
+.work-results-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+
+  color: #999999;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   RESULTS LINE
+===================================================== */
+
+.work-results-line {
+  width: 35px;
+
+  height: 1px;
+
+  background:
+    rgba(
+      17,
+      17,
+      17,
+      0.15
+    );
+}
+
+
+/* =====================================================
+   PROJECT GRID
+===================================================== */
+
+.work-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 26px;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.work-empty-state {
+  min-height: 280px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 50px 25px;
+
+  text-align: center;
+
+  border:
+    1px dashed
+    rgba(
+      17,
+      17,
+      17,
+      0.14
+    );
+
+  border-radius: 24px;
+
+  background:
+    #fafaf8;
+}
+
+
+/* =====================================================
+   EMPTY ICON
+===================================================== */
+
+.work-empty-icon {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+
+  color: #d72638;
+
+  background:
+    rgba(
+      215,
+      38,
+      56,
+      0.07
+    );
+}
+
+
+/* =====================================================
+   EMPTY TITLE
+===================================================== */
+
+.work-empty-state h3 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: 22px;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* =====================================================
+   EMPTY DESCRIPTION
+===================================================== */
+
+.work-empty-state p {
+  max-width: 420px;
+
+  margin: 10px 0 20px;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   EMPTY BUTTON
+===================================================== */
+
+.work-empty-state button {
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* =====================================================
+   EMPTY BUTTON HOVER
+===================================================== */
+
+.work-empty-state button:hover {
+  transform:
+    translateY(-2px);
+
+  background: #d72638;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  /* HERO */
+
+  .work-hero {
+    padding:
+      120px
+      0
+      90px;
+  }
+
+
+  .work-hero-grid {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+  }
+
+
+  .work-hero-content {
+    max-width: 780px;
+  }
+
+
+  .work-hero-visual {
+    min-height: 360px;
+  }
+
+
+  /* DIRECTORY */
+
+  .work-section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+
+  .work-section-heading > p {
+    max-width: 600px;
+  }
+
+
+  /* GRID */
+
+  .work-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  /* HERO */
+
+  .work-hero {
+    padding:
+      105px
+      0
+      75px;
+  }
+
+
+  .work-hero-grid {
+    gap: 45px;
+  }
+
+
+  .work-eyebrow {
+    font-size: 9px;
+
+    padding:
+      7px
+      11px;
+  }
+
+
+  .work-hero h1 {
+    margin-top: 21px;
+
+    font-size:
+      clamp(
+        3.25rem,
+        15vw,
+        5rem
+      );
+
+    line-height: 0.91;
+  }
+
+
+  .work-hero h1 span::after {
+    bottom: -6px;
+
+    height: 2px;
+  }
+
+
+  .work-hero-content > p {
+    margin-top: 27px;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+
+  /* ACTIONS */
+
+  .work-hero-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 14px;
+
+    margin-top: 28px;
+  }
+
+
+  .work-primary-button {
+    width: 100%;
+  }
+
+
+  .work-text-link {
+    justify-content: center;
+
+    padding: 8px 0;
+  }
+
+
+  /* HERO VISUAL */
+
+  .work-hero-visual {
+    min-height: 285px;
+  }
+
+
+  .work-visual-card {
+    width: 220px;
+
+    min-height: 255px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+  }
+
+
+  .work-visual-card > span {
+    margin-bottom: 21px;
+  }
+
+
+  .work-visual-card strong {
+    font-size: 25px;
+  }
+
+
+  .work-visual-dot {
+    margin-top: 25px;
+  }
+
+
+  .work-orbit-one {
+    width: 300px;
+
+    height: 300px;
+  }
+
+
+  .work-orbit-two {
+    width: 220px;
+
+    height: 220px;
+  }
+
+
+  /* DIRECTORY */
+
+  .work-directory {
+    padding:
+      80px
+      0
+      90px;
+  }
+
+
+  .work-section-heading {
+    margin-bottom: 35px;
+  }
+
+
+  .work-section-heading h2 {
+    margin-top: 15px;
+
+    font-size:
+      clamp(
+        2.75rem,
+        13vw,
+        4.5rem
+      );
+
+    line-height: 0.93;
+  }
+
+
+  .work-section-heading > p {
+    font-size: 14px;
+  }
+
+
+  /* FILTERS */
+
+  .work-filters {
+    gap: 7px;
+
+    margin-bottom: 17px;
+  }
+
+
+  .work-filters button {
+    min-height: 37px;
+
+    padding:
+      0
+      13px;
+
+    font-size: 9px;
+  }
+
+
+  /* RESULTS */
+
+  .work-results-meta {
+    margin-bottom: 25px;
+
+    font-size: 9px;
+  }
+
+
+  /* GRID */
+
+  .work-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  /* EMPTY */
+
+  .work-empty-state {
+    min-height: 250px;
+
+    padding:
+      40px
+      20px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .work-hero {
+    padding-top: 95px;
+  }
+
+
+  .work-hero h1 {
+    font-size: 3.15rem;
+  }
+
+
+  .work-visual-card {
+    width: 200px;
+
+    min-height: 240px;
+
+    padding: 27px;
+  }
+
+
+  .work-visual-card strong {
+    font-size: 23px;
+  }
+
+
+  .work-orbit-one {
+    width: 270px;
+
+    height: 270px;
+  }
+
+
+  .work-orbit-two {
+    width: 200px;
+
+    height: 200px;
+  }
+
+
+  .work-filters button {
+    padding:
+      0
+      11px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .work-eyebrow svg,
+  .work-hero h1 span::after,
+  .work-visual-card,
+  .work-orbit-one,
+  .work-orbit-two,
+  .work-visual-dot {
+    animation: none;
+  }
+
+
+  .work-primary-button,
+  .work-text-link,
+  .work-filters button,
+  .work-empty-state button {
+    transition: none;
+  }
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes workSparklePulse {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.2)
+      rotate(8deg);
+  }
+
+}
+
+
+@keyframes workUnderlineReveal {
+
+  to {
+    transform:
+      scaleX(1);
+  }
+
+}
+
+
+@keyframes workVisualFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(4deg);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotate(1deg);
+  }
+
+}
+
+
+@keyframes workOrbitRotate {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+@keyframes workOrbitRotateReverse {
+
+  from {
+    transform:
+      rotate(360deg);
+  }
+
+  to {
+    transform:
+      rotate(0deg);
+  }
+
+}
+
+
+@keyframes workDotPulse {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.2);
+  }
+
+}

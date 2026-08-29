@@ -1,0 +1,1417 @@
+/* =========================================================
+   PROCESS SECTION
+========================================================= */
+
+.process-section {
+  position: relative;
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  color: #171a17;
+}
+
+
+/* =========================================================
+   TOP BACKGROUND
+========================================================= */
+
+.process-top-background {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 330px;
+
+  padding: 70px 0 190px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0f0f8 0%,
+      #e0defb 45%,
+      #d4d1fe 100%
+    );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.process-container {
+  position: relative;
+
+  width: min(
+    1200px,
+    calc(100% - 48px)
+  );
+
+  margin: 0 auto;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.process-top-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(4px);
+}
+
+
+.process-glow-one {
+  width: 420px;
+  height: 420px;
+
+  top: -260px;
+  left: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.14),
+      transparent 70%
+    );
+}
+
+
+.process-glow-two {
+  width: 520px;
+  height: 520px;
+
+  top: -320px;
+  right: -160px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(150, 140, 255, 0.3),
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.process-header {
+  position: relative;
+
+  text-align: center;
+
+  color: #0e0606;
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.process-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  color: rgba(12, 9, 9, 0.82);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+
+.process-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  margin-right: 9px;
+
+  border-radius: 50%;
+
+  background: #c8ff3d;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(200, 255, 61, 0.15);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.process-header h2 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size:
+    clamp(
+      2.8rem,
+      5vw,
+      4.5rem
+    );
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   HEADER DESCRIPTION
+========================================================= */
+
+.process-header p {
+  max-width: 760px;
+
+  margin: 20px auto 0;
+
+  color:
+    rgba(0, 0, 0, 0.78);
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARDS WRAPPER
+========================================================= */
+
+.process-cards-wrapper {
+  position: relative;
+
+  margin-top: -145px;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   CARDS GRID
+========================================================= */
+
+.process-cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   PROCESS CARD
+   Starts hidden — .is-revealed (added on scroll into view,
+   see Process.jsx) triggers the entrance. Nothing here
+   plays automatically on page load anymore.
+========================================================= */
+
+.process-card {
+  position: relative;
+
+  min-width: 0;
+
+  padding-top: 26px;
+
+  opacity: 0;
+  transform: translateY(46px) scale(0.97);
+
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+
+  transition-delay: var(--process-delay);
+}
+
+.process-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   CONNECTOR LINE — grows between this card and the next
+   once revealed, reinforcing the "next one appears as you
+   scroll" feeling. Height matches the grid/flex gap exactly
+   so it always reaches the next card cleanly.
+========================================================= */
+
+.process-card:not(.is-last)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+
+  width: 2px;
+  height: 0;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(180deg, rgba(98, 89, 233, 0.5), rgba(200, 255, 61, 0.15));
+
+  transition: height 0.6s ease;
+  transition-delay: calc(var(--process-delay) + 500ms);
+
+  z-index: 6;
+
+  pointer-events: none;
+}
+
+/* Only meaningful once cards stack vertically — see mobile
+   section below, where height is set on .is-revealed. */
+
+
+/* =========================================================
+   NUMBER WRAPPER
+========================================================= */
+
+.process-number-wrapper {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  z-index: 8;
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* =========================================================
+   NUMBER
+   Pops in with a spring bounce, slightly after the card
+   itself starts revealing.
+========================================================= */
+
+.process-number {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid #ffffff;
+
+  border-radius: 50%;
+
+  background:
+    #ffffff;
+
+  color:
+    #5b52e6;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  opacity: 0;
+  transform: scale(0.4) rotate(-25deg);
+
+  box-shadow:
+    0 6px 20px
+    rgba(
+      38,
+      32,
+      110,
+      0.18
+    );
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  transition-delay:
+    calc(var(--process-delay) + 150ms),
+    calc(var(--process-delay) + 150ms),
+    0s,
+    0s,
+    0s;
+}
+
+.process-card.is-revealed .process-number {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  animation: numberPulseRing 1s ease-out calc(var(--process-delay) + 550ms) 1;
+}
+
+
+/* =========================================================
+   CARD INNER
+========================================================= */
+
+.process-card-inner {
+  position: relative;
+
+  height: 100%;
+
+  min-height: 420px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  border: 1px solid
+    #e5e7eb;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 14px 40px
+    rgba(
+      25,
+      30,
+      60,
+      0.1
+    );
+
+  transition:
+    transform 0.4s
+      cubic-bezier(
+        0.2,
+        0.8,
+        0.2,
+        1
+      ),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   CARD TOP ICON AREA
+========================================================= */
+
+.process-icon-area {
+  position: relative;
+
+  width: 100%;
+
+  height: 165px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fafbff 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   ICON DECORATIVE CIRCLE
+========================================================= */
+
+.process-icon-area::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  border:
+    1px dashed
+    rgba(
+      91,
+      82,
+      230,
+      0.24
+    );
+
+  animation:
+    processRotate
+    18s
+    linear
+    infinite;
+}
+
+
+.process-icon-area::after {
+  content: "";
+
+  position: absolute;
+
+  width: 85px;
+  height: 85px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        102,
+        93,
+        241,
+        0.1
+      ),
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   ICON CIRCLE
+   Rotates and scales in once the card is revealed.
+========================================================= */
+
+.process-icon-circle {
+  position: relative;
+
+  z-index: 2;
+
+  width: 92px;
+  height: 92px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f4f5ff,
+      #ffffff
+    );
+
+  color: #5c54df;
+
+  opacity: 0;
+  transform: scale(0.6) rotate(-18deg);
+
+  box-shadow:
+    0 10px 25px
+    rgba(
+      70,
+      65,
+      160,
+      0.1
+    );
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.4s ease,
+    color 0.4s ease;
+
+  transition-delay: calc(var(--process-delay) + 220ms);
+}
+
+.process-card.is-revealed .process-icon-circle {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.process-card-content {
+  width: 100%;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding:
+    20px
+    28px
+    30px;
+}
+
+
+/* =========================================================
+   STEP LABEL
+========================================================= */
+
+.process-step-label {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #7169dc;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.process-card-content h3 {
+  margin: 0;
+
+  color: #202225;
+
+  font-size: 18px;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.025em;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.process-card-content p {
+  margin:
+    13px 0 0;
+
+  color: #666a72;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   POINTS
+========================================================= */
+
+.process-points {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin:
+    18px 0 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.process-points li {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #555960;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(14px);
+
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: calc(var(--process-delay) + 320ms + var(--point-delay, 0ms));
+}
+
+.process-card.is-revealed .process-points li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   CHECK
+========================================================= */
+
+.process-check {
+  width: 17px;
+  height: 17px;
+
+  flex: 0 0 17px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      200,
+      255,
+      61,
+      0.25
+    );
+
+  color:
+    #719800;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.process-card-arrow {
+  position: absolute;
+
+  right: 15px;
+  bottom: 15px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    #e4e5e8;
+
+  border-radius: 50%;
+
+  color: #777b82;
+
+  background: #ffffff;
+
+  opacity: 0;
+
+  transform:
+    translate(-5px, 5px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   ACCENT SWEEP
+   Thin gradient bar along the bottom edge of the card,
+   sweeping in from 0 to full width once revealed.
+========================================================= */
+
+.process-card-accent {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  height: 3px;
+  width: 0%;
+
+  background: linear-gradient(90deg, #6259e9, #c8ff3d);
+
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--process-delay) + 450ms);
+}
+
+.process-card.is-revealed .process-card-accent {
+  width: 100%;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.process-card:hover
+.process-card-inner {
+  transform:
+    translateY(-9px);
+
+  border-color:
+    rgba(
+      104,
+      95,
+      235,
+      0.35
+    );
+
+  box-shadow:
+    0 22px 55px
+    rgba(
+      40,
+      38,
+      100,
+      0.15
+    );
+}
+
+
+.process-card:hover
+.process-number {
+  transform:
+    scale(1.08);
+
+  background:
+    #6259e9;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 25px
+    rgba(
+      98,
+      89,
+      233,
+      0.3
+    );
+}
+
+
+.process-card:hover
+.process-icon-circle {
+  transform:
+    scale(1.07);
+
+  background:
+    linear-gradient(
+      145deg,
+      #665eea,
+      #8178f4
+    );
+
+  color: #ffffff;
+}
+
+
+.process-card:hover
+.process-card-arrow {
+  opacity: 1;
+
+  transform:
+    translate(0, 0);
+
+  background:
+    #c8ff3d;
+
+  border-color:
+    #c8ff3d;
+
+  color: #171a17;
+}
+
+
+/* =========================================================
+   BOTTOM SPACE
+========================================================= */
+
+.process-bottom-space {
+  width: min(
+    1200px,
+    calc(100% - 48px)
+  );
+
+  margin:
+    80px auto 0;
+}
+
+
+.process-bottom-line {
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    #e6e8e5;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes processRotate {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+@keyframes numberPulseRing {
+
+  0% {
+    box-shadow:
+      0 6px 20px rgba(38, 32, 110, 0.18),
+      0 0 0 0 rgba(98, 89, 233, 0.45);
+  }
+
+  70% {
+    box-shadow:
+      0 6px 20px rgba(38, 32, 110, 0.18),
+      0 0 0 16px rgba(98, 89, 233, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 6px 20px rgba(38, 32, 110, 0.18),
+      0 0 0 0 rgba(98, 89, 233, 0);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .process-container {
+    width:
+      min(
+        94%,
+        960px
+      );
+  }
+
+
+  .process-cards {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 25px;
+  }
+
+
+  .process-card-inner {
+    min-height: 400px;
+  }
+
+
+  .process-icon-area {
+    height: 150px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .process-top-background {
+    min-height: 310px;
+
+    padding:
+      65px 0
+      175px;
+  }
+
+
+  .process-header h2 {
+    font-size:
+      clamp(
+        2.7rem,
+        9vw,
+        4rem
+      );
+  }
+
+
+  .process-header p {
+    max-width: 600px;
+
+    font-size: 15px;
+  }
+
+
+  .process-cards-wrapper {
+    margin-top: -130px;
+  }
+
+
+  .process-cards {
+    gap: 22px;
+  }
+
+
+  .process-card-content {
+    padding:
+      18px
+      22px
+      28px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — cards stack, so this is where the scroll-reveal
+   and connector line actually read as "the next card
+   appears as you scroll to it".
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .process-top-background {
+    min-height: 330px;
+
+    padding:
+      55px 0
+      175px;
+  }
+
+
+  .process-container {
+    width:
+      calc(
+        100% - 32px
+      );
+  }
+
+
+  .process-header {
+    padding:
+      0 8px;
+  }
+
+
+  .process-eyebrow {
+    margin-bottom: 13px;
+
+    font-size: 11px;
+  }
+
+
+  .process-header h2 {
+    font-size:
+      clamp(
+        2.45rem,
+        12vw,
+        3.5rem
+      );
+
+    line-height: 1;
+  }
+
+
+  .process-header p {
+    margin-top: 17px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  /* =====================================================
+     MOBILE CARD AREA
+  ===================================================== */
+
+  .process-cards-wrapper {
+    margin-top: -130px;
+  }
+
+
+  .process-cards {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 38px;
+  }
+
+
+  .process-card {
+    width: 100%;
+
+    padding-top: 27px;
+
+    /* A bit more travel distance on mobile so the reveal
+       reads clearly against a long vertical scroll. */
+    transform: translateY(60px) scale(0.96);
+  }
+
+  .process-card.is-revealed {
+    transform: translateY(0) scale(1);
+  }
+
+  /* Connector height matches this breakpoint's 38px gap
+     exactly, so the line always reaches the next card. */
+  .process-card.is-revealed:not(.is-last)::after {
+    height: 38px;
+  }
+
+
+  .process-number {
+    width: 62px;
+    height: 62px;
+
+    font-size: 16px;
+
+    border-width: 3px;
+  }
+
+
+  .process-card-inner {
+    min-height: 0;
+
+    border-radius: 12px;
+  }
+
+
+  /* =====================================================
+     MOBILE ICON
+  ===================================================== */
+
+  .process-icon-area {
+    height: 170px;
+
+    margin-top: 18px;
+  }
+
+
+  .process-icon-area::before {
+    width: 125px;
+    height: 125px;
+  }
+
+
+  .process-icon-circle {
+    width: 96px;
+    height: 96px;
+  }
+
+
+  /* =====================================================
+     MOBILE CONTENT
+  ===================================================== */
+
+  .process-card-content {
+    padding:
+      19px
+      25px
+      32px;
+  }
+
+
+  .process-step-label {
+    margin-bottom: 9px;
+
+    font-size: 10px;
+  }
+
+
+  .process-card-content h3 {
+    font-size: 21px;
+
+    line-height: 1.25;
+  }
+
+
+  .process-card-content p {
+    max-width: 430px;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  /* =====================================================
+     MOBILE POINTS
+  ===================================================== */
+
+  .process-points {
+    max-width: 400px;
+
+    margin-top: 19px;
+
+    gap: 8px;
+  }
+
+
+  .process-points li {
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+
+  /* =====================================================
+     ALWAYS SHOW ARROW ON MOBILE
+  ===================================================== */
+
+  .process-card-arrow {
+    opacity: 1;
+
+    right: 15px;
+    bottom: 15px;
+
+    transform:
+      translate(0, 0);
+
+    width: 34px;
+    height: 34px;
+  }
+
+
+  /* =====================================================
+     BOTTOM
+  ===================================================== */
+
+  .process-bottom-space {
+    width:
+      calc(
+        100% - 32px
+      );
+
+    margin-top: 60px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .process-top-background {
+    min-height: 315px;
+
+    padding:
+      50px 0
+      165px;
+  }
+
+
+  .process-container {
+    width:
+      calc(
+        100% - 24px
+      );
+  }
+
+
+  .process-header h2 {
+    font-size:
+      2.35rem;
+  }
+
+
+  .process-header p {
+    font-size: 13.5px;
+  }
+
+
+  .process-cards-wrapper {
+    margin-top: -120px;
+  }
+
+
+  .process-cards {
+    gap: 34px;
+  }
+
+  .process-card.is-revealed:not(.is-last)::after {
+    height: 34px;
+  }
+
+
+  .process-card-content {
+    padding:
+      18px
+      19px
+      30px;
+  }
+
+
+  .process-card-content h3 {
+    font-size: 19px;
+  }
+
+
+  .process-card-content p {
+    font-size: 13px;
+  }
+
+
+  .process-icon-area {
+    height: 155px;
+  }
+
+
+  .process-icon-circle {
+    width: 88px;
+    height: 88px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 340px) {
+
+  .process-header h2 {
+    font-size:
+      2.15rem;
+  }
+
+
+  .process-card-content h3 {
+    font-size: 18px;
+  }
+
+
+  .process-card-content p {
+    font-size: 12.5px;
+  }
+
+
+  .process-points li {
+    font-size: 11.5px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   Content must not stay permanently invisible for users
+   who've asked for less motion — show everything instantly.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .process-card,
+  .process-number,
+  .process-icon-circle,
+  .process-points li,
+  .process-card-accent {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .process-card-accent {
+    width: 100% !important;
+  }
+
+  .process-card::after {
+    transition: none !important;
+    height: 0 !important;
+  }
+
+  .process-icon-area::before {
+    animation: none;
+  }
+
+
+  .process-card-inner,
+  .process-number,
+  .process-icon-circle,
+  .process-card-arrow {
+    transition: none;
+  }
+
+}

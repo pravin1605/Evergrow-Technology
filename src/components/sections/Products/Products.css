@@ -1,0 +1,132 @@
+.products-section {
+  padding: var(--section-padding) 0;
+
+  background: var(--color-bg-soft);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.products-heading {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 65px;
+}
+
+.products-heading h2 {
+  margin-top: 18px;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    6rem
+  );
+
+  line-height: 0.92;
+}
+
+.products-heading-right {
+  padding-bottom: 8px;
+}
+
+.products-heading-right p {
+  max-width: 500px;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.products-view-all {
+  margin-top: 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--color-primary);
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.products-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.products-empty {
+  min-height: 250px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  border: 1px dashed
+    var(--color-border);
+}
+
+.products-empty h3 {
+  font-size: 21px;
+}
+
+.products-empty p {
+  margin-top: 8px;
+
+  color: var(--color-text-muted);
+
+  font-size: 13px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .products-heading {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,109 @@
+.clients-section {
+  width: 100%;
+
+  padding: 110px 0;
+
+  background: var(--color-muted);
+}
+
+.clients-container {
+  width: min(1200px, 92%);
+
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.clients-header {
+  max-width: 720px;
+
+  margin-bottom: 55px;
+}
+
+.clients-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.clients-header h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 62px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.04em;
+
+  color: var(--color-heading);
+}
+
+.clients-header h2 span {
+  color: var(--color-accent);
+}
+
+.clients-header p {
+  margin-top: 22px;
+
+  max-width: 650px;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: var(--color-text-secondary);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.clients-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .clients-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .clients-section {
+    padding: 80px 0;
+  }
+
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

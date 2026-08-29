@@ -1,0 +1,91 @@
+.projects-section {
+  padding: var(--section-padding) 0;
+
+  background: var(--color-bg-soft);
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.projects-heading {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr 0.9fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 70px;
+}
+
+.projects-heading h2 {
+  margin-top: 18px;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    6rem
+  );
+
+  line-height: 0.92;
+}
+
+.projects-heading-right {
+  padding-bottom: 8px;
+}
+
+.projects-heading-right p {
+  max-width: 500px;
+
+  font-size: 16px;
+}
+
+.projects-view-all {
+  margin-top: 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--color-primary);
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 24px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .projects-heading {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

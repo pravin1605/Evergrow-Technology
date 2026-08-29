@@ -1,0 +1,59 @@
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 6rem;
+  }
+
+  .container,
+  .container-wide {
+    width: min(
+      calc(100% - 48px),
+      var(--container-width)
+    );
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 5rem;
+  }
+
+  .container,
+  .container-wide {
+    width: calc(100% - 32px);
+  }
+
+  .section-description {
+    max-width: 100%;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 4rem;
+  }
+
+  .container,
+  .container-wide {
+    width: calc(100% - 24px);
+  }
+}

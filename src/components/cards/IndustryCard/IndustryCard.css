@@ -1,0 +1,786 @@
+/* =========================================================
+   EVERGROW INDUSTRY CARD
+   PREMIUM • MODERN • ATTRACTIVE
+========================================================= */
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.industry-directory-item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 100%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fbfdfb
+    );
+
+  border:
+    1px solid
+    rgba(25, 135, 83, 0.14);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 8px 30px
+    rgba(18, 45, 31, 0.08);
+
+  opacity: 0;
+
+  transform:
+    translateY(25px);
+
+  animation:
+    industryCardIn
+    0.65s
+    ease
+    forwards;
+
+  animation-delay:
+    var(--card-delay, 0ms);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   PREMIUM BORDER EFFECT
+========================================================= */
+
+.industry-directory-item::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  padding: 1px;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(25, 135, 83, 0.65),
+      transparent 38%,
+      transparent 62%,
+      rgba(220, 82, 57, 0.55)
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0)
+    content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask-composite: exclude;
+
+  pointer-events: none;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.industry-directory-item:hover {
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(25, 135, 83, 0.32);
+
+  box-shadow:
+    0 24px 50px
+    rgba(18, 45, 31, 0.16),
+    0 8px 18px
+    rgba(25, 135, 83, 0.06);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.industry-card-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 230px;
+
+  overflow: hidden;
+
+  background:
+    #edf2ee;
+}
+
+
+/* =========================================================
+   IMAGE ELEMENT
+========================================================= */
+
+.industry-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.4s ease;
+}
+
+
+.industry-directory-item:hover
+.industry-card-image img {
+  transform:
+    scale(1.1);
+
+  filter:
+    brightness(1.05)
+    saturate(1.08);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.industry-card-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.04) 20%,
+      rgba(0, 0, 0, 0.12) 55%,
+      rgba(0, 0, 0, 0.58) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE BOTTOM LABEL
+========================================================= */
+
+.industry-image-label {
+  position: absolute;
+
+  left: 24px;
+  bottom: 20px;
+
+  z-index: 5;
+}
+
+
+.industry-image-label span {
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.industry-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 44px;
+  height: 32px;
+
+  padding: 0 12px;
+
+  border-radius: 50px;
+
+  color: #ffffff;
+
+  background:
+    rgba(17, 26, 21, 0.62);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.28);
+
+  backdrop-filter:
+    blur(10px);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   TOP RIGHT ARROW
+========================================================= */
+
+.industry-card-arrow {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    rgba(17, 26, 21, 0.62);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  backdrop-filter:
+    blur(10px);
+
+  z-index: 5;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+
+.industry-directory-item:hover
+.industry-card-arrow {
+  transform:
+    rotate(45deg)
+    scale(1.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      #198753,
+      #42b978
+    );
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.industry-directory-content {
+  display: flex;
+
+  flex: 1;
+
+  flex-direction: column;
+
+  padding:
+    24px
+    24px
+    22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fbfdfb
+    );
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.industry-directory-content h3 {
+  margin: 0;
+
+  color:
+    #17231d;
+
+  font-size: 24px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing:
+    -0.03em;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.industry-directory-item:hover
+.industry-directory-content h3 {
+  color:
+    #198753;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.industry-description {
+  margin:
+    12px
+    0
+    0;
+
+  color:
+    #68746d;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  font-weight: 500;
+
+  display:
+    -webkit-box;
+
+  -webkit-line-clamp:
+    3;
+
+  -webkit-box-orient:
+    vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.industry-content-divider {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  height: 1px;
+
+  margin:
+    20px
+    0;
+
+  background:
+    rgba(23, 35, 29, 0.08);
+}
+
+
+.industry-content-divider span {
+  width: 52px;
+  height: 2px;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #198753,
+      #df5b3d
+    );
+}
+
+
+/* =========================================================
+   BUTTON ROW
+========================================================= */
+
+.industry-directory-actions {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 10px;
+
+  width: 100%;
+
+  margin-top: auto;
+}
+
+
+/* =========================================================
+   BOTH BUTTONS
+========================================================= */
+
+.industry-solution-link,
+.industry-know-more-link {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 48px;
+
+  padding:
+    0
+    16px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   READ MORE
+========================================================= */
+
+.industry-know-more-link {
+  color:
+    #344139;
+
+  background:
+    #ffffff;
+
+  border:
+    1px solid
+    rgba(53, 68, 59, 0.18);
+}
+
+
+.industry-know-more-link:hover {
+  color:
+    #ffffff;
+
+  background:
+    #17231d;
+
+  border-color:
+    #17231d;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 10px 20px
+    rgba(23, 35, 29, 0.18);
+}
+
+
+/* =========================================================
+   EXPLORE DEMO
+========================================================= */
+
+.industry-solution-link {
+  color:
+    #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #198753,
+      #35aa6d
+    );
+
+  border:
+    1px solid
+    #198753;
+
+  box-shadow:
+    0 8px 18px
+    rgba(25, 135, 83, 0.15);
+}
+
+
+.industry-solution-link:hover {
+  color:
+    #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #126c43,
+      #198753
+    );
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 24px
+    rgba(25, 135, 83, 0.28);
+}
+
+
+/* =========================================================
+   BUTTON ICON ANIMATION
+========================================================= */
+
+.industry-solution-link svg,
+.industry-know-more-link svg {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.industry-solution-link:hover svg {
+  transform:
+    scale(1.15);
+}
+
+
+.industry-know-more-link:hover svg {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   IMAGE ERROR
+========================================================= */
+
+.industry-image-error {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf2ee,
+      #e2e9e4
+    );
+
+  color:
+    #27332c;
+
+  z-index: 4;
+}
+
+
+.industry-image-error span {
+  color:
+    #d45a3e;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+
+.industry-image-error strong {
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   ENTRY ANIMATION
+========================================================= */
+
+@keyframes industryCardIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .industry-card-image {
+    height: 210px;
+  }
+
+  .industry-directory-content {
+    padding:
+      20px;
+  }
+
+  .industry-directory-content h3 {
+    font-size: 21px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .industry-directory-item {
+    border-radius: 18px;
+  }
+
+  .industry-card-image {
+    height: 220px;
+  }
+
+  .industry-directory-content {
+    padding:
+      20px
+      18px
+      18px;
+  }
+
+  .industry-directory-content h3 {
+    font-size: 21px;
+  }
+
+  .industry-description {
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .industry-directory-actions {
+    grid-template-columns:
+      1fr;
+  }
+
+  .industry-solution-link,
+  .industry-know-more-link {
+    min-height: 46px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .industry-card-image {
+    height: 190px;
+  }
+
+  .industry-directory-content {
+    padding:
+      18px
+      16px
+      16px;
+  }
+
+  .industry-directory-content h3 {
+    font-size: 19px;
+  }
+
+  .industry-description {
+    font-size: 12.5px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .industry-directory-item {
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .industry-directory-item:hover {
+    transform: none;
+  }
+
+}

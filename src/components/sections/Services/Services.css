@@ -1,0 +1,351 @@
+/* =========================================
+   SERVICES SECTION
+========================================= */
+
+.services-section {
+  padding: var(--section-padding) 0;
+
+  background: var(--color-bg);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.services-heading {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 80px;
+}
+
+.services-heading-title h2 {
+  margin-top: 18px;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    6rem
+  );
+
+  line-height: 0.92;
+}
+
+.services-heading-description {
+  padding-bottom: 8px;
+}
+
+.services-heading-description p {
+  max-width: 500px;
+
+  font-size: 16px;
+}
+
+.services-all-link {
+  margin-top: 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--color-primary);
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.services-all-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   DOMAINS
+========================================= */
+
+.service-domains {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 80px;
+}
+
+.service-domain {
+  border-top: 1px solid
+    var(--color-border);
+}
+
+/* =========================================
+   DOMAIN HEADER
+========================================= */
+
+.service-domain-header {
+  display: grid;
+
+  grid-template-columns: 100px 1fr;
+
+  gap: 40px;
+
+  padding: 30px 0 35px;
+}
+
+.service-domain-number {
+  color: var(--color-primary);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+.service-domain-info h3 {
+  font-size: clamp(
+    1.8rem,
+    3vw,
+    2.7rem
+  );
+
+  letter-spacing: -0.04em;
+}
+
+.service-domain-info p {
+  max-width: 600px;
+
+  margin-top: 10px;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   SERVICES LIST
+========================================= */
+
+.services-list {
+  border-top: 1px solid
+    var(--color-border-light);
+}
+
+/* =========================================
+   SERVICE ROW
+========================================= */
+
+.service-row {
+  min-height: 105px;
+
+  padding: 20px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-bottom: 1px solid
+    var(--color-border-light);
+
+  transition:
+    padding var(--transition-normal),
+    background var(--transition-normal);
+}
+
+.service-row:hover {
+  padding-left: 18px;
+
+  padding-right: 18px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.025
+  );
+}
+
+/* =========================================
+   LEFT
+========================================= */
+
+.service-row-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-primary);
+
+  background: rgba(
+    200,
+    255,
+    61,
+    0.06
+  );
+
+  border: 1px solid
+    rgba(200, 255, 61, 0.12);
+
+  border-radius: var(--radius-md);
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.service-row:hover .service-icon {
+  background: rgba(
+    200,
+    255,
+    61,
+    0.12
+  );
+
+  transform: scale(1.05);
+}
+
+.service-row-left h4 {
+  font-size: 18px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+}
+
+.service-row-left p {
+  max-width: 650px;
+
+  margin-top: 5px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   ARROW
+========================================= */
+
+.service-row-arrow {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-text-muted);
+
+  border: 1px solid
+    var(--color-border);
+
+  border-radius: 50%;
+
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.service-row:hover .service-row-arrow {
+  color: #000;
+
+  background: var(--color-primary);
+
+  border-color: var(--color-primary);
+
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .services-heading {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .service-domain-header {
+    grid-template-columns: 70px 1fr;
+
+    gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-heading {
+    margin-bottom: 55px;
+  }
+
+  .service-domains {
+    gap: 60px;
+  }
+
+  .service-domain-header {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    padding-bottom: 25px;
+  }
+
+  .service-domain-number {
+    font-size: 11px;
+  }
+
+  .service-row {
+    min-height: 95px;
+  }
+
+  .service-row-left {
+    gap: 14px;
+  }
+
+  .service-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .service-row-left h4 {
+    font-size: 16px;
+  }
+
+  .service-row-left p {
+    display: none;
+  }
+
+  .service-row-arrow {
+    width: 36px;
+    height: 36px;
+  }
+}

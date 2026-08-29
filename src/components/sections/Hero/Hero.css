@@ -1,0 +1,1787 @@
+/* =========================================================
+   EVERGROW HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+
+  min-height:
+    auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding:
+    0px 0 50px;
+
+  background:
+    #ffffff;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.hero-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.hero-background-image {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    url("/public/images/hero-bg.jpg.png");
+
+  background-size:
+    cover;
+
+  background-position:
+    center;
+
+  background-repeat:
+    no-repeat;
+
+  opacity:
+    0.14;
+
+  filter:
+    saturate(0.65)
+    contrast(0.95);
+
+  transform:
+    scale(1.04);
+
+  animation:
+    heroBackgroundReveal
+    1.8s
+    ease
+    both;
+}
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.hero-background-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.94) 45%,
+      #ffffff 85%
+    );
+
+  z-index:
+    1;
+}
+
+
+/* =========================================================
+   GREEN GLOWS
+========================================================= */
+
+.hero-background-glow {
+  position: absolute;
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+
+  filter:
+    blur(15px);
+
+  z-index:
+    2;
+}
+
+
+.hero-glow-one {
+  width:
+    520px;
+
+  height:
+    520px;
+
+  top:
+    -280px;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(200, 255, 61, 0.20),
+      rgba(200, 255, 61, 0) 70%
+    );
+
+  animation:
+    heroGlowFloat
+    8s
+    ease-in-out
+    infinite alternate;
+}
+
+
+.hero-glow-two {
+  width:
+    400px;
+
+  height:
+    400px;
+
+  right:
+    -230px;
+
+  top:
+    35%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(200, 255, 61, 0.13),
+      rgba(200, 255, 61, 0) 70%
+    );
+
+  animation:
+    heroGlowFloatTwo
+    10s
+    ease-in-out
+    infinite alternate;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.hero-grid {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    3;
+
+  opacity:
+    0.22;
+
+  background-image:
+    linear-gradient(
+      rgba(23, 26, 23, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(23, 26, 23, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    52px 52px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 75%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.hero-container {
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  width:
+    100%;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  text-align:
+    center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.hero-eyebrow-wrap {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    12px;
+
+  opacity:
+    0;
+
+  animation:
+    heroFadeUp
+    0.7s
+    ease
+    forwards;
+
+  animation-delay:
+    0.1s;
+}
+
+
+.hero-eyebrow-line {
+  width:
+    30px;
+
+  height:
+    2px;
+
+  background:
+    #c8ff3d;
+
+  border-radius:
+    999px;
+}
+
+
+.eyebrow {
+  color:
+    #4f584f;
+
+  font-size:
+    11px;
+
+  line-height:
+    1;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.hero-title-wrap {
+  width:
+    100%;
+
+  margin-top:
+    26px;
+
+  overflow:
+    hidden;
+}
+
+
+.hero-title {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  margin:
+    0;
+
+  color:
+    #171a17;
+
+  font-size:
+    clamp(
+      3.4rem,
+      7.5vw,
+      7rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    0.96;
+
+  letter-spacing:
+    -0.065em;
+
+  text-wrap:
+    balance;
+}
+
+
+/* =========================================================
+   TITLE LINES
+========================================================= */
+
+.hero-title-line,
+.hero-title-highlight {
+  display:
+    block;
+
+  opacity:
+    0;
+
+  transform:
+    translateY(45px);
+
+  animation:
+    heroTitleReveal
+    0.9s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+
+.hero-title-line:nth-child(1) {
+  animation-delay:
+    0.18s;
+}
+
+
+.hero-title-line:nth-child(2) {
+  animation-delay:
+    0.28s;
+}
+
+
+.hero-title-highlight {
+  animation-delay:
+    0.38s;
+}
+
+
+/* =========================================================
+   GREEN TITLE
+========================================================= */
+
+.hero-title-highlight {
+  background:
+    linear-gradient(
+      110deg,
+      #171a17 0%,
+      #6f9f00 45%,
+      #8dbd19 100%
+    );
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+}
+
+
+/* =========================================================
+   VIDEO SECTION
+========================================================= */
+
+.hero-video-section {
+  position:
+    relative;
+
+  width:
+    min(100%, 1050px);
+
+  margin-top:
+    52px;
+
+  padding:
+    0 20px;
+
+  opacity:
+    0;
+
+  transform:
+    translateY(45px);
+
+  animation:
+    heroVideoSectionReveal
+    1s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+
+  animation-delay:
+    0.48s;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.hero-video-wrap {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    21 / 9;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    28px;
+
+  background:
+    #111111;
+
+  box-shadow:
+    0 35px 90px
+    rgba(23, 26, 23, 0.18);
+
+  isolation:
+    isolate;
+}
+
+
+/* =========================================================
+   VIDEO ELEMENT
+========================================================= */
+
+.hero-video {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  transform:
+    scale(1.02);
+
+  transition:
+    transform
+    1.2s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.hero-video-wrap:hover
+.hero-video {
+  transform:
+    scale(1.055);
+}
+
+
+/* =========================================================
+   VIDEO OVERLAY
+========================================================= */
+
+.hero-video-overlay {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.03) 0%,
+      rgba(0, 0, 0, 0.04) 45%,
+      rgba(0, 0, 0, 0.48) 100%
+    );
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   VIDEO TOP
+========================================================= */
+
+.hero-video-top {
+  position:
+    absolute;
+
+  top:
+    20px;
+
+  left:
+    22px;
+
+  right:
+    22px;
+
+  z-index:
+    3;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+}
+
+
+.hero-video-label {
+  padding:
+    8px 12px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  backdrop-filter:
+    blur(12px);
+
+  color:
+    #ffffff;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+.hero-video-number {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    36px;
+
+  height:
+    36px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(0, 0, 0, 0.15);
+
+  backdrop-filter:
+    blur(10px);
+
+  color:
+    #ffffff;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+}
+
+
+/* =========================================================
+   VIDEO BOTTOM
+========================================================= */
+
+.hero-video-bottom {
+  position:
+    absolute;
+
+  left:
+    22px;
+
+  right:
+    22px;
+
+  bottom:
+    20px;
+
+  z-index:
+    3;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+}
+
+
+.hero-video-caption {
+  color:
+    #ffffff;
+
+  font-size:
+    13px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    -0.01em;
+}
+
+
+.hero-video-icon {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  border-radius:
+    50%;
+
+  background:
+    #c8ff3d;
+
+  color:
+    #171a17;
+
+  font-size:
+    20px;
+
+  transition:
+    transform
+    300ms ease;
+}
+
+
+.hero-video-wrap:hover
+.hero-video-icon {
+  transform:
+    rotate(8deg)
+    scale(1.08);
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.hero-description {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    11px;
+
+  margin:
+    30px 0 0;
+
+  color:
+    #252a25;
+
+  font-size:
+    15px;
+
+  line-height:
+    1.5;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.045em;
+
+  opacity:
+    0;
+
+  animation:
+    heroFadeUp
+    0.7s
+    ease
+    forwards;
+
+  animation-delay:
+    0.72s;
+}
+
+
+.hero-dot {
+  color:
+    #9eaa9e;
+
+  font-size:
+    13px;
+}
+
+
+/* =========================================================
+   SUPPORTING DESCRIPTION
+========================================================= */
+
+.hero-subdescription {
+  width:
+    100%;
+
+  max-width:
+    700px;
+
+  margin:
+    13px auto 0;
+
+  color:
+    #454b45;
+
+  font-size:
+    clamp(
+      0.95rem,
+      1.25vw,
+      1.08rem
+    );
+
+  line-height:
+    1.72;
+
+  letter-spacing:
+    -0.01em;
+
+  opacity:
+    0;
+
+  animation:
+    heroFadeUp
+    0.7s
+    ease
+    forwards;
+
+  animation-delay:
+    0.82s;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.hero-actions {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    12px;
+
+  margin-top:
+    28px;
+
+  opacity:
+    0;
+
+  animation:
+    heroFadeUp
+    0.7s
+    ease
+    forwards;
+
+  animation-delay:
+    0.92s;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+========================================================= */
+
+.hero-button {
+  position:
+    relative;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    9px;
+
+  min-height:
+    50px;
+
+  padding:
+    0 21px;
+
+  border:
+    1px solid
+    #e2e7e1;
+
+  border-radius:
+    9px;
+
+  font-size:
+    14px;
+
+  line-height:
+    1;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  overflow:
+    hidden;
+
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+
+/* =========================================================
+   PRIMARY
+========================================================= */
+
+.hero-button-primary {
+  border-color:
+    #c8ff3d;
+
+  background:
+    #c8ff3d;
+
+  color:
+    #171a17;
+
+  box-shadow:
+    0 8px 24px
+    rgba(111, 159, 0, 0.12);
+}
+
+
+.hero-button-primary:hover {
+  border-color:
+    #b5ef2f;
+
+  background:
+    #b5ef2f;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 14px 32px
+    rgba(111, 159, 0, 0.18);
+}
+
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.hero-button-secondary {
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  color:
+    #171a17;
+
+  backdrop-filter:
+    blur(8px);
+}
+
+
+.hero-button-secondary:hover {
+  border-color:
+    rgba(111, 159, 0, 0.45);
+
+  background:
+    #f5fbdd;
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   BUTTON ICON
+========================================================= */
+
+.hero-button svg {
+  transition:
+    transform
+    220ms
+    ease;
+}
+
+
+.hero-button:hover svg {
+  transform:
+    translate(
+      2px,
+      -2px
+    );
+}
+
+
+/* =========================================================
+   BOTTOM INFORMATION
+========================================================= */
+
+.hero-bottom {
+  width:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  margin-top:
+    55px;
+
+  padding-top:
+    18px;
+
+  border-top:
+    1px solid
+    rgba(23, 26, 23, 0.10);
+
+  opacity:
+    0;
+
+  animation:
+    heroFadeUp
+    0.75s
+    ease
+    forwards;
+
+  animation-delay:
+    1.02s;
+}
+
+
+.hero-bottom-item {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  padding:
+    0 24px;
+
+  color:
+    #697169;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.5;
+
+  font-weight:
+    600;
+}
+
+
+.hero-bottom-item:not(:last-child) {
+  border-right:
+    1px solid
+    rgba(23, 26, 23, 0.12);
+}
+
+
+.hero-bottom-number {
+  color:
+    #6f9f00;
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.08em;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.hero-button:focus-visible {
+  outline:
+    3px solid
+    rgba(111, 159, 0, 0.28);
+
+  outline-offset:
+    3px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroFadeUp {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateY(24px);
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes heroTitleReveal {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateY(45px);
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes heroVideoSectionReveal {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateY(50px)
+      scale(0.97);
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes heroBackgroundReveal {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      scale(1.08);
+  }
+
+  to {
+    opacity:
+      0.14;
+
+    transform:
+      scale(1.04);
+  }
+}
+
+
+@keyframes heroGlowFloat {
+
+  from {
+    transform:
+      translateX(-50%)
+      translateY(0)
+      scale(1);
+  }
+
+  to {
+    transform:
+      translateX(-50%)
+      translateY(40px)
+      scale(1.08);
+  }
+}
+
+
+@keyframes heroGlowFloatTwo {
+
+  from {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  to {
+    transform:
+      translate(-30px, 35px)
+      scale(1.12);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding:
+      55px 0 42px;
+  }
+
+
+  .hero-title {
+    font-size:
+      clamp(
+        3.1rem,
+        8vw,
+        5.5rem
+      );
+  }
+
+
+  .hero-video-section {
+    width:
+      100%;
+
+    margin-top:
+      42px;
+
+    padding:
+      0 10px;
+  }
+
+
+  .hero-video-wrap {
+    aspect-ratio:
+      16 / 8;
+  }
+
+
+  .hero-bottom {
+    margin-top:
+      45px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero {
+    min-height:
+      auto;
+
+    padding:
+      42px 0 32px;
+  }
+
+
+  .hero-container {
+    padding-left:
+      18px;
+
+    padding-right:
+      18px;
+  }
+
+
+  /* EYEBROW */
+
+  .hero-eyebrow-wrap {
+    gap:
+      8px;
+  }
+
+
+  .hero-eyebrow-line {
+    width:
+      20px;
+  }
+
+
+  .eyebrow {
+    font-size:
+      9px;
+
+    letter-spacing:
+      0.13em;
+  }
+
+
+  /* TITLE */
+
+  .hero-title-wrap {
+    margin-top:
+      22px;
+  }
+
+
+  .hero-title {
+    font-size:
+      clamp(
+        2.65rem,
+        12.8vw,
+        4rem
+      );
+
+    line-height:
+      0.98;
+
+    letter-spacing:
+      -0.06em;
+  }
+
+
+  /* VIDEO */
+
+  .hero-video-section {
+    width:
+      100%;
+
+    margin-top:
+      32px;
+
+    padding:
+      0;
+  }
+
+
+  .hero-video-wrap {
+    width:
+      100%;
+
+    aspect-ratio:
+      16 / 10;
+
+    border-radius:
+      20px;
+
+    box-shadow:
+      0 22px 55px
+      rgba(23, 26, 23, 0.16);
+  }
+
+
+  .hero-video-top {
+    top:
+      14px;
+
+    left:
+      14px;
+
+    right:
+      14px;
+  }
+
+
+  .hero-video-label {
+    padding:
+      7px 9px;
+
+    font-size:
+      7px;
+  }
+
+
+  .hero-video-number {
+    width:
+      32px;
+
+    height:
+      32px;
+
+    font-size:
+      9px;
+  }
+
+
+  .hero-video-bottom {
+    left:
+      14px;
+
+    right:
+      14px;
+
+    bottom:
+      14px;
+  }
+
+
+  .hero-video-caption {
+    font-size:
+      10px;
+  }
+
+
+  .hero-video-icon {
+    width:
+      36px;
+
+    height:
+      36px;
+
+    font-size:
+      17px;
+  }
+
+
+  /* SERVICES */
+
+  .hero-description {
+    margin-top:
+      25px;
+
+    gap:
+      8px;
+
+    font-size:
+      12px;
+  }
+
+
+  /* DESCRIPTION */
+
+  .hero-subdescription {
+    max-width:
+      100%;
+
+    margin-top:
+      11px;
+
+    font-size:
+      0.92rem;
+
+    line-height:
+      1.65;
+  }
+
+
+  /* ACTIONS */
+
+  .hero-actions {
+    width:
+      100%;
+
+    margin-top:
+      24px;
+
+    gap:
+      9px;
+  }
+
+
+  .hero-button {
+    min-height:
+      47px;
+
+    padding:
+      0 16px;
+
+    font-size:
+      12px;
+  }
+
+
+  /* BOTTOM */
+
+  .hero-bottom {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      12px;
+
+    margin-top:
+      38px;
+
+    padding-top:
+      16px;
+  }
+
+
+  .hero-bottom-item {
+    width:
+      100%;
+
+    padding:
+      0;
+
+    font-size:
+      10px;
+  }
+
+
+  .hero-bottom-item:not(:last-child) {
+    border-right:
+      none;
+  }
+
+
+  /* BACKGROUND */
+
+  .hero-background-image {
+    opacity:
+      0.08;
+
+    background-position:
+      center;
+  }
+
+
+  .hero-background-overlay {
+    background:
+      radial-gradient(
+        circle at 50% 15%,
+        rgba(255, 255, 255, 0.72),
+        rgba(255, 255, 255, 0.97) 50%,
+        #ffffff 90%
+      );
+  }
+
+
+  .hero-glow-one {
+    width:
+      360px;
+
+    height:
+      360px;
+  }
+
+
+  .hero-glow-two {
+    width:
+      300px;
+
+    height:
+      300px;
+
+    right:
+      -220px;
+  }
+
+
+  .hero-grid {
+    opacity:
+      0.12;
+
+    background-size:
+      38px 38px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .hero {
+    padding:
+      36px 0 28px;
+  }
+
+
+  .hero-container {
+    padding-left:
+      15px;
+
+    padding-right:
+      15px;
+  }
+
+
+  .hero-title {
+    font-size:
+      clamp(
+        2.35rem,
+        12.5vw,
+        3.35rem
+      );
+  }
+
+
+  .hero-video-section {
+    margin-top:
+      28px;
+  }
+
+
+  .hero-video-wrap {
+    aspect-ratio:
+      4 / 3;
+
+    border-radius:
+      18px;
+  }
+
+
+  .hero-description {
+    margin-top:
+      22px;
+  }
+
+
+  .hero-subdescription {
+    font-size:
+      0.88rem;
+  }
+
+
+  .hero-actions {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+  }
+
+
+  .hero-button {
+    width:
+      100%;
+  }
+
+
+  .hero-bottom {
+    margin-top:
+      34px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 340px) {
+
+  .hero-title {
+    font-size:
+      2.2rem;
+  }
+
+
+  .hero-video-wrap {
+    aspect-ratio:
+      4 / 3;
+  }
+
+
+  .hero-video-caption {
+    font-size:
+      9px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero *,
+  .hero::before,
+  .hero::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+
+  .hero-background-image {
+    transform:
+      scale(1.04);
+  }
+
+
+  .hero-video {
+    transform:
+      scale(1.02);
+  }
+
+}

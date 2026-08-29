@@ -1,0 +1,1496 @@
+/* =========================================================
+   SERVICES PAGE
+========================================================= */
+
+.services-page {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    #ffffff;
+
+  color:
+    #14271d;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.services-hero {
+
+  position: relative;
+
+  padding:
+    110px 0 95px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(47, 128, 82, 0.10),
+      transparent 32%
+    ),
+
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(255, 113, 48, 0.07),
+      transparent 30%
+    ),
+
+    #f7faf8;
+
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.services-hero-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr
+    0.95fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.services-hero-content {
+
+  max-width:
+    680px;
+
+}
+
+
+.services-eyebrow {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom:
+    20px;
+
+  padding:
+    7px 12px;
+
+  border:
+    1px solid rgba(47, 128, 82, 0.20);
+
+  border-radius:
+    50px;
+
+  background:
+    rgba(47, 128, 82, 0.07);
+
+  color:
+    #28754b;
+
+  font-size:
+    11px;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.services-eyebrow svg {
+
+  color:
+    #ff7130;
+
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.services-hero h1 {
+
+  margin:
+    0;
+
+  color:
+    #12251b;
+
+  font-size:
+    clamp(44px, 5.2vw, 72px);
+
+  line-height:
+    1.03;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -0.045em;
+
+}
+
+
+.services-hero h1 span {
+
+  display:
+    block;
+
+  color:
+    #31805a;
+
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.services-hero-content > p {
+
+  max-width:
+    600px;
+
+  margin:
+    25px 0 0;
+
+  color:
+    #627169;
+
+  font-size:
+    16px;
+
+  line-height:
+    1.75;
+
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.services-hero-actions {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    22px;
+
+  margin-top:
+    30px;
+
+}
+
+
+.services-primary-button {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  padding:
+    13px 19px;
+
+  border-radius:
+    11px;
+
+  background:
+    #ff7130;
+
+  color:
+    #ffffff;
+
+  font-size:
+    13px;
+
+  font-weight:
+    750;
+
+  text-decoration:
+    none;
+
+  box-shadow:
+    0 10px 25px rgba(255, 113, 48, 0.22);
+
+  transition:
+    all 0.3s ease;
+
+}
+
+
+.services-primary-button:hover {
+
+  background:
+    #e85d20;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 14px 30px rgba(255, 113, 48, 0.30);
+
+}
+
+
+.services-primary-button svg {
+
+  transition:
+    transform 0.3s ease;
+
+}
+
+
+.services-primary-button:hover svg {
+
+  transform:
+    translate(3px, -3px);
+
+}
+
+
+/* TEXT LINK */
+
+.services-text-link {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+
+  color:
+    #24583d;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  transition:
+    all 0.3s ease;
+
+}
+
+
+.services-text-link:hover {
+
+  color:
+    #ff7130;
+
+}
+
+
+.services-text-link svg {
+
+  transition:
+    transform 0.3s ease;
+
+}
+
+
+.services-text-link:hover svg {
+
+  transform:
+    translate(3px, -3px);
+
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.services-hero-visual {
+
+  position:
+    relative;
+
+  min-height:
+    400px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+}
+
+
+/* ORBITS */
+
+.services-orbit {
+
+  position:
+    absolute;
+
+  border:
+    1px solid rgba(47, 128, 82, 0.16);
+
+  border-radius:
+    50%;
+
+  animation:
+    servicesOrbit 12s linear infinite;
+
+}
+
+
+.services-orbit-one {
+
+  width:
+    360px;
+
+  height:
+    360px;
+
+}
+
+
+.services-orbit-two {
+
+  width:
+    260px;
+
+  height:
+    260px;
+
+  animation-direction:
+    reverse;
+
+  animation-duration:
+    9s;
+
+  border-color:
+    rgba(255, 113, 48, 0.18);
+
+}
+
+
+/* VISUAL CARD */
+
+.services-visual-card {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  width:
+    260px;
+
+  min-height:
+    285px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  padding:
+    35px;
+
+  border:
+    1px solid rgba(47, 128, 82, 0.22);
+
+  border-radius:
+    25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #edf6f0
+    );
+
+  box-shadow:
+    0 25px 60px rgba(25, 80, 55, 0.13);
+
+  transform:
+    rotate(-3deg);
+
+  transition:
+    transform 0.4s ease;
+
+}
+
+
+.services-visual-card:hover {
+
+  transform:
+    rotate(0deg)
+    translateY(-7px);
+
+}
+
+
+.services-visual-small {
+
+  margin-bottom:
+    20px;
+
+  color:
+    #75847c;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.13em;
+
+}
+
+
+.services-visual-card strong {
+
+  color:
+    #173d2a;
+
+  font-size:
+    28px;
+
+  line-height:
+    1.15;
+
+  letter-spacing:
+    -0.03em;
+
+}
+
+
+.services-visual-card strong:nth-of-type(2) {
+
+  color:
+    #31805a;
+
+}
+
+
+.services-visual-card strong:nth-of-type(3) {
+
+  color:
+    #ff7130;
+
+}
+
+
+.services-visual-line {
+
+  width:
+    65px;
+
+  height:
+    3px;
+
+  margin:
+    22px 0;
+
+  border-radius:
+    5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #31805a,
+      #ff7130
+    );
+
+}
+
+
+.services-visual-status {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+
+  color:
+    #5e7066;
+
+  font-size:
+    10px;
+
+  font-weight:
+    650;
+
+}
+
+
+.services-visual-status span {
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    #31805a;
+
+  box-shadow:
+    0 0 0 5px rgba(49, 128, 90, 0.10);
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.services-intro {
+
+  padding:
+    100px 0;
+
+  background:
+    #ffffff;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.services-section-heading {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr
+    0.7fr;
+
+  gap:
+    70px;
+
+  align-items:
+    end;
+
+  margin-bottom:
+    45px;
+
+}
+
+
+.services-section-eyebrow {
+
+  display:
+    block;
+
+  margin-bottom:
+    10px;
+
+  color:
+    #31805a;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.services-section-heading h2 {
+
+  margin:
+    0;
+
+  color:
+    #14271d;
+
+  font-size:
+    clamp(32px, 4vw, 52px);
+
+  line-height:
+    1.08;
+
+  letter-spacing:
+    -0.04em;
+
+}
+
+
+.services-section-heading h2 span {
+
+  display:
+    block;
+
+  color:
+    #31805a;
+
+}
+
+
+.services-section-heading p {
+
+  margin:
+    0;
+
+  color:
+    #68776f;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.7;
+
+}
+
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
+
+.services-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap:
+    22px;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.services-cta {
+
+  padding:
+    20px 0 100px;
+
+}
+
+
+.services-cta-box {
+
+  position:
+    relative;
+
+  min-height:
+    350px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  align-items:
+    center;
+
+  gap:
+    50px;
+
+  overflow:
+    hidden;
+
+  padding:
+    55px;
+
+  border:
+    1px solid rgba(49, 128, 90, 0.30);
+
+  border-radius:
+    28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #122c20 0%,
+      #173d2a 55%,
+      #20563b 100%
+    );
+
+  box-shadow:
+    0 25px 60px rgba(18, 44, 32, 0.16);
+
+}
+
+
+/* =========================================================
+   CTA GRID
+========================================================= */
+
+.services-cta-grid {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  opacity:
+    0.08;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.5) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.5) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    35px 35px;
+
+}
+
+
+/* =========================================================
+   CTA GLOWS
+========================================================= */
+
+.services-cta-glow {
+
+  position:
+    absolute;
+
+  width:
+    260px;
+
+  height:
+    260px;
+
+  border-radius:
+    50%;
+
+  filter:
+    blur(55px);
+
+  pointer-events:
+    none;
+
+}
+
+
+.services-cta-glow-one {
+
+  top:
+    -120px;
+
+  right:
+    80px;
+
+  background:
+    rgba(49, 128, 90, 0.25);
+
+}
+
+
+.services-cta-glow-two {
+
+  bottom:
+    -140px;
+
+  left:
+    80px;
+
+  background:
+    rgba(255, 113, 48, 0.18);
+
+}
+
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.services-cta-content {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  max-width:
+    680px;
+
+}
+
+
+.services-cta-eyebrow {
+
+  display:
+    inline-block;
+
+  margin-bottom:
+    14px;
+
+  color:
+    #ff996b;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.services-cta-content h2 {
+
+  margin:
+    0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(34px, 4vw, 55px);
+
+  line-height:
+    1.06;
+
+  letter-spacing:
+    -0.04em;
+
+}
+
+
+.services-cta-content h2 span {
+
+  display:
+    block;
+
+  color:
+    #ff996b;
+
+}
+
+
+.services-cta-content p {
+
+  max-width:
+    570px;
+
+  margin:
+    20px 0 0;
+
+  color:
+    rgba(255,255,255,0.70);
+
+  font-size:
+    14px;
+
+  line-height:
+    1.7;
+
+}
+
+
+/* =========================================================
+   CTA META
+========================================================= */
+
+.services-cta-meta {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  margin-top:
+    25px;
+
+  color:
+    rgba(255,255,255,0.60);
+
+  font-size:
+    10px;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.services-meta-dot {
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    #ff7130;
+
+}
+
+
+.services-meta-separator {
+
+  opacity:
+    0.35;
+
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.services-cta-action {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+}
+
+
+.services-cta-button {
+
+  min-width:
+    155px;
+
+  min-height:
+    52px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    10px;
+
+  padding:
+    0 20px;
+
+  border:
+    1px solid rgba(255,255,255,0.18);
+
+  border-radius:
+    12px;
+
+  background:
+    #ff7130;
+
+  color:
+    #ffffff;
+
+  font-size:
+    13px;
+
+  font-weight:
+    750;
+
+  text-decoration:
+    none;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.18);
+
+  transition:
+    all 0.3s ease;
+
+}
+
+
+.services-cta-button:hover {
+
+  background:
+    #ffffff;
+
+  color:
+    #173d2a;
+
+  transform:
+    translateY(-4px);
+
+}
+
+
+.services-cta-button svg {
+
+  transition:
+    transform 0.3s ease;
+
+}
+
+
+.services-cta-button:hover svg {
+
+  transform:
+    translate(3px, -3px);
+
+}
+
+
+/* =========================================================
+   CORNER TEXT
+========================================================= */
+
+.services-cta-corner {
+
+  position:
+    absolute;
+
+  right:
+    30px;
+
+  bottom:
+    20px;
+
+  color:
+    rgba(255,255,255,0.16);
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.18em;
+
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes servicesOrbit {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .services-hero {
+
+    padding:
+      90px 0 75px;
+
+  }
+
+
+  .services-hero-grid {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      55px;
+
+  }
+
+
+  .services-hero-content {
+
+    max-width:
+      720px;
+
+  }
+
+
+  .services-hero-visual {
+
+    min-height:
+      330px;
+
+  }
+
+
+  .services-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+  }
+
+
+  .services-section-heading {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      20px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .services-hero {
+
+    padding:
+      70px 0 60px;
+
+  }
+
+
+  .services-hero h1 {
+
+    font-size:
+      42px;
+
+  }
+
+
+  .services-hero-content > p {
+
+    font-size:
+      14px;
+
+  }
+
+
+  .services-hero-actions {
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      17px;
+
+  }
+
+
+  .services-hero-visual {
+
+    min-height:
+      290px;
+
+  }
+
+
+  .services-orbit-one {
+
+    width:
+      270px;
+
+    height:
+      270px;
+
+  }
+
+
+  .services-orbit-two {
+
+    width:
+      200px;
+
+    height:
+      200px;
+
+  }
+
+
+  .services-visual-card {
+
+    width:
+      220px;
+
+    min-height:
+      245px;
+
+    padding:
+      27px;
+
+  }
+
+
+  .services-visual-card strong {
+
+    font-size:
+      23px;
+
+  }
+
+
+  .services-intro {
+
+    padding:
+      70px 0;
+
+  }
+
+
+  .services-section-heading {
+
+    margin-bottom:
+      30px;
+
+  }
+
+
+  .services-section-heading h2 {
+
+    font-size:
+      35px;
+
+  }
+
+
+  .services-grid {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      17px;
+
+  }
+
+
+  .services-cta {
+
+    padding:
+      0 0 70px;
+
+  }
+
+
+  .services-cta-box {
+
+    min-height:
+      auto;
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      30px;
+
+    padding:
+      35px 25px;
+
+    border-radius:
+      22px;
+
+  }
+
+
+  .services-cta-content h2 {
+
+    font-size:
+      36px;
+
+  }
+
+
+  .services-cta-action {
+
+    justify-self:
+      start;
+
+  }
+
+
+  .services-cta-button {
+
+    min-height:
+      48px;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .services-hero h1 {
+
+    font-size:
+      36px;
+
+  }
+
+
+  .services-hero-content > p {
+
+    font-size:
+      13px;
+
+  }
+
+
+  .services-primary-button {
+
+    width:
+      100%;
+
+    justify-content:
+      center;
+
+  }
+
+
+  .services-section-heading h2 {
+
+    font-size:
+      31px;
+
+  }
+
+
+  .services-cta-content h2 {
+
+    font-size:
+      31px;
+
+  }
+
+
+  .services-cta-meta {
+
+    flex-wrap:
+      wrap;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .services-orbit {
+
+    animation:
+      none;
+
+  }
+
+}

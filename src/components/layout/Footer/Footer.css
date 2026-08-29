@@ -1,0 +1,1321 @@
+/* =========================================================
+   EVERGROW TECHNOLOGY — PREMIUM FOOTER
+========================================================= */
+
+.site-footer {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 55px 0 22px;
+
+  color: #17202a;
+
+  background:
+    radial-gradient(
+      circle at 85% 5%,
+      rgba(37, 99, 235, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(58, 154, 91, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f6f9fc 0%,
+      #eef3f8 55%,
+      #e9f0f6 100%
+    );
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.footer-container {
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND ORBS
+========================================================= */
+
+.footer-bg-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(70px);
+
+  opacity: 0.55;
+
+  z-index: 1;
+}
+
+
+/* TOP RIGHT BLUE ORB */
+
+.footer-bg-orb-one {
+  width: 320px;
+  height: 320px;
+
+  top: -190px;
+  right: 5%;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  animation:
+    footerOrbOne
+    9s
+    ease-in-out
+    infinite alternate;
+}
+
+
+/* BOTTOM LEFT GREEN ORB */
+
+.footer-bg-orb-two {
+  width: 260px;
+  height: 260px;
+
+  bottom: -180px;
+  left: 5%;
+
+  background:
+    rgba(58, 154, 91, 0.10);
+
+  animation:
+    footerOrbTwo
+    11s
+    ease-in-out
+    infinite alternate;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.footer-bg-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  opacity: 0.22;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(25, 55, 85, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(25, 55, 85, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    50px 50px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 18%,
+      black 82%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   MAIN FOOTER GRID
+========================================================= */
+
+.footer-main {
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    1.8fr
+    0.8fr
+    1fr
+    1fr;
+
+  gap: 55px;
+
+  padding-bottom: 38px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+  max-width: 370px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.footer-logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+
+/*
+   IMPORTANT
+
+   Your EverGrow logo is BLUE.
+
+   Therefore we keep the footer light and give
+   the logo enough physical size to become a
+   strong visual element.
+*/
+
+.footer-logo-image {
+  display: block;
+
+  width: 220px;
+  height: 105px;
+
+  object-fit: contain;
+
+  object-position: left center;
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+
+/* LOGO HOVER */
+
+.footer-logo:hover {
+  transform:
+    translateY(-3px);
+}
+
+
+.footer-logo:hover .footer-logo-image {
+  transform:
+    scale(1.04);
+
+  filter:
+    drop-shadow(
+      0 8px 18px
+      rgba(37, 99, 235, 0.18)
+    );
+}
+
+
+/* =========================================================
+   BRAND DESCRIPTION
+========================================================= */
+
+.footer-description {
+  max-width: 340px;
+
+  margin:
+    10px 0 0;
+
+  color:
+    #536273;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.7;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.footer-socials {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+
+.footer-social {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.15);
+
+  border-radius: 10px;
+
+  color:
+    #526273;
+
+  background:
+    rgba(255, 255, 255, 0.70);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.footer-social:hover {
+  transform:
+    translateY(-4px);
+
+  color:
+    #ffffff;
+
+  background:
+    #2563eb;
+
+  border-color:
+    #2563eb;
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+  position: relative;
+}
+
+
+.footer-column h3 {
+  margin:
+    4px 0 17px;
+
+  color:
+    #182433;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.15em;
+}
+
+
+/* =========================================================
+   COLUMN NAVIGATION
+========================================================= */
+
+.footer-column nav {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    9px;
+}
+
+
+.footer-column nav a {
+  position:
+    relative;
+
+  width:
+    fit-content;
+
+  color:
+    #5f6d7b;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.45;
+
+  text-decoration:
+    none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* ANIMATED UNDERLINE */
+
+.footer-column nav a::after {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  bottom:
+    -3px;
+
+  width:
+    0;
+
+  height:
+    1px;
+
+  background:
+    #2563eb;
+
+  transition:
+    width 0.3s ease;
+}
+
+
+.footer-column nav a:hover {
+  color:
+    #2563eb;
+
+  transform:
+    translateX(3px);
+}
+
+
+.footer-column nav a:hover::after {
+  width:
+    100%;
+}
+
+
+/* =========================================================
+   CONTACT STRIP
+========================================================= */
+
+.footer-contact {
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    auto;
+
+  align-items:
+    center;
+
+  gap:
+    20px;
+
+  padding:
+    20px 0;
+
+  border-top:
+    1px solid
+    rgba(25, 45, 65, 0.10);
+
+  border-bottom:
+    1px solid
+    rgba(25, 45, 65, 0.10);
+}
+
+
+/* =========================================================
+   CONTACT ITEM
+========================================================= */
+
+.footer-contact-item {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    11px;
+
+  min-width:
+    0;
+
+  color:
+    #536273;
+}
+
+
+/* =========================================================
+   CONTACT ICON
+========================================================= */
+
+.footer-contact-icon {
+  width:
+    36px;
+
+  height:
+    36px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex-shrink:
+    0;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.14);
+
+  border-radius:
+    10px;
+
+  color:
+    #2563eb;
+
+  background:
+    rgba(255, 255, 255, 0.70);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.footer-contact-item:hover
+.footer-contact-icon {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(37, 99, 235, 0.30);
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 8px 20px
+    rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   CONTACT CONTENT
+========================================================= */
+
+.footer-contact-content {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    2px;
+
+  min-width:
+    0;
+}
+
+
+.footer-contact-content span {
+  color:
+    #7b8996;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.13em;
+}
+
+
+.footer-contact-content a,
+.footer-contact-content p {
+  margin:
+    0;
+
+  overflow:
+    hidden;
+
+  color:
+    #273746;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.4;
+
+  text-decoration:
+    none;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+}
+
+
+.footer-contact-content a {
+  transition:
+    color 0.25s ease;
+}
+
+
+.footer-contact-content a:hover {
+  color:
+    #2563eb;
+}
+
+
+/* =========================================================
+   LET'S TALK BUTTON
+========================================================= */
+
+.footer-talk-button {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    8px;
+
+  min-height:
+    42px;
+
+  padding:
+    0 19px;
+
+  border:
+    none;
+
+  border-radius:
+    999px;
+
+  background:
+    #2563eb;
+
+  color:
+    #ffffff;
+
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  white-space:
+    nowrap;
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 99, 235, 0.20);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.footer-talk-button:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    #1d4ed8;
+
+  box-shadow:
+    0 15px 30px
+    rgba(37, 99, 235, 0.28);
+}
+
+
+.footer-talk-button svg {
+  transition:
+    transform 0.3s ease;
+}
+
+
+.footer-talk-button:hover svg {
+  transform:
+    translate(
+      2px,
+      -2px
+    );
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+
+  padding-top:
+    18px;
+}
+
+
+.footer-bottom p {
+  margin:
+    0;
+
+  color:
+    #7a8995;
+
+  font-size:
+    9px;
+}
+
+
+.footer-bottom-links {
+  display:
+    flex;
+
+  gap:
+    18px;
+}
+
+
+.footer-bottom-links a {
+  color:
+    #7a8995;
+
+  font-size:
+    9px;
+
+  text-decoration:
+    none;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.footer-bottom-links a:hover {
+  color:
+    #2563eb;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.footer-reveal {
+  opacity:
+    0;
+
+  transform:
+    translateY(18px);
+
+  animation:
+    footerReveal
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+
+/* BRAND */
+
+.footer-brand {
+  animation-delay:
+    0.05s;
+}
+
+
+/* COMPANY */
+
+.footer-column:nth-child(2) {
+  animation-delay:
+    0.12s;
+}
+
+
+/* SERVICES */
+
+.footer-column:nth-child(3) {
+  animation-delay:
+    0.19s;
+}
+
+
+/* INDUSTRIES */
+
+.footer-column:nth-child(4) {
+  animation-delay:
+    0.26s;
+}
+
+
+/* CONTACT */
+
+.footer-contact {
+  animation-delay:
+    0.34s;
+}
+
+
+/* BOTTOM */
+
+.footer-bottom {
+  animation-delay:
+    0.42s;
+}
+
+
+@keyframes footerReveal {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING BACKGROUND ANIMATION
+========================================================= */
+
+@keyframes footerOrbOne {
+
+  from {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(1);
+  }
+
+  to {
+    transform:
+      translate3d(
+        -25px,
+        25px,
+        0
+      )
+      scale(1.12);
+  }
+
+}
+
+
+@keyframes footerOrbTwo {
+
+  from {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(1);
+  }
+
+  to {
+    transform:
+      translate3d(
+        25px,
+        -20px,
+        0
+      )
+      scale(1.1);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .site-footer {
+    padding:
+      48px 0 20px;
+  }
+
+
+  .footer-main {
+    grid-template-columns:
+      1.4fr
+      1fr
+      1fr;
+
+    gap:
+      40px;
+  }
+
+
+  .footer-brand {
+    grid-column:
+      1 / -1;
+
+    max-width:
+      520px;
+  }
+
+
+  .footer-contact {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+
+  .footer-talk-button {
+    width:
+      fit-content;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .site-footer {
+    padding:
+      42px 0 20px;
+  }
+
+
+  /* MAIN GRID */
+
+  .footer-main {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap:
+      32px 25px;
+
+    padding-bottom:
+      30px;
+  }
+
+
+  /* BRAND */
+
+  .footer-brand {
+    grid-column:
+      1 / -1;
+
+    max-width:
+      100%;
+  }
+
+
+  /* =====================================================
+     MOBILE LOGO
+  ===================================================== */
+
+  .footer-logo-image {
+    width:
+      185px;
+
+    height:
+      90px;
+
+    object-fit:
+      contain;
+  }
+
+
+  .footer-description {
+    max-width:
+      340px;
+
+    margin-top:
+      8px;
+
+    font-size:
+      12px;
+
+    line-height:
+      1.65;
+  }
+
+
+  /* SOCIALS */
+
+  .footer-socials {
+    margin-top:
+      15px;
+  }
+
+
+  .footer-social {
+    width:
+      33px;
+
+    height:
+      33px;
+  }
+
+
+  /* =====================================================
+     COLUMNS
+  ===================================================== */
+
+  .footer-column h3 {
+    margin-bottom:
+      14px;
+
+    font-size:
+      9px;
+  }
+
+
+  .footer-column nav {
+    gap:
+      8px;
+  }
+
+
+  .footer-column nav a {
+    font-size:
+      11px;
+  }
+
+
+  /* =====================================================
+     CONTACT
+  ===================================================== */
+
+  .footer-contact {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      14px;
+
+    padding:
+      18px 0;
+  }
+
+
+  .footer-contact-item {
+    width:
+      100%;
+  }
+
+
+  .footer-contact-content a,
+  .footer-contact-content p {
+    font-size:
+      10px;
+  }
+
+
+  /* TALK BUTTON */
+
+  .footer-talk-button {
+    width:
+      100%;
+
+    min-height:
+      40px;
+  }
+
+
+  /* =====================================================
+     BOTTOM
+  ===================================================== */
+
+  .footer-bottom {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap:
+      10px;
+
+    padding-top:
+      16px;
+  }
+
+
+  .footer-bottom-links {
+    gap:
+      14px;
+  }
+
+
+  /* =====================================================
+     MOBILE ORBS
+  ===================================================== */
+
+  .footer-bg-orb-one {
+    width:
+      200px;
+
+    height:
+      200px;
+  }
+
+
+  .footer-bg-orb-two {
+    width:
+      180px;
+
+    height:
+      180px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .site-footer {
+    padding:
+      38px 0 18px;
+  }
+
+
+  /* ONE COLUMN */
+
+  .footer-main {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      27px;
+
+    padding-bottom:
+      27px;
+  }
+
+
+  /* =====================================================
+     SMALL MOBILE LOGO
+  ===================================================== */
+
+  .footer-logo-image {
+    width:
+      170px;
+
+    height:
+      82px;
+  }
+
+
+  .footer-brand {
+    max-width:
+      100%;
+  }
+
+
+  .footer-column {
+    max-width:
+      240px;
+  }
+
+
+  .footer-column nav {
+    gap:
+      7px;
+  }
+
+
+  .footer-contact {
+    gap:
+      12px;
+  }
+
+
+  .footer-bottom p,
+  .footer-bottom-links a {
+    font-size:
+      8px;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .footer-logo-image {
+    width:
+      155px;
+
+    height:
+      76px;
+  }
+
+
+  .footer-description {
+    font-size:
+      11px;
+  }
+
+
+  .footer-column nav a {
+    font-size:
+      10px;
+  }
+
+
+  .footer-contact-content a,
+  .footer-contact-content p {
+    font-size:
+      9px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .site-footer *,
+  .site-footer::before,
+  .site-footer::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}

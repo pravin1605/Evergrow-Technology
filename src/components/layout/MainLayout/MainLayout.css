@@ -1,0 +1,52 @@
+/* =========================================================
+   EVERGROW MAIN LAYOUT
+   GLOBAL PAGE STRUCTURE
+========================================================= */
+
+.main-layout {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--color-background);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+  flex: 1;
+
+  min-height: 0;
+
+  /*
+    IMPORTANT:
+    Do NOT add navbar height here.
+
+    Navbar is sticky and already participates
+    in normal document flow.
+  */
+
+  padding-top: 0;
+}
+
+
+/* =========================================================
+   PAGE ROOT
+========================================================= */
+
+.main-content > * {
+  width: 100%;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.main-layout > footer {
+  margin-top: auto;
+}
