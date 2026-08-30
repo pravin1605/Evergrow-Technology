@@ -446,10 +446,78 @@
    MOBILE MENU
 ===================================================== */
 
-.navbar-mobile-menu {
+/* .navbar-mobile-menu {
   display: none;
+} */
+
+
+/* ================================================
+   MOBILE MENU
+================================================ */
+
+.navbar-mobile-menu {
+  display: block;
+
+  position: fixed;
+
+  top: 70px;
+  left: 0;
+
+  width: 100%;
+
+  max-height: 0;
+
+  /*
+     IMPORTANT:
+     Keep the menu visible outside its own box.
+     This prevents the fixed/sticky navbar positioning
+     from clipping the menu unexpectedly.
+  */
+  overflow: visible;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f7fbf8
+    );
+
+  border-bottom:
+    1px solid transparent;
+
+  box-shadow:
+    0 15px 35px
+    rgba(30, 70, 45, 0.08);
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    border-color 0.25s ease;
 }
 
+
+/* ================================================
+   MOBILE MENU OPEN
+================================================ */
+
+.navbar-mobile-menu {
+  display: block;
+
+  position: fixed;
+
+  top: 70px;
+  left: 0;
+
+  width: 100%;
+
+  max-height: 0;
+
+  overflow: visible;
+
+  ...
+}
 
 /* =====================================================
    TABLET
@@ -549,7 +617,7 @@
   .navbar-mobile-menu {
     display: block;
 
-    position: absolute;
+    position: fixed;
 
     top: 100%;
     left: 0;
