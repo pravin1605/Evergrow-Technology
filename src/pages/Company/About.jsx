@@ -70,19 +70,17 @@ function About() {
 
 
             <h1 className="about-hero-title">
-
               <span className="hero-line">
                 Building digital
               </span>
 
               <span className="hero-line">
-                experiences that
+                <span></span> experiences that help
               </span>
 
               <span className="hero-line hero-line-accent">
-                help businesses grow.
+                <span></span> businesses <span>grow.</span>
               </span>
-
             </h1>
 
 
@@ -98,10 +96,8 @@ function About() {
                 className="about-hero-button"
               >
                 Start a conversation
-
                 <ArrowUpRight size={16} />
               </Link>
-
 
               <div className="about-hero-scroll">
 
@@ -109,9 +105,18 @@ function About() {
                   <ArrowDown size={14} />
                 </span>
 
-                <span>
-                  Explore our story
-                </span>
+                <a
+                  href="/documents/documentation/EverGrow_Document_pdf.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="documentation-link"
+                  style={{
+                    color: "#111827",
+                    fontWeight: 600,
+                  }}
+                >
+                  View Documentation
+                </a>
 
               </div>
 
@@ -232,11 +237,10 @@ function About() {
                       return (
                         <p
                           key={index}
-                          className={`about-story-paragraph ${
-                            isHidden
-                              ? "story-hidden-paragraph"
-                              : ""
-                          }`}
+                          className={`about-story-paragraph ${isHidden
+                            ? "story-hidden-paragraph"
+                            : ""
+                            }`}
                         >
                           {paragraph}
                         </p>
@@ -267,11 +271,10 @@ function About() {
 
 
                       <span
-                        className={`story-plus ${
-                          storyExpanded
-                            ? "story-plus-open"
-                            : ""
-                        }`}
+                        className={`story-plus ${storyExpanded
+                          ? "story-plus-open"
+                          : ""
+                          }`}
                       >
 
                         <Plus size={17} />
@@ -354,7 +357,7 @@ function About() {
       </section>
 
 
-      
+
       {/* =====================================================
           TEAM
       ===================================================== */}

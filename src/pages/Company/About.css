@@ -1785,3 +1785,17 @@
   }
 
 }
+
+
+
+
+.documentation-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.documentation-link:hover {
+  color: #2458b8;
+}

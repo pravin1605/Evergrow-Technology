@@ -4,17 +4,17 @@ const process = [
 
     number: "01",
 
-    title: "Discover",
+    title: "Listen",
 
     shortTitle: "Understand",
 
     description:
-      "We start by understanding your business, audience, goals, challenges and what you want to achieve.",
+      "We begin by listening to your business, your people and the challenges you are facing. The goal is to understand what is happening before suggesting a solution.",
 
     points: [
-      "Business requirements",
-      "Target audience",
-      "Current challenges"
+      "Business discussion",
+      "Current challenges",
+      "Business goals"
     ]
   },
 
@@ -23,17 +23,17 @@ const process = [
 
     number: "02",
 
-    title: "Plan",
+    title: "Understand",
 
-    shortTitle: "Strategize",
+    shortTitle: "Analyze",
 
     description:
-      "We turn your requirements into a clear project plan with the right features, structure and technology.",
+      "We look beyond the initial requirement to understand the actual business problem, users, existing processes and what the solution needs to achieve.",
 
     points: [
-      "Project scope",
-      "Feature planning",
-      "Technology selection"
+      "Business requirements",
+      "User needs",
+      "Existing processes"
     ]
   },
 
@@ -42,17 +42,17 @@ const process = [
 
     number: "03",
 
-    title: "Design",
+    title: "Plan",
 
-    shortTitle: "Create",
+    shortTitle: "Strategize",
 
     description:
-      "We create a modern and user-friendly experience that reflects your brand and makes it easy for customers to interact with you.",
+      "We convert the understanding into a clear and practical solution plan with the right structure, features, priorities and technology approach.",
 
     points: [
-      "UI/UX design",
-      "Brand direction",
-      "User experience"
+      "Solution planning",
+      "Feature priorities",
+      "Technology approach"
     ]
   },
 
@@ -66,12 +66,12 @@ const process = [
     shortTitle: "Develop",
 
     description:
-      "Our development team converts the approved design into a responsive and functional digital solution.",
+      "We develop the solution step by step, combining design and technology to create something practical, reliable and easy for people to use.",
 
     points: [
-      "Frontend development",
-      "Backend development",
-      "Integrations"
+      "Design & development",
+      "Business functionality",
+      "System integration"
     ]
   },
 
@@ -85,12 +85,12 @@ const process = [
     shortTitle: "Validate",
 
     description:
-      "Before launch, we test the solution across devices, screen sizes and important user flows.",
+      "We test the solution from a real-world user perspective to make sure important features, workflows and experiences work as expected.",
 
     points: [
-      "Responsive testing",
       "Functionality testing",
-      "Performance checks"
+      "User-flow testing",
+      "Responsive testing"
     ]
   },
 
@@ -99,16 +99,16 @@ const process = [
 
     number: "06",
 
-    title: "Launch",
+    title: "Deliver",
 
-    shortTitle: "Go Live",
+    shortTitle: "Launch",
 
     description:
-      "Once everything is ready, we deploy your website, application or digital solution and make it available to your customers.",
+      "Once the solution is ready, we prepare it for actual use and help move it from development into a live business environment.",
 
     points: [
+      "Final review",
       "Deployment",
-      "Domain setup",
       "Production launch"
     ]
   },
@@ -118,17 +118,17 @@ const process = [
 
     number: "07",
 
-    title: "Grow",
+    title: "Improve",
 
-    shortTitle: "Improve",
+    shortTitle: "Grow",
 
     description:
-      "Our relationship does not have to end after launch. We can continue improving your digital presence as your business grows.",
+      "Our work does not have to stop after delivery. We can continue improving the digital solution as your business, users and requirements evolve.",
 
     points: [
       "Maintenance",
-      "Marketing",
-      "Future improvements"
+      "Feature improvements",
+      "Digital growth"
     ]
   }
 ];

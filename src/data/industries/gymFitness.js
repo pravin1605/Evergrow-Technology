@@ -202,7 +202,7 @@ const gymFitness = {
         "Manage membership payments, renewals, pending dues and receipts through a centralized system.",
 
       image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85",
+        "https://framerusercontent.com/images/5DVvS3eo1ShyoaqFGQ3jBL6co.webp",
 
       features: [
         "Payment tracking",

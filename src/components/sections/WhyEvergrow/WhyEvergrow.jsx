@@ -10,37 +10,41 @@ import {
 import "./WhyEvergrow.css";
 
 
+// ======================================================
+// WHY EVERGROW — CONTENT FROM COMPANY PROFILE
+// ======================================================
+
 const reasons = [
   {
     number: "01",
     icon: Lightbulb,
-    title: "Business-first thinking",
+    title: "Business Before Technology",
     description:
-      "We understand the business problem first and then choose the right technology, design and digital strategy.",
+      "We understand the business problem first before deciding what technology, design or digital approach should be used.",
   },
 
   {
     number: "02",
     icon: Target,
-    title: "Solutions with purpose",
+    title: "Solutions Around Your Needs",
     description:
-      "We don't build technology just for the sake of it. Every solution is designed around a clear business objective.",
+      "We design practical digital solutions around your actual requirements instead of forcing your business into a predefined system.",
   },
 
   {
     number: "03",
     icon: Layers3,
-    title: "One digital partner",
+    title: "One Digital Partner",
     description:
-      "From websites and software to marketing and automation, we bring multiple digital capabilities together.",
+      "From websites and software to mobile applications, digital marketing and automation, we bring multiple digital capabilities together.",
   },
 
   {
     number: "04",
     icon: Users,
-    title: "Built for long-term growth",
+    title: "Built for Long-Term Growth",
     description:
-      "Our goal is not just to launch a project. We build solutions that can evolve as your business grows.",
+      "Our goal is not just to launch a project. We build solutions that can evolve and improve as your business grows.",
   },
 ];
 
@@ -66,12 +70,17 @@ function useRevealOnScroll(threshold = 0.2) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+
         if (entry.isIntersecting) {
           setVisible(true);
           observer.disconnect();
         }
+
       },
-      { threshold, rootMargin: "0px 0px -10% 0px" }
+      {
+        threshold,
+        rootMargin: "0px 0px -10% 0px",
+      }
     );
 
     observer.observe(el);
@@ -86,9 +95,7 @@ function useRevealOnScroll(threshold = 0.2) {
 
 
 // ======================================================
-// SINGLE REASON — its own component so the reveal hook
-// can be called once per instance (hooks can't live
-// inside the .map() loop of the parent).
+// SINGLE REASON
 // ======================================================
 
 function ReasonItem({ reason, index }) {
@@ -154,19 +161,30 @@ function ReasonItem({ reason, index }) {
 }
 
 
+// ======================================================
+// WHY EVERGROW
+// ======================================================
+
 function WhyEvergrow() {
 
-  const [reasonsRef, reasonsVisible] = useRevealOnScroll(0.15);
-  const [bottomRef, bottomVisible] = useRevealOnScroll(0.3);
+  const [reasonsRef, reasonsVisible] =
+    useRevealOnScroll(0.15);
+
+  const [bottomRef, bottomVisible] =
+    useRevealOnScroll(0.3);
+
 
   return (
+
     <section className="why-evergrow-section">
+
 
       {/* =========================================
           BACKGROUND DECORATION
       ========================================= */}
 
       <div className="why-evergrow-bg-glow why-glow-one" />
+
       <div className="why-evergrow-bg-glow why-glow-two" />
 
 
@@ -197,9 +215,7 @@ function WhyEvergrow() {
 
 
           {/* =====================================
-              CENTER — glow, orbit ring and circle
-              share one wrapper so they stay perfectly
-              centered on each other at every size.
+              CENTER
           ===================================== */}
 
           <div className="why-center-wrap">
@@ -242,23 +258,23 @@ function WhyEvergrow() {
 
           {/* =====================================
               REASONS
-              A continuous connecting line grows in
-              behind the list once it scrolls into
-              view (mobile/tablet-portrait only —
-              see CSS).
           ===================================== */}
 
           <div
             ref={reasonsRef}
-            className={`why-reasons${reasonsVisible ? " is-revealed" : ""}`}
+            className={`why-reasons${
+              reasonsVisible ? " is-revealed" : ""
+            }`}
           >
 
             {reasons.map((reason, index) => (
+
               <ReasonItem
                 key={reason.number}
                 reason={reason}
                 index={index}
               />
+
             ))}
 
           </div>
@@ -274,17 +290,22 @@ function WhyEvergrow() {
 
         <div
           ref={bottomRef}
-          className={`why-evergrow-bottom${bottomVisible ? " is-revealed" : ""}`}
+          className={`why-evergrow-bottom${
+            bottomVisible ? " is-revealed" : ""
+          }`}
         >
 
           <div className="why-bottom-line" />
 
           <p>
+
             <strong>
               Technology
             </strong>{" "}
+
             should simplify your business,
             not complicate it.
+
           </p>
 
           <div className="why-bottom-mark">
@@ -297,7 +318,9 @@ function WhyEvergrow() {
       </div>
 
     </section>
+
   );
+
 }
 
 

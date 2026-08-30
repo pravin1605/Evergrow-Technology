@@ -37,7 +37,7 @@ const restaurantDemo = {
   liveUrl:
     "https://evergrowqrfronted.vercel.app/",
 
-  documentation: "",
+  documentation:  "/documents/documentation/evergrow_smart_restaurant.pdf",
 
   /*
   |--------------------------------------------------------------------------
