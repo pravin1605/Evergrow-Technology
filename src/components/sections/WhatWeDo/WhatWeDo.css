@@ -351,6 +351,9 @@
 
 /* =========================================================
    SERVICE CARD
+   Rendered as a <Link> (anchor) now, so the entire card is
+   clickable — reset link defaults and add a visible focus
+   state for keyboard users.
 ========================================================= */
 
 .what-we-do-card {
@@ -404,6 +407,15 @@
       0.045
     );
 
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+
+  cursor:
+    pointer;
+
   opacity:
     0;
 
@@ -426,12 +438,13 @@
 
   transition:
     transform 0.45s ease,
-    border-color 0.45s ease,
+    border-color 0.3s ease,
     box-shadow 0.45s ease;
 }
 
 
-.what-we-do-card:hover {
+.what-we-do-card:hover,
+.what-we-do-card:focus-visible {
   transform:
     translateY(-8px);
 
@@ -443,6 +456,9 @@
       0.18
     );
 
+  border-color:
+    var(--card-accent, #2563eb);
+
   box-shadow:
     0 25px 60px
     rgba(
@@ -451,6 +467,16 @@
       42,
       0.10
     );
+}
+
+
+.what-we-do-card:focus-visible {
+  outline:
+    2px solid
+    var(--card-accent, #2563eb);
+
+  outline-offset:
+    4px;
 }
 
 
@@ -498,6 +524,9 @@
   color:
     #2563eb;
 
+  color:
+    var(--card-accent, #2563eb);
+
   background:
     rgba(
       37,
@@ -514,6 +543,10 @@
 
   letter-spacing:
     0.08em;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 
@@ -586,6 +619,8 @@
 
 
 .what-we-do-card:hover
+.what-we-do-image,
+.what-we-do-card:focus-visible
 .what-we-do-image {
   transform:
     scale(1.08);
@@ -629,6 +664,8 @@
 
 
 .what-we-do-card:hover
+.what-we-do-visual-overlay,
+.what-we-do-card:focus-visible
 .what-we-do-visual-overlay {
   opacity:
     0.75;
@@ -677,6 +714,8 @@
 
 
 .what-we-do-card:hover
+.what-we-do-image-shine,
+.what-we-do-card:focus-visible
 .what-we-do-image-shine {
   animation:
     imageShine
@@ -754,6 +793,8 @@
 
 
 .what-we-do-card:hover
+.what-we-do-icon,
+.what-we-do-card:focus-visible
 .what-we-do-icon {
   transform:
     translateY(-4px)
@@ -761,6 +802,132 @@
 
   background:
     #2563eb;
+
+  background:
+    var(--card-accent, #2563eb);
+}
+
+
+/* =========================================================
+   HOVER REVEAL — quick-glance tags
+   A drawer that slides up from the bottom of the image on
+   hover/focus, giving visitors an instant sense of what the
+   service includes without having to click through.
+========================================================= */
+
+.what-we-do-reveal {
+  position:
+    absolute;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  bottom:
+    0;
+
+  z-index:
+    2;
+
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  align-items:
+    flex-end;
+
+  gap:
+    6px;
+
+  padding:
+    30px 15px 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 15, 28, 0) 0%,
+      rgba(8, 15, 28, 0.78) 55%,
+      rgba(8, 15, 28, 0.92) 100%
+    );
+
+  transform:
+    translateY(70%);
+
+  opacity:
+    0;
+
+  transition:
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+    opacity 0.35s ease;
+}
+
+
+.what-we-do-card:hover
+.what-we-do-reveal,
+.what-we-do-card:focus-visible
+.what-we-do-reveal {
+  transform:
+    translateY(0);
+
+  opacity:
+    1;
+}
+
+
+.what-we-do-tag {
+  padding:
+    5px 11px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.28
+    );
+
+  border-radius:
+    999px;
+
+  color:
+    #ffffff;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+
+  backdrop-filter:
+    blur(6px);
+
+  -webkit-backdrop-filter:
+    blur(6px);
+
+  font-size:
+    10.5px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.01em;
+
+  white-space:
+    nowrap;
 }
 
 
@@ -1091,6 +1258,18 @@
 
   letter-spacing:
     0.08em;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.what-we-do-card:hover
+.what-we-do-card-label,
+.what-we-do-card:focus-visible
+.what-we-do-card-label {
+  color:
+    var(--card-accent, #2563eb);
 }
 
 
@@ -1128,9 +1307,6 @@
   background:
     #ffffff;
 
-  text-decoration:
-    none;
-
   transition:
     transform 0.35s ease,
     color 0.35s ease,
@@ -1139,21 +1315,25 @@
 }
 
 
-.what-we-do-card-link:hover {
+.what-we-do-card:hover
+.what-we-do-card-link,
+.what-we-do-card:focus-visible
+.what-we-do-card-link {
   transform:
     translate(
-      2px,
-      -2px
-    );
+      3px,
+      -3px
+    )
+    rotate(8deg);
 
   color:
     #ffffff;
 
   background:
-    #2563eb;
+    var(--card-accent, #2563eb);
 
   border-color:
-    #2563eb;
+    var(--card-accent, #2563eb);
 }
 
 
@@ -1598,6 +1778,29 @@
 
     border-radius:
       16px;
+  }
+
+
+  /*
+    On touch devices there's no hover, so the reveal drawer
+    stays gently visible instead of hidden until a hover that
+    will never come.
+  */
+  .what-we-do-reveal {
+    transform:
+      translateY(45%);
+
+    opacity:
+      1;
+  }
+
+
+  .what-we-do-card:hover
+  .what-we-do-reveal,
+  .what-we-do-card:focus-visible
+  .what-we-do-reveal {
+    transform:
+      translateY(0);
   }
 
 

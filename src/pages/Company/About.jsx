@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 import {
@@ -14,16 +15,12 @@ import Team from "../../components/sections/Team/Team";
 import WhyEvergrow from "../../components/sections/WhyEvergrow/WhyEvergrow";
 import Testimonials from "../../components/sections/Testimonials/Testimonials";
 import Process from "../../components/sections/Process/Process";
-
-import teamImage from "../../../public/images/team/team02.png";
-
 import FinalCTA from "../../components/sections/FinalCTA/FinalCTA";
 
 import "./About.css";
 
 
 function About() {
-
   const [storyExpanded, setStoryExpanded] = useState(false);
 
   return (
@@ -36,7 +33,7 @@ function About() {
       <section
         className="about-section about-section--hero about-hero"
         style={{
-          "--about-team-image": `url(${teamImage})`,
+          "--about-team-image": "url('/images/team/team02.png')",
         }}
       >
 
@@ -70,6 +67,7 @@ function About() {
 
 
             <h1 className="about-hero-title">
+
               <span className="hero-line">
                 Building digital
               </span>
@@ -81,6 +79,7 @@ function About() {
               <span className="hero-line hero-line-accent">
                 <span></span> businesses <span>grow.</span>
               </span>
+
             </h1>
 
 
@@ -99,11 +98,13 @@ function About() {
                 <ArrowUpRight size={16} />
               </Link>
 
+
               <div className="about-hero-scroll">
 
                 <span className="scroll-circle">
                   <ArrowDown size={14} />
                 </span>
+
 
                 <a
                   href="/documents/documentation/EverGrow_Document_pdf.pdf"
@@ -237,10 +238,11 @@ function About() {
                       return (
                         <p
                           key={index}
-                          className={`about-story-paragraph ${isHidden
-                            ? "story-hidden-paragraph"
-                            : ""
-                            }`}
+                          className={`about-story-paragraph ${
+                            isHidden
+                              ? "story-hidden-paragraph"
+                              : ""
+                          }`}
                         >
                           {paragraph}
                         </p>
@@ -271,10 +273,11 @@ function About() {
 
 
                       <span
-                        className={`story-plus ${storyExpanded
-                          ? "story-plus-open"
-                          : ""
-                          }`}
+                        className={`story-plus ${
+                          storyExpanded
+                            ? "story-plus-open"
+                            : ""
+                        }`}
                       >
 
                         <Plus size={17} />
@@ -308,8 +311,6 @@ function About() {
         </section>
 
       )}
-
-
 
 
       {/* =====================================================
@@ -355,7 +356,6 @@ function About() {
         <Testimonials />
 
       </section>
-
 
 
       {/* =====================================================

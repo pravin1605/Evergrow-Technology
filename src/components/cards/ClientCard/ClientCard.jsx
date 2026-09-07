@@ -1,82 +1,69 @@
+
 import "./ClientCard.css";
 
 const ClientCard = ({ client }) => {
   const {
     name,
-    logo,
+    role,
+    company,
     industry,
     location,
-    description,
-    type,
-    website
+    image,
+    testimonial,
   } = client;
 
   return (
     <article className="client-card">
 
-      {/* Logo */}
-      <div className="client-logo-wrapper">
+      <div className="client-image-wrapper">
 
-        {logo ? (
+        {image ? (
           <img
-            src={logo}
-            alt={`${name} logo`}
-            className="client-logo"
+            src={image}
+            alt={name}
+            className="client-image"
+            loading="lazy"
           />
         ) : (
-          <div className="client-logo-placeholder">
-            {name.charAt(0)}
+          <div
+            className="client-avatar"
+            aria-hidden="true"
+          >
+            {name?.charAt(0)}
           </div>
         )}
 
-      </div>
-
-      {/* Content */}
-      <div className="client-content">
-
-        <div className="client-meta">
-
-          <span className="client-industry">
-            {industry}
-          </span>
-
-          {type === "sample" && (
-            <span className="client-type">
-              Sample
-            </span>
-          )}
-
-          {type === "client" && (
-            <span className="client-type client-type-real">
-              Client
-            </span>
-          )}
-
+        <div className="client-identity">
+          <h3>{name}</h3>
+          <p className="client-role">{role}</p>
         </div>
 
-        <h3>{name}</h3>
+      </div>
 
-        <p className="client-location">
+
+      <div className="client-meta">
+
+        <span className="client-industry">
+          {industry}
+        </span>
+
+        <span className="client-location">
           {location}
-        </p>
-
-        <p className="client-description">
-          {description}
-        </p>
-
-        {website && website !== "#" && (
-          <a
-            href={website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="client-link"
-          >
-            Visit Website
-            <span>↗</span>
-          </a>
-        )}
+        </span>
 
       </div>
+
+
+      <h4 className="client-company">
+        {company}
+      </h4>
+
+
+      {testimonial && (
+        <div className="client-testimonial-status">
+          Client Experience Available
+        </div>
+      )}
 
     </article>
   );

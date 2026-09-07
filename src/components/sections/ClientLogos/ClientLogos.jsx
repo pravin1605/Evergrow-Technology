@@ -7,8 +7,9 @@ import ClientCard
 
 const ClientLogos = () => {
 
-  const featuredClients =
-    clients.filter((client) => client.featured);
+  const featuredClients = clients.filter(
+    (client) => client.featured
+  );
 
   return (
     <section
@@ -18,34 +19,35 @@ const ClientLogos = () => {
 
       <div className="clients-container">
 
-        {/* Header */}
         <div className="clients-header">
 
           <span className="clients-eyebrow">
-            CLIENTS & PARTNERS
+            OUR CLIENTS
           </span>
 
           <h2>
-            Businesses that
-            <span> trust digital.</span>
+            Businesses we
+            <span> work with.</span>
           </h2>
 
           <p>
-            We work with businesses across different
-            industries to create websites, software,
-            marketing systems and digital experiences.
+            We help businesses across different
+            industries build better digital experiences
+            and practical technology solutions.
           </p>
 
         </div>
 
-        {/* Clients */}
+
         <div className="clients-grid">
 
           {featuredClients.map((client) => (
+
             <ClientCard
               key={client.id}
               client={client}
             />
+
           ))}
 
         </div>

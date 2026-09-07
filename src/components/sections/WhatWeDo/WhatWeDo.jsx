@@ -67,6 +67,40 @@ const serviceVisuals = {
 
 
 /* =========================================================
+   ACCENT COLOR PER SERVICE TYPE
+   Gives each card its own identity so a visitor can tell
+   services apart at a glance instead of six identical blue cards.
+========================================================= */
+
+const accentColors = {
+  web: "#2563eb",
+  software: "#7c3aed",
+  marketing: "#f97316",
+  mobile: "#0ea5e9",
+  commerce: "#16a34a",
+  design: "#db2777",
+  default: "#2563eb",
+};
+
+
+/* =========================================================
+   QUICK-GLANCE TAGS SHOWN ON HOVER
+   Falls back to a sensible default per service type if the
+   service object itself doesn't define tags/features.
+========================================================= */
+
+const defaultTags = {
+  web: ["Responsive design", "Fast load times", "SEO friendly"],
+  software: ["Custom workflows", "Scalable systems", "Secure by design"],
+  marketing: ["Targeted campaigns", "Analytics driven", "Brand growth"],
+  mobile: ["iOS & Android", "Smooth UX", "Push notifications"],
+  commerce: ["Secure checkout", "Inventory sync", "Payment gateways"],
+  design: ["User research", "Wireframes", "Pixel-perfect UI"],
+  default: ["Tailored approach", "Modern stack", "Ongoing support"],
+};
+
+
+/* =========================================================
    FALLBACK SERVICE IMAGES
 ========================================================= */
 
@@ -238,16 +272,36 @@ function WhatWeDo() {
               serviceImages[service.slug];
 
 
+            const accent =
+              accentColors[visual.type] || accentColors.default;
+
+
+            const tags = (
+              service.tags ||
+              service.features ||
+              defaultTags[visual.type] ||
+              defaultTags.default
+            ).slice(0, 3);
+
+
             return (
 
-              <article
+              /*
+                The whole card is now a single link to the
+                service page — visitors don't have to hunt
+                for the small arrow to explore a service.
+              */
+              <Link
+                to={`/services/${service.slug}`}
                 className={`
                   what-we-do-card
                   what-we-do-card-${visual.type}
                 `}
                 key={service.slug}
+                aria-label={`Explore ${service.title}`}
                 style={{
                   "--card-delay": `${index * 80}ms`,
+                  "--card-accent": accent,
                 }}
               >
 
@@ -319,7 +373,7 @@ function WhatWeDo() {
                   <div className="what-we-do-icon">
 
                     <Icon
-                      size={21}
+                      size={19}
                       strokeWidth={1.8}
                     />
 
@@ -327,6 +381,31 @@ function WhatWeDo() {
 
 
                   <div className="what-we-do-image-shine" />
+
+
+                  {/* =======================================
+                      HOVER REVEAL — quick-glance tags that
+                      slide up over the image so a visitor
+                      immediately sees what the service covers
+                  ======================================= */}
+
+                  <div
+                    className="what-we-do-reveal"
+                    aria-hidden="true"
+                  >
+
+                    {tags.map((tag) => (
+
+                      <span
+                        className="what-we-do-tag"
+                        key={tag}
+                      >
+                        {tag}
+                      </span>
+
+                    ))}
+
+                  </div>
 
                 </div>
 
@@ -363,10 +442,9 @@ function WhatWeDo() {
                   </span>
 
 
-                  <Link
-                    to={`/services/${service.slug}`}
+                  <span
                     className="what-we-do-card-link"
-                    aria-label={`Explore ${service.title}`}
+                    aria-hidden="true"
                   >
 
                     <ArrowUpRight
@@ -374,11 +452,11 @@ function WhatWeDo() {
                       strokeWidth={2}
                     />
 
-                  </Link>
+                  </span>
 
                 </div>
 
-              </article>
+              </Link>
 
             );
 
