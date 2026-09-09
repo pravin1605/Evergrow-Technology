@@ -15,6 +15,10 @@ import "./Industries.css";
 
 /* =========================================================
    INDUSTRY DATA
+   Each industry now carries its own accent color (matches
+   the What We Do cards) and a short set of quick-glance tags
+   that surface on hover, so a visitor immediately sees what's
+   included instead of just a photo.
 ========================================================= */
 
 const industries = [
@@ -25,6 +29,8 @@ const industries = [
     path: "/industries/gym-fitness",
     icon: Dumbbell,
     label: "Fitness Solutions",
+    accent: "#f97316",
+    tags: ["Class scheduling", "Member management", "Fitness marketing"],
     image:
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85",
   },
@@ -36,6 +42,8 @@ const industries = [
     path: "/industries/healthcare",
     icon: HeartPulse,
     label: "Healthcare Solutions",
+    accent: "#14b8a6",
+    tags: ["Appointment booking", "Patient records", "Clean, calm design"],
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
   },
@@ -47,6 +55,8 @@ const industries = [
     path: "/industries/education",
     icon: GraduationCap,
     label: "Education Solutions",
+    accent: "#7c3aed",
+    tags: ["Admission systems", "Parent portals", "Digital campus"],
     image:
       "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85",
   },
@@ -58,6 +68,8 @@ const industries = [
     path: "/industries/housing-society",
     icon: Building2,
     label: "Community Solutions",
+    accent: "#0ea5e9",
+    tags: ["Maintenance tracking", "Visitor management", "Society billing"],
     image:
       "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=85",
   },
@@ -69,6 +81,8 @@ const industries = [
     path: "/industries/real-estate",
     icon: House,
     label: "Property Solutions",
+    accent: "#16a34a",
+    tags: ["Property listings", "Lead capture", "Virtual tours"],
     image:
       "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=85",
   },
@@ -80,6 +94,8 @@ const industries = [
     path: "/industries/restaurants",
     icon: Utensils,
     label: "Restaurant Solutions",
+    accent: "#dc2626",
+    tags: ["Online ordering", "Table management", "Menu design"],
     image:
       "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
   },
@@ -192,9 +208,10 @@ function Industries() {
                 key={industry.path}
                 to={industry.path}
                 className="industry-card"
+                aria-label={`Explore ${industry.name} solutions`}
                 style={{
                   "--card-index": index,
-                  "--industry-image": `url("${industry.image}")`,
+                  "--card-accent": industry.accent,
                 }}
               >
 
@@ -247,9 +264,34 @@ function Industries() {
                   <div className="industry-card-icon">
 
                     <Icon
-                      size={21}
+                      size={19}
                       strokeWidth={1.8}
                     />
+
+                  </div>
+
+
+                  {/* =======================================
+                      HOVER REVEAL — quick-glance tags that
+                      slide up over the image so a visitor
+                      immediately sees what's included
+                  ======================================= */}
+
+                  <div
+                    className="industry-card-reveal"
+                    aria-hidden="true"
+                  >
+
+                    {industry.tags.map((tag) => (
+
+                      <span
+                        className="industry-card-tag"
+                        key={tag}
+                      >
+                        {tag}
+                      </span>
+
+                    ))}
 
                   </div>
 
@@ -290,7 +332,10 @@ function Industries() {
                   </span>
 
 
-                  <span className="industry-card-link">
+                  <span
+                    className="industry-card-link"
+                    aria-hidden="true"
+                  >
 
                     <ArrowUpRight
                       size={18}

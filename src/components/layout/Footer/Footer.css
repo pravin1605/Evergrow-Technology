@@ -103,6 +103,38 @@
 }
 
 
+/* NEW — small drifting accent orb, adds a bit more life to the
+   background without touching the palette */
+
+.footer-bg-orb-three {
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  top: 40%;
+  left: 45%;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(60px);
+
+  opacity: 0.35;
+
+  z-index: 1;
+
+  background: rgba(37, 99, 235, 0.10);
+
+  animation:
+    footerOrbThree
+    13s
+    ease-in-out
+    infinite alternate;
+}
+
+
 /* =========================================================
    BACKGROUND GRID
 ========================================================= */
@@ -140,6 +172,9 @@
       black 82%,
       transparent
     );
+
+  /* NEW — very slow pan so the grid feels alive instead of static */
+  animation: footerGridPan 22s linear infinite;
 }
 
 
@@ -180,6 +215,8 @@
 ========================================================= */
 
 .footer-logo {
+  position: relative;
+
   display: inline-flex;
 
   align-items: center;
@@ -188,9 +225,42 @@
 
   text-decoration: none;
 
+  overflow: hidden;
+
   transition:
     transform 0.35s ease,
     filter 0.35s ease;
+}
+
+
+/* NEW — soft shine sweeping across the logo on hover */
+.footer-logo::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -60%;
+
+  width: 40%;
+  height: 100%;
+
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    transparent 100%
+  );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+
+  transition: left 0.7s ease;
+}
+
+
+.footer-logo:hover::after {
+  left: 130%;
 }
 
 
@@ -217,6 +287,9 @@
   transition:
     transform 0.4s ease,
     filter 0.4s ease;
+
+  /* NEW — gentle idle float so the brand mark never feels static */
+  animation: footerLogoFloat 5s ease-in-out infinite;
 }
 
 
@@ -300,18 +373,30 @@
 
   text-decoration: none;
 
+  overflow: hidden;
+
   transition:
     transform 0.3s ease,
     background 0.3s ease,
     border-color 0.3s ease,
     color 0.3s ease,
     box-shadow 0.3s ease;
+
+  /* NEW — pop-in entrance, staggered per icon below */
+  opacity: 0;
+  animation: footerSocialPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
+
+.footer-social:nth-child(1) { animation-delay: 0.55s; }
+.footer-social:nth-child(2) { animation-delay: 0.62s; }
+.footer-social:nth-child(3) { animation-delay: 0.69s; }
+.footer-social:nth-child(4) { animation-delay: 0.76s; }
 
 
 .footer-social:hover {
   transform:
-    translateY(-4px);
+    translateY(-4px)
+    rotate(-6deg);
 
   color:
     #ffffff;
@@ -328,6 +413,15 @@
 }
 
 
+.footer-social svg {
+  transition: transform 0.35s ease;
+}
+
+.footer-social:hover svg {
+  transform: scale(1.12);
+}
+
+
 /* =========================================================
    FOOTER COLUMNS
 ========================================================= */
@@ -338,6 +432,8 @@
 
 
 .footer-column h3 {
+  position: relative;
+
   margin:
     4px 0 17px;
 
@@ -355,6 +451,27 @@
 
   letter-spacing:
     0.15em;
+}
+
+/* NEW — tiny accent underline that grows in under each heading */
+.footer-column h3::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 16px;
+  height: 2px;
+
+  border-radius: 2px;
+
+  background: #2563eb;
+
+  transform-origin: left center;
+  transform: scaleX(0);
+
+  animation: footerHeadingGrow 0.6s ease 0.5s forwards;
 }
 
 
@@ -395,8 +512,20 @@
 
   transition:
     color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    padding-left 0.25s ease;
+
+  /* NEW — links quietly slide/fade into place, staggered */
+  opacity: 0;
+  animation: footerLinkIn 0.5s ease forwards;
 }
+
+.footer-column nav a:nth-child(1) { animation-delay: 0.30s; }
+.footer-column nav a:nth-child(2) { animation-delay: 0.36s; }
+.footer-column nav a:nth-child(3) { animation-delay: 0.42s; }
+.footer-column nav a:nth-child(4) { animation-delay: 0.48s; }
+.footer-column nav a:nth-child(5) { animation-delay: 0.54s; }
+.footer-column nav a:nth-child(6) { animation-delay: 0.60s; }
 
 
 /* ANIMATED UNDERLINE */
@@ -434,6 +563,8 @@
 
   transform:
     translateX(3px);
+
+  padding-left: 2px;
 }
 
 
@@ -501,6 +632,12 @@
 
   color:
     #536273;
+
+  transition: transform 0.3s ease;
+}
+
+.footer-contact-item:hover {
+  transform: translateY(-2px);
 }
 
 
@@ -509,6 +646,9 @@
 ========================================================= */
 
 .footer-contact-icon {
+  position:
+    relative;
+
   width:
     36px;
 
@@ -547,11 +687,32 @@
     box-shadow 0.3s ease;
 }
 
+/* NEW — soft breathing ring behind each contact icon */
+.footer-contact-icon::before {
+  content: "";
+
+  position: absolute;
+  inset: -4px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(37, 99, 235, 0.18);
+
+  opacity: 0;
+
+  animation: footerIconPulse 3.2s ease-in-out infinite;
+}
+
+.footer-contact-item:nth-child(1) .footer-contact-icon::before { animation-delay: 0s; }
+.footer-contact-item:nth-child(2) .footer-contact-icon::before { animation-delay: 1.05s; }
+.footer-contact-item:nth-child(3) .footer-contact-icon::before { animation-delay: 2.1s; }
+
 
 .footer-contact-item:hover
 .footer-contact-icon {
   transform:
-    translateY(-3px);
+    translateY(-3px)
+    scale(1.06);
 
   border-color:
     rgba(37, 99, 235, 0.30);
@@ -647,6 +808,9 @@
 ========================================================= */
 
 .footer-talk-button {
+  position:
+    relative;
+
   display:
     inline-flex;
 
@@ -689,6 +853,8 @@
   white-space:
     nowrap;
 
+  overflow: hidden;
+
   box-shadow:
     0 10px 25px
     rgba(37, 99, 235, 0.20);
@@ -697,6 +863,37 @@
     transform 0.3s ease,
     background 0.3s ease,
     box-shadow 0.3s ease;
+
+  /* NEW — a slow, subtle pulse on the shadow so the CTA keeps drawing the eye */
+  animation: footerTalkPulse 2.6s ease-in-out infinite;
+}
+
+
+/* NEW — light sweep across the button on hover */
+.footer-talk-button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -75%;
+
+  width: 45%;
+  height: 100%;
+
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+.footer-talk-button:hover::before {
+  left: 130%;
 }
 
 
@@ -710,6 +907,8 @@
   box-shadow:
     0 15px 30px
     rgba(37, 99, 235, 0.28);
+
+  animation-play-state: paused;
 }
 
 
@@ -778,6 +977,8 @@
 
 
 .footer-bottom-links a {
+  position: relative;
+
   color:
     #7a8995;
 
@@ -944,6 +1145,68 @@
 
 }
 
+/* NEW keyframes for the extra animations added above */
+
+@keyframes footerOrbThree {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(20px, 20px, 0) scale(1.2);
+  }
+}
+
+@keyframes footerGridPan {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 50px 50px, 50px 50px; }
+}
+
+@keyframes footerLogoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+@keyframes footerSocialPop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes footerHeadingGrow {
+  to { transform: scaleX(1); }
+}
+
+@keyframes footerLinkIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes footerIconPulse {
+  0%   { opacity: 0.55; transform: scale(1); }
+  70%  { opacity: 0;    transform: scale(1.25); }
+  100% { opacity: 0;    transform: scale(1.25); }
+}
+
+@keyframes footerTalkPulse {
+  0%, 100% {
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.20);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+  }
+}
+
 
 /* =========================================================
    TABLET
@@ -994,31 +1257,34 @@
 
 /* =========================================================
    MOBILE
+   — redesigned to feel deliberate rather than a squeezed-down
+     desktop layout: a centered brand block, a tidy two-column
+     link grid, and the contact info as clear tappable cards.
 ========================================================= */
 
 @media (max-width: 650px) {
 
   .site-footer {
     padding:
-      42px 0 20px;
+      40px 0 20px;
   }
 
 
-  /* MAIN GRID */
+  /* =====================================================
+     BRAND — centered, feels like a proper header for the
+     footer instead of just the first grid item
+  ===================================================== */
 
   .footer-main {
     grid-template-columns:
       1fr 1fr;
 
     gap:
-      32px 25px;
+      30px 20px;
 
     padding-bottom:
-      30px;
+      26px;
   }
-
-
-  /* BRAND */
 
   .footer-brand {
     grid-column:
@@ -1026,6 +1292,20 @@
 
     max-width:
       100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px dashed rgba(37, 99, 235, 0.18);
+  }
+
+  .footer-logo {
+    justify-content: center;
   }
 
 
@@ -1035,10 +1315,10 @@
 
   .footer-logo-image {
     width:
-      185px;
+      170px;
 
     height:
-      90px;
+      82px;
 
     object-fit:
       contain;
@@ -1047,63 +1327,97 @@
 
   .footer-description {
     max-width:
-      340px;
+      300px;
 
-    margin-top:
-      8px;
+    margin:
+      10px auto 0;
 
     font-size:
-      12px;
+      12.5px;
 
     line-height:
       1.65;
+
+    text-align: center;
   }
 
 
-  /* SOCIALS */
+  /* SOCIALS — centered pill row, slightly bigger for touch */
 
   .footer-socials {
+    justify-content: center;
+
     margin-top:
-      15px;
+      16px;
+
+    gap: 10px;
   }
 
 
   .footer-social {
     width:
-      33px;
+      38px;
 
     height:
-      33px;
+      38px;
+
+    border-radius: 11px;
   }
 
 
   /* =====================================================
-     COLUMNS
+     COLUMNS — kept as a clean 2x2 grid, headings get a
+     small colored dot so each block reads as its own card
   ===================================================== */
 
   .footer-column h3 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
     margin-bottom:
-      14px;
+      13px;
 
     font-size:
-      9px;
+      9.5px;
+  }
+
+  .footer-column h3::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+  }
+
+  /* the accent underline reads better hidden on the compact
+     mobile heading style above */
+  .footer-column h3::after {
+    display: none;
   }
 
 
   .footer-column nav {
     gap:
-      8px;
+      9px;
   }
 
 
   .footer-column nav a {
     font-size:
-      11px;
+      11.5px;
   }
 
 
   /* =====================================================
-     CONTACT
+     CONTACT — turned into stacked "cards" with a soft
+     background so the strip doesn't look like a cramped
+     leftover of the desktop row
   ===================================================== */
 
   .footer-contact {
@@ -1111,34 +1425,61 @@
       1fr;
 
     gap:
-      14px;
+      12px;
 
     padding:
-      18px 0;
+      20px 16px;
+
+    margin: 0 -4px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    box-shadow: 0 1px 0 rgba(25, 45, 65, 0.06) inset;
   }
 
 
   .footer-contact-item {
     width:
       100%;
+
+    padding: 10px 4px;
+
+    border-radius: 12px;
+
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .footer-contact-item:active {
+    background: rgba(37, 99, 235, 0.06);
+    transform: scale(0.98);
   }
 
 
   .footer-contact-content a,
   .footer-contact-content p {
     font-size:
-      10px;
+      11.5px;
+
+    white-space: normal;
   }
 
 
-  /* TALK BUTTON */
+  /* TALK BUTTON — full-width, a bit taller for an easy tap
+     target, and promoted above the fold of the contact card */
 
   .footer-talk-button {
     width:
       100%;
 
     min-height:
-      40px;
+      46px;
+
+    margin-top: 4px;
+
+    font-size: 13px;
   }
 
 
@@ -1151,41 +1492,63 @@
       column;
 
     align-items:
-      flex-start;
+      center;
 
     gap:
-      10px;
+      12px;
 
     padding-top:
-      16px;
+      18px;
+
+    text-align: center;
   }
 
+  .footer-bottom p {
+    order: 2;
+  }
 
   .footer-bottom-links {
+    order: 1;
+
+    flex-wrap: wrap;
+    justify-content: center;
+
     gap:
-      14px;
+      8px 16px;
   }
 
 
   /* =====================================================
-     MOBILE ORBS
+     MOBILE ORBS — smaller and dimmer so they add atmosphere
+     without ever competing with the content on a small screen
   ===================================================== */
 
   .footer-bg-orb-one {
     width:
-      200px;
+      180px;
 
     height:
-      200px;
+      180px;
+
+    opacity: 0.4;
   }
 
 
   .footer-bg-orb-two {
     width:
-      180px;
+      160px;
 
     height:
-      180px;
+      160px;
+
+    opacity: 0.4;
+  }
+
+  .footer-bg-orb-three {
+    width: 110px;
+    height: 110px;
+
+    opacity: 0.25;
   }
 
 }
@@ -1199,21 +1562,21 @@
 
   .site-footer {
     padding:
-      38px 0 18px;
+      36px 0 18px;
   }
 
 
-  /* ONE COLUMN */
-
+  /* single column, each block still reads as its own card
+     thanks to the dot heading + spacing above */
   .footer-main {
     grid-template-columns:
       1fr;
 
     gap:
-      27px;
+      24px;
 
     padding-bottom:
-      27px;
+      24px;
   }
 
 
@@ -1223,41 +1586,45 @@
 
   .footer-logo-image {
     width:
-      170px;
+      155px;
 
     height:
-      82px;
-  }
-
-
-  .footer-brand {
-    max-width:
-      100%;
+      75px;
   }
 
 
   .footer-column {
     max-width:
-      240px;
+      100%;
+
+    text-align: center;
   }
 
+  .footer-column h3 {
+    justify-content: center;
+  }
 
   .footer-column nav {
-    gap:
-      7px;
+    align-items: center;
+  }
+
+  .footer-column nav a {
+    width: auto;
   }
 
 
   .footer-contact {
     gap:
-      12px;
+      10px;
+
+    padding: 18px 14px;
   }
 
 
   .footer-bottom p,
   .footer-bottom-links a {
     font-size:
-      8px;
+      8.5px;
   }
 
 }
@@ -1271,10 +1638,10 @@
 
   .footer-logo-image {
     width:
-      155px;
+      145px;
 
     height:
-      76px;
+      70px;
   }
 
 
@@ -1286,14 +1653,14 @@
 
   .footer-column nav a {
     font-size:
-      10px;
+      11px;
   }
 
 
   .footer-contact-content a,
   .footer-contact-content p {
     font-size:
-      9px;
+      10.5px;
   }
 
 }
@@ -1316,6 +1683,11 @@
 
     transition-duration:
       0.01ms !important;
+  }
+
+  .footer-column nav a,
+  .footer-social {
+    opacity: 1 !important;
   }
 
 }

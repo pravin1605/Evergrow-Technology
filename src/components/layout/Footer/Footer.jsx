@@ -1,4 +1,3 @@
-
 import {
   ArrowUpRight,
   Mail,
@@ -56,6 +55,12 @@ function Footer() {
 
       <div
         className="footer-bg-orb footer-bg-orb-two"
+        aria-hidden="true"
+      />
+
+      {/* NEW — small drifting accent orb (see .footer-bg-orb-three in CSS) */}
+      <div
+        className="footer-bg-orb-three"
         aria-hidden="true"
       />
 
@@ -340,4 +345,3 @@ function Footer() {
 
 
 export default Footer;
-

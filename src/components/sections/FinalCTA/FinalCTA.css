@@ -19,6 +19,32 @@
   border-radius: 28px;
   background: linear-gradient(135deg, #122c20 0%, #173d2a 55%, #20563b 100%);
   box-shadow: 0 25px 60px rgba(18, 44, 32, 0.16);
+
+  /* the whole card's border/shadow breathes very slowly, so the
+     box feels alive even before you touch anything */
+  animation: finalCtaBoxGlow 5s ease-in-out infinite;
+}
+
+/* NEW — a soft diagonal light beam sweeps across the entire card
+   every few seconds, on every screen size — the biggest single
+   thing that makes the box feel "alive" at rest */
+.final-cta-box::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 45%;
+  height: 220%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 100%
+  );
+  transform: rotate(8deg);
+  animation: finalCtaBeamSweep 6s ease-in-out infinite;
 }
 
 
@@ -32,6 +58,10 @@
     linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
   background-size: 35px 35px;
+
+  /* very slow diagonal drift, barely perceptible but keeps the
+     background from feeling static */
+  animation: finalCtaGridPan 24s linear infinite;
 }
 
 
@@ -50,16 +80,25 @@
   top: -120px;
   right: 80px;
   background: rgba(49, 128, 90, 0.25);
+
+  animation: finalCtaGlowOne 8s ease-in-out infinite alternate;
 }
 
 .final-cta-glow-two {
   bottom: -140px;
   left: 80px;
   background: rgba(255, 113, 48, 0.18);
+
+  animation: finalCtaGlowTwo 10s ease-in-out infinite alternate;
 }
 
 
-/* ---------------- ORBITING RING ---------------- */
+/* ---------------- ORBITING RING ----------------
+   IMPORTANT: this now stays visible at every breakpoint. It is
+   resized/repositioned in the responsive section below instead
+   of being display:none on mobile, so small screens still get
+   the circular motion instead of losing it entirely.
+------------------------------------------------- */
 
 .final-cta-orb {
   position: absolute;
@@ -81,6 +120,16 @@
   animation: finalCtaOrbit 18s linear infinite;
 }
 
+/* a second, slower, inverse ring adds depth to the orbit */
+.final-cta-orb::after {
+  content: "";
+  position: absolute;
+  inset: 26px;
+  border: 1px dashed rgba(49, 128, 90, 0.30);
+  border-radius: 50%;
+  animation: finalCtaOrbitReverse 26s linear infinite;
+}
+
 .final-cta-orb span {
   position: absolute;
   top: -4px;
@@ -94,9 +143,31 @@
   animation: finalCtaOrbit 18s linear infinite;
 }
 
+/* NEW — a second, smaller particle riding the inner ring at a
+   different speed, so the orbit reads as a small solar system
+   rather than a single dot on a line */
+.final-cta-orb span::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6fd39b;
+  box-shadow: 0 0 10px 3px rgba(111, 211, 155, 0.5);
+  animation: finalCtaOrbitReverse 9s linear infinite;
+  transform-origin: 2.5px 74px;
+}
+
 @keyframes finalCtaOrbit {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@keyframes finalCtaOrbitReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
 
 
@@ -121,9 +192,19 @@
   animation: finalCtaFloat 4s ease-in-out infinite;
 }
 
+/* the little sparkle icon inside the label gets its own twinkle */
+.final-cta-floating-label svg {
+  animation: finalCtaSparkle 2.2s ease-in-out infinite;
+}
+
 @keyframes finalCtaFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
+}
+
+@keyframes finalCtaSparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50%      { transform: scale(1.2) rotate(15deg); opacity: 0.75; }
 }
 
 
@@ -133,6 +214,38 @@
   position: relative;
   z-index: 2;
   max-width: 680px;
+}
+
+/* content pieces settle in with a soft staggered rise, instead
+   of appearing all at once */
+.final-cta-eyebrow.eyebrow,
+.final-cta-content h2,
+.final-cta-content p,
+.final-cta-meta {
+  opacity: 0;
+  animation: finalCtaRiseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.final-cta-eyebrow.eyebrow { animation-delay: 0.05s; }
+.final-cta-content h2      { animation-delay: 0.14s; }
+.final-cta-content p       { animation-delay: 0.26s; }
+.final-cta-meta            { animation-delay: 0.38s; }
+
+.final-cta-action {
+  opacity: 0;
+  animation: finalCtaRiseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.46s;
+}
+
+@keyframes finalCtaRiseIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .final-cta-eyebrow.eyebrow {
@@ -147,6 +260,17 @@
   text-transform: uppercase;
 }
 
+/* the little dot before "Let's work together" pulses like a
+   live indicator */
+.final-cta-eyebrow.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7130;
+  animation: finalCtaDotPulse 1.8s ease-in-out infinite;
+}
+
 .final-cta-content h2 {
   margin: 0;
   color: #ffffff;
@@ -157,7 +281,18 @@
 
 .final-cta-highlight {
   display: block;
-  color: #ff996b;
+  background: linear-gradient(90deg, #ff996b, #ff7130, #ff996b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* a slow gradient sheen drifts across the highlighted line */
+  animation: finalCtaTextShine 6s linear infinite;
+}
+
+@keyframes finalCtaTextShine {
+  to { background-position: -200% center; }
 }
 
 .final-cta-content p {
@@ -188,10 +323,21 @@
   height: 7px;
   border-radius: 50%;
   background: #ff7130;
+
+  animation: finalCtaDotPulse 1.8s ease-in-out infinite;
 }
 
 .meta-separator {
   opacity: 0.35;
+}
+
+@keyframes finalCtaDotPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 113, 48, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(255, 113, 48, 0);
+  }
 }
 
 
@@ -203,6 +349,7 @@
 }
 
 .final-cta-button {
+  position: relative;
   min-width: 155px;
   min-height: 52px;
   display: inline-flex;
@@ -217,14 +364,46 @@
   font-size: 13px;
   font-weight: 750;
   text-decoration: none;
+  overflow: hidden;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
   transition: all 0.3s ease;
+
+  /* a slow breathing glow so the CTA keeps drawing the eye even
+     when nothing else on the page is moving */
+  animation: finalCtaButtonPulse 2.6s ease-in-out infinite;
+}
+
+/* light sweep across the button on hover */
+.final-cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.final-cta-button:hover::before {
+  left: 130%;
 }
 
 .final-cta-button:hover {
   background: #ffffff;
   color: #173d2a;
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
+  animation-play-state: paused;
+}
+
+.final-cta-button:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 .final-cta-button-icon {
@@ -235,6 +414,15 @@
 
 .final-cta-button:hover .final-cta-button-icon {
   transform: translate(3px, -3px);
+}
+
+@keyframes finalCtaButtonPulse {
+  0%, 100% {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  }
+  50% {
+    box-shadow: 0 12px 32px rgba(255, 113, 48, 0.35);
+  }
 }
 
 
@@ -249,6 +437,51 @@
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.18em;
+
+  /* fades in last, like a quiet signature on the card */
+  opacity: 0;
+  animation: finalCtaCornerIn 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes finalCtaCornerIn {
+  to { opacity: 0.16; }
+}
+
+
+/* ---------------- SHARED KEYFRAMES ---------------- */
+
+@keyframes finalCtaBoxGlow {
+  0%, 100% {
+    box-shadow: 0 25px 60px rgba(18, 44, 32, 0.16);
+    border-color: rgba(49, 128, 90, 0.30);
+  }
+  50% {
+    box-shadow: 0 25px 70px rgba(18, 44, 32, 0.26);
+    border-color: rgba(49, 128, 90, 0.45);
+  }
+}
+
+@keyframes finalCtaBeamSweep {
+  0%   { left: -60%; opacity: 0; }
+  15%  { opacity: 1; }
+  55%  { left: 130%; opacity: 0; }
+  100% { left: 130%; opacity: 0; }
+}
+
+@keyframes finalCtaGridPan {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 35px 35px, 35px 35px; }
+}
+
+@keyframes finalCtaGlowOne {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-16px, 14px, 0) scale(1.08); }
+}
+
+@keyframes finalCtaGlowTwo {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(16px, -14px, 0) scale(1.1); }
 }
 
 
@@ -264,8 +497,16 @@
     padding: 55px 34px 44px;
   }
 
+  /* NEW — instead of hiding the orb, shrink it and tuck it into
+     the top-right corner behind the content so the circular
+     motion stays visible instead of just disappearing */
   .final-cta-orb {
-    display: none;
+    top: 18px;
+    right: -10px;
+    width: 130px;
+    height: 130px;
+    transform: none;
+    opacity: 0.6;
   }
 
   .final-cta-floating-label {
@@ -291,6 +532,16 @@
     border-radius: 20px;
   }
 
+  /* NEW — smaller still, and nudged so it sits quietly behind
+     the top-right area without crowding the heading text */
+  .final-cta-orb {
+    top: 8px;
+    right: -22px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.5;
+  }
+
   .final-cta-button {
     width: 100%;
   }
@@ -302,9 +553,36 @@
 
 
 @media (prefers-reduced-motion: reduce) {
+  .final-cta-box,
+  .final-cta-box::after,
+  .final-cta-grid,
+  .final-cta-glow-one,
+  .final-cta-glow-two,
   .final-cta-orb::before,
+  .final-cta-orb::after,
   .final-cta-orb span,
-  .final-cta-floating-label {
+  .final-cta-orb span::after,
+  .final-cta-floating-label,
+  .final-cta-floating-label svg,
+  .final-cta-eyebrow.eyebrow,
+  .final-cta-eyebrow.eyebrow::before,
+  .final-cta-content h2,
+  .final-cta-content p,
+  .final-cta-meta,
+  .meta-dot,
+  .final-cta-highlight,
+  .final-cta-action,
+  .final-cta-button,
+  .final-cta-corner-text {
     animation: none !important;
+  }
+
+  .final-cta-eyebrow.eyebrow,
+  .final-cta-content h2,
+  .final-cta-content p,
+  .final-cta-meta,
+  .final-cta-action,
+  .final-cta-corner-text {
+    opacity: 1 !important;
   }
 }
