@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+
   width: 100%;
 
   background:
@@ -52,7 +53,9 @@
 
 .navbar-logo {
   display: inline-flex;
+
   align-items: center;
+
   flex-shrink: 0;
 
   color: #142018;
@@ -89,6 +92,7 @@
 
 .navbar-desktop {
   display: flex;
+
   align-items: center;
 
   gap: 4px;
@@ -115,6 +119,7 @@
   padding: 0 13px;
 
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -125,6 +130,7 @@
   text-decoration: none;
 
   font-size: 0.88rem;
+
   font-weight: 600;
 
   border-radius: 999px;
@@ -267,6 +273,7 @@
 
 .navbar-dropdown-inner {
   position: relative;
+
   z-index: 2;
 }
 
@@ -289,6 +296,7 @@
   text-decoration: none;
 
   font-size: 0.87rem;
+
   font-weight: 600;
 
   border-radius: 11px;
@@ -364,6 +372,7 @@
   border-radius: 999px;
 
   font-size: 0.86rem;
+
   font-weight: 700;
 
   box-shadow:
@@ -417,6 +426,12 @@
   align-items: center;
   justify-content: center;
 
+  flex-shrink: 0;
+
+  position: relative;
+
+  z-index: 1002;
+
   border:
     1px solid rgba(35, 131, 74, 0.12);
 
@@ -446,36 +461,43 @@
    MOBILE MENU
 ===================================================== */
 
-/* .navbar-mobile-menu {
-  display: none;
-} */
+/*
+   IMPORTANT
 
+   The mobile menu is positioned relative to the
+   viewport and starts directly below the mobile navbar.
 
-/* ================================================
-   MOBILE MENU
-================================================ */
+   Mobile navbar height = 70px
+
+   DO NOT change this to:
+
+       top: 100%;
+
+   because the menu will be pushed to the bottom
+   of the viewport on deployed builds.
+*/
 
 .navbar-mobile-menu {
-  display: block;
+  display: none;
 
   position: fixed;
 
   top: 70px;
+
   left: 0;
+  right: 0;
 
   width: 100%;
 
   max-height: 0;
 
-  /*
-     IMPORTANT:
-     Keep the menu visible outside its own box.
-     This prevents the fixed/sticky navbar positioning
-     from clipping the menu unexpectedly.
-  */
-  overflow: visible;
+  overflow: hidden;
 
   opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
 
   background:
     linear-gradient(
@@ -491,33 +513,15 @@
     0 15px 35px
     rgba(30, 70, 45, 0.08);
 
+  z-index: 999;
+
   transition:
     max-height 0.35s ease,
     opacity 0.25s ease,
+    visibility 0.25s ease,
     border-color 0.25s ease;
 }
 
-
-/* ================================================
-   MOBILE MENU OPEN
-================================================ */
-
-.navbar-mobile-menu {
-  display: block;
-
-  position: fixed;
-
-  top: 70px;
-  left: 0;
-
-  width: 100%;
-
-  max-height: 0;
-
-  overflow: visible;
-
-  
-}
 
 /* =====================================================
    TABLET
@@ -565,6 +569,19 @@
 @media (max-width: 800px) {
 
   /* ================================================
+     NAVBAR
+  ================================================ */
+
+  .navbar {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+  }
+
+
+  /* ================================================
      NAVBAR CONTAINER
   ================================================ */
 
@@ -585,6 +602,7 @@
 
   .navbar-logo-image {
     width: 88px;
+
     height: 46px;
   }
 
@@ -612,6 +630,15 @@
 
   /* ================================================
      MOBILE MENU
+
+     IMPORTANT FIX:
+
+     top MUST remain 70px.
+
+     NOT 100%.
+
+     This places the menu immediately below
+     the mobile navbar.
   ================================================ */
 
   .navbar-mobile-menu {
@@ -619,8 +646,10 @@
 
     position: fixed;
 
-    top: 100%;
+    top: 70px;
+
     left: 0;
+    right: 0;
 
     width: 100%;
 
@@ -629,6 +658,10 @@
     overflow: hidden;
 
     opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
 
     background:
       linear-gradient(
@@ -644,12 +677,19 @@
       0 15px 35px
       rgba(30, 70, 45, 0.08);
 
+    z-index: 999;
+
     transition:
       max-height 0.35s ease,
       opacity 0.25s ease,
+      visibility 0.25s ease,
       border-color 0.25s ease;
   }
 
+
+  /* ================================================
+     MOBILE MENU OPEN
+  ================================================ */
 
   .navbar-mobile-menu.open {
     max-height:
@@ -662,6 +702,10 @@
     -webkit-overflow-scrolling: touch;
 
     opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
 
     border-bottom-color:
       rgba(35, 131, 74, 0.10);
@@ -700,11 +744,6 @@
 
   /* ================================================
      DROPDOWN HEADER
-
-     THIS IS THE IMPORTANT FIX.
-
-     Main link and arrow are now
-     completely separate.
   ================================================ */
 
   .navbar-mobile-dropdown-header {
@@ -753,6 +792,8 @@
     font-size: 0.96rem;
 
     font-weight: 650;
+
+    cursor: pointer;
   }
 
 
@@ -768,8 +809,6 @@
 
   /* ================================================
      SEPARATE ARROW BUTTON
-
-     Arrow ONLY opens submenu.
   ================================================ */
 
   .navbar-mobile-dropdown-toggle {
@@ -874,8 +913,6 @@
 
   /* ================================================
      MOBILE DROPDOWN
-
-     NO "VIEW ALL" HERE.
   ================================================ */
 
   .navbar-mobile-dropdown {
@@ -1040,9 +1077,11 @@
 
   .navbar-logo-image {
     width: 82px;
+
     height: 46px;
 
     object-fit: contain;
+
     object-position: left center;
   }
 
@@ -1071,6 +1110,7 @@
 
   .navbar-mobile-dropdown-toggle {
     width: 46px;
+
     height: 46px;
   }
 
@@ -1114,6 +1154,7 @@
   .navbar-mobile-dropdown-link,
   .navbar-mobile-dropdown-toggle,
   .navbar-mobile-main-link,
+  .navbar-mobile-link,
   .navbar-mobile-cta {
 
     transition: none;
