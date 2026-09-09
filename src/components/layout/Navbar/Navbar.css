@@ -461,22 +461,6 @@
    MOBILE MENU
 ===================================================== */
 
-/*
-   IMPORTANT
-
-   The mobile menu is positioned relative to the
-   viewport and starts directly below the mobile navbar.
-
-   Mobile navbar height = 70px
-
-   DO NOT change this to:
-
-       top: 100%;
-
-   because the menu will be pushed to the bottom
-   of the viewport on deployed builds.
-*/
-
 .navbar-mobile-menu {
   display: none;
 
@@ -630,9 +614,9 @@
 
   /* ================================================
      MOBILE MENU
-
+     
      IMPORTANT FIX:
-
+     
      top MUST remain 70px.
 
      NOT 100%.
@@ -1158,6 +1142,7 @@
   .navbar-mobile-cta {
 
     transition: none;
+
   }
 
 }

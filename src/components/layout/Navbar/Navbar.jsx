@@ -55,6 +55,66 @@ function Navbar() {
 
 
   /* =====================================================
+     CLOSE MOBILE MENU ON SCROLL / GESTURE
+     
+     IMPORTANT:
+     The mobile menu locks body scrolling.
+     Therefore, window scroll alone is not enough.
+
+     We listen for:
+     - wheel
+     - touchmove
+
+     As soon as the user starts scrolling/swiping,
+     the mobile menu closes and normal page scrolling
+     becomes available again.
+  ===================================================== */
+
+  useEffect(() => {
+
+    if (!mobileOpen) {
+      return;
+    }
+
+
+    const handleScrollGesture = () => {
+
+      closeMobileMenu();
+
+    };
+
+
+    window.addEventListener(
+      "wheel",
+      handleScrollGesture,
+      { passive: true }
+    );
+
+    window.addEventListener(
+      "touchmove",
+      handleScrollGesture,
+      { passive: true }
+    );
+
+
+    return () => {
+
+      window.removeEventListener(
+        "wheel",
+        handleScrollGesture
+      );
+
+      window.removeEventListener(
+        "touchmove",
+        handleScrollGesture
+      );
+
+    };
+
+  }, [mobileOpen]);
+
+
+  /* =====================================================
      TOGGLE MOBILE DROPDOWN
   ===================================================== */
 
