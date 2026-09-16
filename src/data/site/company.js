@@ -342,7 +342,7 @@ const company = {
   contact: {
     email: "evergrowtechnology@gmail.com",
 
-    phone: "+91 8999805010",
+    phone: "+91 7620 172 187",
 
     location: "Navi Mumbai, Maharashtra, India",
 

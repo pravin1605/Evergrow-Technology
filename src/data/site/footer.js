@@ -131,8 +131,8 @@ export const footerData = {
 
     phone: {
       label: "Phone",
-      value: "+91 8999805010",
-      href: "tel:+918999805010",
+      value: "+91 7620 172 187",
+      href: "tel:+917620172187",
     },
 
     location: {
