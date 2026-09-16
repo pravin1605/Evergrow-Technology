@@ -5,6 +5,7 @@ import {
   MapPin,
   Phone,
   Send,
+  ExternalLink,
 } from "lucide-react";
 
 import {
@@ -29,6 +30,16 @@ function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+
+
+  // ==========================================
+  // COMPANY LOCATION
+  // ==========================================
+
+  const officeAddress =
+    "B-34, Agroli Village, CBD Belapur, Navi Mumbai, Maharashtra 400614";
+
+  const mapAddress = encodeURIComponent(officeAddress);
 
 
   // ==========================================
@@ -84,7 +95,6 @@ ${formData.message}
   return (
     <main className="contact-page">
 
-
       {/* =========================================
           HERO
       ========================================= */}
@@ -97,7 +107,6 @@ ${formData.message}
             Contact EverGrow
           </span>
 
-
           <h1>
             Let's build
             <br />
@@ -106,7 +115,6 @@ ${formData.message}
               something useful.
             </span>
           </h1>
-
 
           <p>
             Tell us about your business, idea or
@@ -120,7 +128,7 @@ ${formData.message}
 
 
       {/* =========================================
-          CONTACT CONTENT
+          MAIN CONTACT SECTION
       ========================================= */}
 
       <section className="contact-section">
@@ -136,21 +144,17 @@ ${formData.message}
 
             <div className="contact-form-wrapper">
 
-
-              {/* FORM HEADER */}
-
               <div className="contact-section-heading">
 
                 <span className="eyebrow">
                   Start a conversation
                 </span>
 
-
                 <h2>
                   Tell us what
+                  <br />
                   you need.
                 </h2>
-
 
                 <p>
                   Share a few details about your
@@ -161,29 +165,20 @@ ${formData.message}
               </div>
 
 
-              {/* FORM */}
-
               <form
                 className="contact-form"
                 onSubmit={handleSubmit}
               >
 
-
-                {/* =================================
-                    NAME + COMPANY
-                ================================= */}
+                {/* NAME + COMPANY */}
 
                 <div className="contact-form-row">
-
-
-                  {/* NAME */}
 
                   <div className="contact-field">
 
                     <label htmlFor="name">
                       Name
                     </label>
-
 
                     <input
                       id="name"
@@ -198,14 +193,11 @@ ${formData.message}
                   </div>
 
 
-                  {/* COMPANY */}
-
                   <div className="contact-field">
 
                     <label htmlFor="company">
                       Company
                     </label>
-
 
                     <input
                       id="company"
@@ -221,21 +213,15 @@ ${formData.message}
                 </div>
 
 
-                {/* =================================
-                    EMAIL + PHONE
-                ================================= */}
+                {/* EMAIL + PHONE */}
 
                 <div className="contact-form-row">
-
-
-                  {/* EMAIL */}
 
                   <div className="contact-field">
 
                     <label htmlFor="email">
                       Email
                     </label>
-
 
                     <input
                       id="email"
@@ -250,14 +236,11 @@ ${formData.message}
                   </div>
 
 
-                  {/* PHONE */}
-
                   <div className="contact-field">
 
                     <label htmlFor="phone">
                       Phone
                     </label>
-
 
                     <input
                       id="phone"
@@ -274,16 +257,13 @@ ${formData.message}
                 </div>
 
 
-                {/* =================================
-                    BUSINESS TYPE
-                ================================= */}
+                {/* BUSINESS TYPE */}
 
                 <div className="contact-field">
 
                   <label htmlFor="businessType">
                     Business Type
                   </label>
-
 
                   <select
                     id="businessType"
@@ -297,41 +277,33 @@ ${formData.message}
                       Select your business type
                     </option>
 
-
                     <option value="Gym & Fitness">
                       Gym & Fitness
                     </option>
-
 
                     <option value="Healthcare">
                       Healthcare
                     </option>
 
-
                     <option value="Education">
                       Education
                     </option>
-
 
                     <option value="Kindergarten & Preschool">
                       Kindergarten & Preschool
                     </option>
 
-
                     <option value="Housing Society">
                       Housing Society
                     </option>
-
 
                     <option value="Real Estate">
                       Real Estate
                     </option>
 
-
                     <option value="Restaurant">
                       Restaurant
                     </option>
-
 
                     <option value="Other Business">
                       Other Business
@@ -342,16 +314,13 @@ ${formData.message}
                 </div>
 
 
-                {/* =================================
-                    REQUIREMENT
-                ================================= */}
+                {/* REQUIREMENT */}
 
                 <div className="contact-field">
 
                   <label htmlFor="requirement">
                     What do you need?
                   </label>
-
 
                   <select
                     id="requirement"
@@ -365,51 +334,41 @@ ${formData.message}
                       Select a service
                     </option>
 
-
                     <option value="Website Development">
                       Website Development
                     </option>
-
 
                     <option value="Custom Software">
                       Custom Software
                     </option>
 
-
                     <option value="Mobile Application">
                       Mobile Application
                     </option>
-
 
                     <option value="UI/UX Design">
                       UI/UX Design
                     </option>
 
-
                     <option value="Digital Marketing">
                       Digital Marketing
                     </option>
-
 
                     <option value="SEO">
                       SEO
                     </option>
 
-
                     <option value="Google Ads">
                       Google Ads
                     </option>
-
 
                     <option value="Meta Ads">
                       Meta Ads
                     </option>
 
-
                     <option value="Business Automation">
                       Business Automation
                     </option>
-
 
                     <option value="Not Sure">
                       I'm not sure yet
@@ -420,16 +379,13 @@ ${formData.message}
                 </div>
 
 
-                {/* =================================
-                    MESSAGE
-                ================================= */}
+                {/* MESSAGE */}
 
                 <div className="contact-field">
 
                   <label htmlFor="message">
                     Message
                   </label>
-
 
                   <textarea
                     id="message"
@@ -444,9 +400,7 @@ ${formData.message}
                 </div>
 
 
-                {/* =================================
-                    SUBMIT
-                ================================= */}
+                {/* SUBMIT */}
 
                 <button
                   type="submit"
@@ -457,13 +411,10 @@ ${formData.message}
                     Send Enquiry
                   </span>
 
-
                   <Send size={17} />
 
                 </button>
 
-
-                {/* SUBMITTED MESSAGE */}
 
                 {submitted && (
 
@@ -486,9 +437,7 @@ ${formData.message}
             <aside className="contact-information">
 
 
-              {/* =================================
-                  HEADER
-              ================================= */}
+              {/* HEADER */}
 
               <div className="contact-info-header">
 
@@ -496,12 +445,11 @@ ${formData.message}
                   Get in touch
                 </span>
 
-
                 <h2>
                   Let's talk about
+                  <br />
                   your next idea.
                 </h2>
-
 
                 <p>
                   Whether you need a website,
@@ -513,9 +461,7 @@ ${formData.message}
               </div>
 
 
-              {/* =================================
-                  EMAIL
-              ================================= */}
+              {/* EMAIL */}
 
               <a
                 href={`mailto:${company.contact.email}`}
@@ -523,18 +469,14 @@ ${formData.message}
               >
 
                 <span className="contact-info-icon">
-
                   <Mail size={20} />
-
                 </span>
-
 
                 <div>
 
                   <small>
                     Email
                   </small>
-
 
                   <strong>
                     {company.contact.email}
@@ -545,9 +487,7 @@ ${formData.message}
               </a>
 
 
-              {/* =================================
-                  PHONE
-              ================================= */}
+              {/* PHONE */}
 
               <a
                 href={`tel:${company.contact.phone.replace(/\s/g, "")}`}
@@ -555,18 +495,14 @@ ${formData.message}
               >
 
                 <span className="contact-info-icon">
-
                   <Phone size={20} />
-
                 </span>
-
 
                 <div>
 
                   <small>
                     Phone
                   </small>
-
 
                   <strong>
                     {company.contact.phone}
@@ -577,52 +513,96 @@ ${formData.message}
               </a>
 
 
-              {/* =================================
-                  LOCATION
-              ================================= */}
+              {/* LOCATION */}
 
-              <div className="contact-info-item">
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${mapAddress}`}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-info-item contact-location-item"
+              >
 
                 <span className="contact-info-icon">
-
                   <MapPin size={20} />
-
                 </span>
-
 
                 <div>
 
                   <small>
-                    Location
+                    Office
                   </small>
 
-
                   <strong>
-                    {company.contact.location}
+                    {officeAddress}
                   </strong>
+
+                </div>
+
+                <ExternalLink
+                  className="contact-location-arrow"
+                  size={16}
+                />
+
+              </a>
+
+
+              {/* =================================
+                  MAP
+              ================================= */}
+
+              <div className="contact-map-wrapper">
+
+                <div className="contact-map-header">
+
+                  <div>
+
+                    <span className="contact-map-label">
+                      Find us
+                    </span>
+
+                    <strong>
+                      Navi Mumbai Office
+                    </strong>
+
+                  </div>
+
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${mapAddress}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="contact-map-link"
+                  >
+                    Open Map
+                    <ExternalLink size={14} />
+                  </a>
+
+                </div>
+
+
+                <div className="contact-map">
+
+                  <iframe
+                    title="EverGrow Technology Office Location"
+                    src={`https://www.google.com/maps?q=${mapAddress}&output=embed`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
 
                 </div>
 
               </div>
 
 
-              {/* =================================
-                  SOCIAL
-              ================================= */}
+              {/* SOCIAL */}
 
-              <div className="contact-social">
+              {/* <div className="contact-social">
 
                 <span className="eyebrow">
                   Follow EverGrow
                 </span>
 
-
                 <div className="contact-social-links">
-
-
-                  {/* =================================
-                      INSTAGRAM
-                  ================================= */}
 
                   <a
                     href={company.contact.social.instagram}
@@ -630,15 +610,9 @@ ${formData.message}
                     rel="noreferrer"
                     aria-label="Instagram"
                   >
-
                     <FaInstagram size={18} />
-
                   </a>
 
-
-                  {/* =================================
-                      FACEBOOK
-                  ================================= */}
 
                   <a
                     href={company.contact.social.facebook}
@@ -646,27 +620,21 @@ ${formData.message}
                     rel="noreferrer"
                     aria-label="Facebook"
                   >
-
                     <FaFacebookF size={18} />
-
                   </a>
-
 
                 </div>
 
-              </div>
+              </div> */}
 
 
-              {/* =================================
-                  QUICK MESSAGE
-              ================================= */}
+              {/* QUICK MESSAGE */}
 
-              <div className="contact-side-note">
+              {/* <div className="contact-side-note">
 
                 <strong>
                   Not sure what you need?
                 </strong>
-
 
                 <p>
                   That's completely fine. Tell us
@@ -675,7 +643,7 @@ ${formData.message}
                   solution.
                 </p>
 
-              </div>
+              </div> */}
 
 
             </aside>
@@ -685,7 +653,6 @@ ${formData.message}
         </div>
 
       </section>
-
 
     </main>
   );
