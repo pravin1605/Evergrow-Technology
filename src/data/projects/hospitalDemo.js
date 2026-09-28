@@ -21,7 +21,7 @@ const hospitalDemo = {
     "/images/projects/hospital-demo/hospital-demo.jpg",
 
   liveUrl:
-    "#",
+    "https://hosppital-websitenew.vercel.app/",
 
   documentation:
     "/documents/documentation/hospital-demo.pdf",
