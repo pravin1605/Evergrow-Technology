@@ -7,6 +7,12 @@ import kindergartenDemo2 from "./kindergartenDemo2";
 
 import restaurantDemo from "./restaurantDemo";
 
+
+import kharchaManager from "./kharchaManager";
+
+import kidsgames from "./kidsgames";
+
+import classhub from "./classhub";
 /*
 |--------------------------------------------------------------------------
 | ALL PROJECTS
@@ -20,6 +26,9 @@ const projects = [
   kindergartenDemo1,
   kindergartenDemo2,
  restaurantDemo,
+  kharchaManager,
+  kidsgames,
+  classhub
 ];
 
 /*
@@ -36,6 +45,9 @@ export {
   kindergartenDemo1,
   kindergartenDemo2,
   restaurantDemo,
+  kharchaManager ,
+  kidsgames,  
+  classhub
 };
 
 /*
